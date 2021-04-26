@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnouncementController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('homepage');
+
+Route::get('/login&register',function(){
+
+        return view('auth.login_register');
+
+})->name('login_register');
+
+
+Route::get('/create/announcement',[AnnouncementController::class,'create'])->name('announcement.create');
