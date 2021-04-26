@@ -12,7 +12,7 @@
 
                 {{-- registrazione --}}
                 <h5 class="card-title text-center">Modifica i campi</h5>
-                <form method="POST" action="{{route('register')}}"  class="form-signin">
+                <form method="POST" action="{{route('announcement.store')}}"  class="form-signin">
                     @csrf
                     <div class="form-label-group">
                       <input  name="title" type="text" id="titolo" class="form-control" placeholder="Email address" required autofocus>
@@ -26,7 +26,13 @@
                       <div class="form-label-group">
                         <input  name="price" type="text" id="prezzo" class="form-control" placeholder="Email address" required autofocus>
                         <label for="prezzo">Prezzo</label>
-                      </div> 
+                      <select class="my-3" name="categories" id="category">
+                        @foreach ($categories as $category)  
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                      </select>
+                    </div> 
+
                
                   {{-- <div class="custom-control custom-checkbox mb-3">
                     <input type="checkbox" class="custom-control-input" id="customCheck1">

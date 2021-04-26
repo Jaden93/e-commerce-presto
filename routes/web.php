@@ -26,3 +26,4 @@ Route::get('/login&register',function(){
 
 
 Route::get('/create/announcement',[AnnouncementController::class,'create'])->name('announcement.create');
+Route::post('/store',[AnnouncementController::class,'store'])->name('announcement.store');

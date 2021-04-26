@@ -25,8 +25,11 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
+
         return view('announcement.create');
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -36,17 +39,22 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
     {
+
         $announcement = Announcement::create([
             'title'=>$request->input('title'),
             'description'=>$request->input('description'),
             'price'=>$request->input('price'),
             'user_id'=>Auth::id(),
+            'category_id'=>$request->input('categories'),
+            
 
         ]);
 
-        return redirect('homepage')->with('status','il tuo annuncio è stato creato');
+
+        return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
     }
 
+    
     /**
      * Display the specified resource.
      *
