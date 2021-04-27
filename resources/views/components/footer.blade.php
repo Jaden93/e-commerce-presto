@@ -3,7 +3,7 @@
 <footer id="sticky-footer" class=" py-4 mt-10  ">
         <div class="container text-center">
       </footer>   
-      <footer class="text-center text-white" style="background-color: #f1f1f1;">
+      <footer class="text-center text-white">
   <!-- Grid container -->
   <div class="container pt-4">
     <!-- Section: Social media -->
@@ -67,7 +67,7 @@
 
   <!-- Copyright -->
 
-  <div  class="text-center text-dark p-3" style="background-color:--main-color ;">
+  <div  class="text-center text-dark bg-main p-3">
   <p>P.iva 123456789 • Cookie Policy • Copyright Policy • <a href="tel:+390123456789">chiama +390123456789</a></p>
     © 2020 Copyright:
     <a class="text-dark" href="https://mdbootstrap.com/">Art Attack</a>
