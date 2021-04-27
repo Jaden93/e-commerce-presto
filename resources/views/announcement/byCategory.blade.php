@@ -1,43 +1,9 @@
-{{-- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
-
-     
 <x-layout>
- @if (session('status'))
-    <div class="alert alert-success">
-    {{session('status')}}
-</div>
- @endif
- <div class="container-fluid bg-primary me-2">
 
-<h2 class=" text-center display-1">Cerca la categoria</h2>
-
-    <div class="row">
-    @foreach ($categories as $category) 
-        <div class="col-md-3 my-4 card col-12">
-            <img class="img-fluid"  src="" style="width: 200px; height: 200px;"alt="Card image cap">
-            <div class="card-body">
-            <p><i class="fas fa-motorcycle"></i>
-            
-            
-            
-            
-            
-            
-            </p>
-            </div>
-        </div>
-        @endforeach
-    </div>
-
-
-
-
+    <h2 class=" text-center display-1">Cerca la categoria</h2>
     <div class="row">
         @foreach ($announcements as $announcement)
-            <div class="my-3 card col-md-8 col-12 offset-md-2">
+            <div class="card col-8">
             <img class="img-fluid"  src="https://www.peperonciniamoci.it/forum/uploads/profile/photo-15386.png" style="width: 200px; height: 200px;"alt="Card image cap">
             <div class="card-body">
             <h3 class="card-title">{{$announcement->title}}</h3>
@@ -53,6 +19,5 @@
         @endforeach
     </div>
 
-</div>
 
 </x-layout>
