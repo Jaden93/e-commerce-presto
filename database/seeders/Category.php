@@ -13,7 +13,7 @@ class Category extends Seeder
      *
      * @return void
      */
-     
+
 
     public function run()
     {
