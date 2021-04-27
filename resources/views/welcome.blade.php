@@ -41,6 +41,8 @@
             <p class="card-text">Categoria: <a href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a></p>
 
             <a href="#" class="btn btn-primary">Go somewhere</a>
+
+             
             </div>
         </div>
         @endforeach
