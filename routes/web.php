@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('homepage');
+Route::get('/', [PublicController::class,'index'])->name('homepage');
 
 Route::get('/login&register',function(){
 
@@ -27,3 +26,4 @@ Route::get('/login&register',function(){
 
 Route::get('/create/announcement',[AnnouncementController::class,'create'])->name('announcement.create');
 Route::post('/store',[AnnouncementController::class,'store'])->name('announcement.store');
+Route::get('/category/{name}/{id}',[PublicController::class,'byCategory'])->name('byCategory');
