@@ -10,13 +10,6 @@
     {{session('status')}}
 </div>
  @endif
-<<<<<<< HEAD
-
- <a href="#" class="btn hvr-hollow">Hollow</a>
- 
- <div class="container-fluid  me-2">
-=======
->>>>>>> f537f3c17ae07274e03649152cb3f373ab771635
 
 
 
