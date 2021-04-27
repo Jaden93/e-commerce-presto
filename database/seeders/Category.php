@@ -13,7 +13,7 @@ class Category extends Seeder
      *
      * @return void
      */
-     
+
 
     public function run()
     {
@@ -22,10 +22,10 @@ class Category extends Seeder
         foreach ($categories as $category) {
         DB::table('categories')->insert([
             'name'=>$category,
-        
+
             ]);
         };
-            
+
 
     }
 }
