@@ -5,6 +5,7 @@
     --third-color: #757575;
     --input-padding-x: 1.5rem;
     --input-padding-y: .75rem;
+    --font-mont_s:'Montserrat Alternates', sans-serif;
 }
 
 .custom-card {
@@ -34,6 +35,12 @@
     background-color: var(--sec-color);
 }
 
+.custom-btn:hover {
+  color: #fff;
+    background-color: var(--sec-color);
+    border-color: var(--sec-color);
+}
+
 .custom-brand {
     letter-spacing: 3px;
     font-size: 26px;
@@ -46,21 +53,21 @@
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   }
-  
+
   .card-signin .card-title {
     margin-bottom: 2rem;
     font-weight: 300;
     font-size: 1.5rem;
   }
-  
+
   .card-signin .card-body {
     padding: 2rem;
   }
-  
+
   .form-signin {
     width: 100%;
   }
-  
+
   .form-signin .btn {
     font-size: 80%;
     border-radius: 5rem;
@@ -69,22 +76,22 @@
     padding: 1rem;
     transition: all 0.2s;
   }
-  
+
   .form-label-group {
     position: relative;
     margin-bottom: 1rem;
   }
-  
+
   .form-label-group input {
     height: auto;
     border-radius: 2rem;
   }
-  
+
   .form-label-group>input,
   .form-label-group>label {
     padding: var(--input-padding-y) var(--input-padding-x);
   }
-  
+
   .form-label-group>label {
     position: absolute;
     top: 0;
@@ -99,39 +106,129 @@
     border-radius: .25rem;
     transition: all .1s ease-in-out;
   }
-  
+
   .form-label-group input::-webkit-input-placeholder {
     color: transparent;
   }
-  
+
   .form-label-group input:-ms-input-placeholder {
     color: transparent;
   }
-  
+
   .form-label-group input::-ms-input-placeholder {
     color: transparent;
   }
-  
+
   .form-label-group input::-moz-placeholder {
     color: transparent;
   }
-  
+
   .form-label-group input::placeholder {
     color: transparent;
   }
-  
+
   .form-label-group input:not(:placeholder-shown) {
     padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
     padding-bottom: calc(var(--input-padding-y) / 3);
   }
-  
+
   .form-label-group input:not(:placeholder-shown)~label {
     padding-top: calc(var(--input-padding-y) / 3);
     padding-bottom: calc(var(--input-padding-y) / 3);
     font-size: 12px;
     color: #777;
   }
-  
+  /* #sticky-footer {
+    
+   
+  } */
+  .text-main {
+    color: var(--main-color);
+  }
+
+  .text-main:hover {
+    color: white;
+    transition: 0.2s;
+  }
+
+  .btn-outline-sec {
+    color: var(--sec-color);
+    border-color: var(--sec-color);
+  }
+
+  .btn-outline-sec:hover {
+    color: #fff;
+    background-color: var(--sec-color);
+    border-color: var(--sec-color);
+  }
+
+  .bg-main {
+    background-color: var(--main-color);
+  }
+
+  .bg-sec {
+    background-color: var(--sec-color);
+  }
+
+  .text-sec {
+    color: var(--sec-color);
+  }
+
+  .text-sec:hover {
+    color: white;
+    transition: 0.2s;
+  }
+
+  .text-U-brand {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+  }
+
+  .text-U-brand:hover {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+
+  .dropdown-item:hover {
+    color: white;
+    background-color: var(--main-color);
+}
 
 
   /* FINE STILE LOGIN */
+
+  .custom-category{
+      font-size: 18px;
+      word-wrap: break-word;
+      font-family: var(--font-mont_s);
+      font-weight: 600;
+  }
+
+  .custom-card {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: background;
+    transition-property: background;
+    box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);
+    background-color:#9d9d9d66;
+    /* Hack to improve aliasing on mobile/tablet devices */
+  }
+
+
+  .custom-card:hover, .custom-card:focus, .custom-card:active {
+    background: none;
+  }
+
+@media screen and (max-width:1200px){
+    .custom-category{
+        font-size: 16px;
+    }
+}
+

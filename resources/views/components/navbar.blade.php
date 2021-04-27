@@ -1,39 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-main">
     <div class="container-fluid">
-        <a class="custom-brand navbar-brand" href="#">Presto</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        <a class="custom-brand navbar-brand text-sec text-U-brand" href="#"><i class="fas fa-store"></i> Presto</a>
+        <button class="navbar-toggler bg-sec" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <i class="fas text-main fa-cog"></i>
         </button>
         <form class="d-flex mx-auto">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-sec ms-2" type="submit">Search</button>
         </form>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
+                    <a class="nav-link active text-sec" aria-current="page" href="{{route('homepage')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('login_register')}}">Login</a>
+                    <a class="nav-link text-sec" href="{{route('login_register')}}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('login_register')}}">Registrer</a>
+                    <a class="nav-link text-sec" href="{{route('login_register')}}">Register</a>
                 </li>
 
                 </li>
                 @auth
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    <a class="nav-link dropdown-toggle text-sec" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                    
                         Ciao, {{Auth::user()->name}}
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-menu bg-main" aria-labelledby="navbarDropdownMenuLink">
                         <li>
                             <form action="{{route('logout')}}" id="logout" method="POST">
                                 @csrf
-                            <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout').submit()">Logout</a>
+                            <a class="dropdown-item text-sec" onclick="event.preventDefault(); document.getElementById('logout').submit()">Logout</a>
                         </form>
                         </li>
                     </ul>
@@ -48,7 +48,7 @@
                     @endauth
                     @else
                     
-                    <a class="custom-btn btn nav-link" href="{{route('login_register')}}">Inserisci annuncio</a>
+                    <a class="custom-btn btn nav-link text-main" href="{{route('login_register')}}">Inserisci annuncio</a>
                     @endif
                 </li>
             </ul>
