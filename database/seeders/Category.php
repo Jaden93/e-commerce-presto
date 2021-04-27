@@ -18,13 +18,17 @@ class Category extends Seeder
     public function run()
     {
         $categories = ['Moto','Macchine','Biciclette','Monopattini','Computer','Televisori','Videogiochi','Immobili','Abbigliamento','Accessori','Elettronica','Libri'];
-
+        $icons = ['<i class="fas fa-motorcycle"></i>','<i class="fas fa-motorcycle"></i>','<i class="fas fa-motorcycle"></i>','<i class="fas fa-motorcycle"></i>'];
+       
         foreach ($categories as $category) {
         DB::table('categories')->insert([
             'name'=>$category,
-        
+            
             ]);
+
         };
+
+
             
 
     }
