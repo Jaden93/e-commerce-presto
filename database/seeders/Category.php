@@ -28,8 +28,6 @@ class Category extends Seeder
         ['name'=>'Immobili','icon'=>'fas fa-house-user'],
         ['name'=>'Abbigliamento','icon'=>'fas fa-tshirt'],
         ['name'=>'Accessori','icon'=>'fas fa-glasses'],
-        ['name'=>'Elettronica','icon'=>'fas fa-mouse'],
-        ['name'=>'Libri','icon'=>'fas fa-book'],
     ];
         foreach ($categories as $category) {
         DB::table('categories')->insert([
