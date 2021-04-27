@@ -16,6 +16,8 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
-        "bootstrap": "^5.0.0-beta3"
+        "@popperjs/core": "^2.9.2",
+        "bootstrap": "^5.0.0-beta3",
+        "hover.css": "^2.3.2"
     }
 }
