@@ -1,6 +1,6 @@
 <x-layout>
 
-    <h2 class=" text-center display-1">Cerca la categoria</h2>
+    <h2 class="margin-custom-top text-center display-1">Ecco gli annunci</h2>
     <div class="row">
         @foreach ($announcements as $announcement)
             <div class="card col-8">

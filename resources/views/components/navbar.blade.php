@@ -1,18 +1,23 @@
-<nav class="navbar navbar-expand-lg bg-main">
+<nav class="navbar nav-custom  navbar-expand-lg bg-main">
     <div class="container-fluid">
-        <a class="custom-brand navbar-brand text-sec text-U-brand" href="#"><i class="fas fa-store"></i> Presto</a>
-        <button class="navbar-toggler bg-sec" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        <a class=" navbar-brand text-sec   text-U-brand" href="{{route('homepage')}}"><i class="fas fa-store"></i> Presto</a>
+        <button class="navbar-toggler hvr-icon-spin  bg-sec" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas text-main fa-cog"></i>
+            <i class="fas  hvr-icon text-main fa-cog"></i>
         </button>
-        <form class="d-flex mx-auto">
+      
+        <form class="d-flex col-md-4 offset-md-2 offset-3">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-sec ms-2" type="submit">Search</button>
         </form>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
+                    @if(Route::is('homepage'))
+                    <a class="nav-link active text-sec" style="display:none;" aria-current="page" href="{{route('homepage')}}">Home</a>
+                    @else
                     <a class="nav-link active text-sec" aria-current="page" href="{{route('homepage')}}">Home</a>
+                    @endif
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-sec" href="{{route('login_register')}}">Login</a>
@@ -44,11 +49,11 @@
                 <li class="nav-item">
                     @auth
                     @if (Auth::user()->name)
-                    <a class="custom-btn btn nav-link" href="{{route('announcement.create')}}">Inserisci annuncio</a>   
+                    <a class="custom-nav  custom-btn btn nav-link" href="{{route('announcement.create')}}">Inserisci annuncio</a>   
                     @endauth
                     @else
                     
-                    <a class="custom-btn btn nav-link text-main" href="{{route('login_register')}}">Inserisci annuncio</a>
+                    <a class=" custom-nav  custom-btn btn nav-link text-main" href="{{route('login_register')}}">Inserisci annuncio</a>
                     @endif
                 </li>
             </ul>
