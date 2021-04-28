@@ -14,6 +14,12 @@
         </div>
         @endif
 
+    
+        @if (session('access.denied'))
+         <div class="mt-5">
+             <h4 class="text-danger">Accesso non consentito</h4>
+         </div>  
+        @endif
         {{-- VIDEO HEADER --}}
         <header>
             <div class="overlay"></div>
@@ -31,6 +37,7 @@
           </header>
 
 
+        
 
         <div class="margin-custom-top container text-center">
             <div class="mt-0 row justify-content-center align-items-center">
@@ -131,6 +138,8 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-10 col-11">
                     @foreach ($announcements as $announcement)
+
+                    @if ($announcement->is_accepted)
                     <div class="my-3 card col-md-8 col-12 offset-md-2">
                         <div class="row align-items-center justify-content-end">
                             <div class="col-5">
@@ -154,7 +163,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
+                    @endif
+                  
                     @endforeach
                 </div>
             </div>
