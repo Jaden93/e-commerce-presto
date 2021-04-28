@@ -27,3 +27,4 @@ Route::get('/login&register',function(){
 Route::get('/create/announcement',[AnnouncementController::class,'create'])->name('announcement.create');
 Route::post('/store',[AnnouncementController::class,'store'])->name('announcement.store');
 Route::get('/category/{name}/{id}',[PublicController::class,'byCategory'])->name('byCategory');
+Route::get('/announcement/show/{announcement}' , [AnnouncementController::class,'show'])->name('announcement.show');

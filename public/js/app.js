@@ -3111,9 +3111,7 @@ function within(min, value, max) {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
-
-__webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module './script'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js"); // require('./script');
 
 /***/ }),
 
