@@ -11,7 +11,7 @@
 .custom-card {
   display: inline-block;
   vertical-align: middle;
-  
+
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -27,16 +27,12 @@
   margin-top: 100px;
 }
 
-.custom-session {
+/* .custom-session {
 
   z-index: 1000;
 
-}
+} */
 
-
-/* .custom-footer-color {
-  background-color: #72aed48a;
-}  */
 .custom-card:hover, .custom-card:focus, .custom-card:active {
   background: none;
 }
@@ -54,33 +50,31 @@
 .custom-nav {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  
+
   font: 120% system-ui;
   text-align: center;
 }
-
-
 
 .custom-btn {
   background-color: var(--sec-color);
   text-decoration: none;
   color: black;
- 
- 
+
+
 }
 .custom-btn:hover {
   color: #fff;
   border-color: var(--sec-color);
   font-weight: 900;
 
-    
+
 }
 .custom-footer {
-  width: 100%;
-}
-.custom-footer-font {
+  width: 100% !important;
+  background-color: #72aed48a;
   color: var(--third-color);
 }
+
 .custom-brand {
     letter-spacing: 3px;
     font-size: 26px;
@@ -179,8 +173,8 @@
     color: #777;
   }
   /* #sticky-footer {
-    
-   
+
+
   } */
   .text-main {
     color: var(--main-color);
@@ -267,7 +261,7 @@
   }
 
 
-  
+
 
 @media screen and (max-width:1200px){
     .custom-category{

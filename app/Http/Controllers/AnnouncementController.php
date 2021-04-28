@@ -46,7 +46,7 @@ class AnnouncementController extends Controller
             'price'=>$request->input('price'),
             'user_id'=>Auth::id(),
             'category_id'=>$request->input('categories'),
-            
+
 
         ]);
 
@@ -54,7 +54,7 @@ class AnnouncementController extends Controller
         return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
     }
 
-    
+
     /**
      * Display the specified resource.
      *
@@ -63,7 +63,8 @@ class AnnouncementController extends Controller
      */
     public function show(Announcement $announcement)
     {
-        
+        // dd($announcement->all());
+        return view('announcement.show', compact('announcement'));
     }
 
     /**
