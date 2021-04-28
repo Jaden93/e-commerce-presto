@@ -11,6 +11,7 @@
 .custom-card {
   display: inline-block;
   vertical-align: middle;
+  
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -22,25 +23,64 @@
   background-color: var(--third-color);
   /* Hack to improve aliasing on mobile/tablet devices */
 }
+.margin-custom-top {
+  margin-top: 100px;
+}
+
+.custom-session {
+
+  z-index: 1000;
+
+}
 
 
+/* .custom-footer-color {
+  background-color: #72aed48a;
+}  */
 .custom-card:hover, .custom-card:focus, .custom-card:active {
   background: none;
 }
 
 
 
+.nav-custom  {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+}
+
+
+.custom-nav {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  
+  font: 120% system-ui;
+  text-align: center;
+}
+
+
 
 .custom-btn {
-    background-color: var(--sec-color);
+  background-color: var(--sec-color);
+  text-decoration: none;
+  color: black;
+ 
+ 
 }
-
 .custom-btn:hover {
   color: #fff;
-    background-color: var(--sec-color);
-    border-color: var(--sec-color);
-}
+  border-color: var(--sec-color);
+  font-weight: 900;
 
+    
+}
+.custom-footer {
+  width: 100%;
+}
+.custom-footer-font {
+  color: var(--third-color);
+}
 .custom-brand {
     letter-spacing: 3px;
     font-size: 26px;
@@ -225,6 +265,9 @@
   .custom-card:hover, .custom-card:focus, .custom-card:active {
     background: none;
   }
+
+
+  
 
 @media screen and (max-width:1200px){
     .custom-category{
