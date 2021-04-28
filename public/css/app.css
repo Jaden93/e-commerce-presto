@@ -10852,16 +10852,12 @@ textarea.form-control-lg {
   margin-top: 100px;
 }
 
-.custom-session {
+/* .custom-session {
 
   z-index: 1000;
 
-}
+} */
 
-
-/* .custom-footer-color {
-  background-color: #72aed48a;
-}  */
 .custom-card:hover, .custom-card:focus, .custom-card:active {
   background: none;
 }
@@ -10884,8 +10880,6 @@ textarea.form-control-lg {
   text-align: center;
 }
 
-
-
 .custom-btn {
   background-color: var(--sec-color);
   text-decoration: none;
@@ -10901,11 +10895,11 @@ textarea.form-control-lg {
 
 }
 .custom-footer {
-  width: 100%;
-}
-.custom-footer-font {
+  width: 100% !important;
+  background-color: #72aed48a;
   color: var(--third-color);
 }
+
 .custom-brand {
     letter-spacing: 3px;
     font-size: 26px;
