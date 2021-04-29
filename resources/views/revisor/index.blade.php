@@ -73,7 +73,7 @@
     </div>
 </div>
 @else
-<div class="margin-custom-top">
+<div class="margin-custom-top flex-wrapper">
     <div class="bg-success">
         <p class="p-3 text-light text-center">
             Non ci sono annunci da revisionare, torna più tardi!
