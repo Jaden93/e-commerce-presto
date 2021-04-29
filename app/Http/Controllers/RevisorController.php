@@ -13,12 +13,14 @@ class RevisorController extends Controller
         $this->middleware('auth.revisor');
     }
 
-    public function index() {
+    public function index()
+    {
         $announcement = Announcement::where('is_accepted',null)->orderBy('created_at','desc')->first();
         return view('revisor.index', compact('announcement'));
     }
 
-    private function setAccepted($announcement_id, $value) {
+    private function setAccepted($announcement_id, $value)
+    {
         $announcement = Announcement::find($announcement_id);
         $announcement->is_accepted = $value;
         $announcement->save();
@@ -26,11 +28,19 @@ class RevisorController extends Controller
     }
 
 
-    public function accept($announcement_id) {
+    public function accept($announcement_id)
+    {
         return $this->setAccepted($announcement_id, true);
     }
 
-    public function reject($announcement_id) {
+    public function reject($announcement_id)
+    {
         return $this->setAccepted($announcement_id, false);
+    }
+
+    public function recovery()
+    {
+        $announcement = Announcement::where('is_accepted',false)->orderBy('created_at','desc')->first();
+        return view('revisor.recovery', compact('announcement'));
     }
 }

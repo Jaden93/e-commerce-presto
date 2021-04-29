@@ -54,6 +54,10 @@
                 @auth
                 @if (Auth::user()->is_revisor)
                 <li class="nav-item">
+                    <a class="nav-link text-sec fw-bold" href="{{route('revisor.recovery')}}"">Recupero</a>
+                    </span>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-sec fw-bold" href="{{route('revisor.index')}}">
                         Revisor index <span class="badge badge-pill badge-warning">#
                             {{ \App\Models\Announcement::ToBeRevisionedCount()}}</a>

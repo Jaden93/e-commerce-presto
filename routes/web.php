@@ -30,7 +30,8 @@ Route::post('/store',[AnnouncementController::class,'store'])->name('announcemen
 Route::get('/category/{name}/{id}',[PublicController::class,'byCategory'])->name('byCategory');
 Route::get('/announcement/show/{announcement}' , [AnnouncementController::class,'show'])->name('announcement.show');
 
-//revisione 
+//revisione
 Route::get('/revisor/index', [RevisorController::class,'index'])->name('revisor.index');
+Route::get('/revisor/recovery', [RevisorController::class,'recovery'])->name('revisor.recovery');
 Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.accept');
 Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.reject');
