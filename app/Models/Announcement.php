@@ -6,12 +6,7 @@ use App\Models\User;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-<<<<<<< HEAD
-use Laravel\Scout\Searchable;
-=======
 
-
->>>>>>> 7bf3e132190be9c5e96a66afc8152a496026338a
 class Announcement extends Model
 {
     use HasFactory;

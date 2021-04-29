@@ -5058,11 +5058,7 @@
                     "type": "patreon"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2021-04-17T11:07:52+00:00"
-=======
             "time": "2021-03-11T15:26:17+00:00"
->>>>>>> 7bf3e132190be9c5e96a66afc8152a496026338a
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

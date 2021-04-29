@@ -447,8 +447,8 @@ a:hover{
   border-radius: 6px 6px 6px 6px;
   background-color: var(--sec-color);
   position: relative;
-  left: 100px;
-  padding-left: 20px;
+ 
+  padding-left: 80px;
   padding-right: 30px;
   padding-top: 60px;
   padding-bottom: 20px;
@@ -473,14 +473,13 @@ a:hover{
 
 .product-welcome {
   display: grid;
-  grid-template-columns: 0.9fr 1fr;
-  margin: auto;
+  grid-template-columns: 0.7fr auto;
   padding: 2.5em 0;
-  min-width: 600px;
   background-color: #585c61fc;
   border-radius: 5px;
   z-index: 1;
 }
+
 
 .text-wrap {
   word-wrap: break-word;
@@ -745,6 +744,15 @@ ol, li {
 @media screen and (max-width:1200px){
     .custom-category{
         font-size: 16px;
+    }
+
+    .product-welcome {
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 2.5em 0;
+      background-color: #585c61fc;
+      border-radius: 5px;
+      z-index: 1;
     }
 
 

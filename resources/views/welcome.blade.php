@@ -65,7 +65,7 @@
 
                     @if ($announcement->is_accepted)
                     <div class="margin-custom-top  custom-detail-ad">
-                        <section class=" product-welcome   ">
+                        <section class=" product-welcome ">
                             <div class="product__photo">
                                 <div class="photo-container">
                                     <div class="photo-main">
@@ -136,18 +136,18 @@
                             </div>
                 
                 
-                            <div class="mx-auto product__info_welcome">
-                                <div class="ms-2 title">
+                            <div class="product__info_welcome">
+                                <div class=" title">
                                     <h1 class="custom-font-card">{{$announcement->title}}</h1>
                                 </div>
                    
                                 <div class="price">
-                                    <p class="ms-2 card-text custom-font-card">{{$announcement->price}} €</p>
+                                    <p class=" card-text custom-font-card">{{$announcement->price}} €</p>
                                 </div>
-                                <p class="ms-2 card-text custom-font-card">Categoria: <a
+                                <p class=" card-text custom-font-card">Categoria: <a
                                         href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a>
                                 </p>
-                                <p class="ms-2 card-text custom-font-card">Creato il: 
+                                <p class=" card-text custom-font-card">Creato il: 
                                     {{$announcement->created_at->format('Y/m/d')}} </p>
                 
                                 <button class="buy--btn">Descrizione Prodotto</button>

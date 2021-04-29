@@ -32,11 +32,13 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-bold" href="{{route('login_register')}}">Register</a>
-                </li>
+                </li class="" >
+                <li class="d-flex">
                 <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class="custom-nav-search btn nav-link ">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button class=" custom-nav btn btn-outline-sec " type="submit">Search</button>
-                </form>
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <button class=" custom-nav btn btn-outline-sec " type="submit">Search</button>
+                    </form>
+                </li>
                 @endguest
                 @auth
                 <li class="nav-item dropdown">
