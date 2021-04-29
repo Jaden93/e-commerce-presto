@@ -236,13 +236,17 @@
     background-color: var(--sec-color);
   }
 
-  .text-sec {
+  .color-sec {
     color: var(--sec-color);
   }
 
-  .text-sec:hover {
+  .color-sec:hover {
     color: white;
     transition: 0.2s;
+  }
+
+  .text-sec {
+    color: var(--sec-color) ;
   }
 
   .text-U-brand {

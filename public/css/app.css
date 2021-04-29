@@ -10908,9 +10908,9 @@ textarea.form-control-lg {
   padding: 4px;
 
 }
-#text-nav-btn { 
+#text-nav-btn {
   font-weight: bolder;
-  
+
   font-size: 17px;
 }
 .custom-btn:hover {
@@ -11077,13 +11077,17 @@ textarea.form-control-lg {
     background-color: var(--sec-color);
   }
 
-  .text-sec {
+  .color-sec {
     color: var(--sec-color);
   }
 
-  .text-sec:hover {
+  .color-sec:hover {
     color: white;
     transition: 0.2s;
+  }
+
+  .text-sec {
+    color: var(--sec-color) ;
   }
 
   .text-U-brand {
@@ -11138,7 +11142,7 @@ textarea.form-control-lg {
 
 }
 
-/* CUSTOM DETAIL CARD  */ 
+/* CUSTOM DETAIL CARD  */
 
 .custom-detail-card {
   display: grid;
@@ -11200,7 +11204,7 @@ textarea.form-control-lg {
   .controls i {
       cursor: pointer;
     }
-  
+
 
     .controls img {
     position: absolute;
@@ -11228,7 +11232,7 @@ textarea.form-control-lg {
     padding: 7px;
     border: 1px solid red;
     border-radius: 3px;
-  
+
 }
 
 /* ----- Informations Section ----- */
@@ -11422,7 +11426,7 @@ ol, li {
   position: relative;
   flex: 0 0 100%;
   width: 100%;
-  
+
 }
 
 
@@ -11545,7 +11549,7 @@ ol, li {
 .carousel::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
   background-size: 20px;
-  
+
 }
 
 .carousel::after {
@@ -11560,7 +11564,7 @@ ol, li {
     .custom-category{
         font-size: 16px;
     }
-    
+
 
 }
 
