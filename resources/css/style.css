@@ -8,6 +8,31 @@
     --font-mont_s:'Montserrat Alternates', sans-serif;
 }
 
+a{
+    color:var(--sec-color);
+}
+
+.card-body a{
+    color:var(--third-color);
+}
+
+.card-body a:hover {
+    color: var(--sec-color);
+}
+
+.btn a{
+    color: var(--third-color);
+}
+
+.btn a:hover{
+    color: var(--third-color);
+}
+
+a:hover{
+    color: white;
+}
+
+
 .row {
   --bs-gutter-x: 0;
   --bs-gutter-y: 0;
@@ -234,15 +259,6 @@
 
   .bg-sec {
     background-color: var(--sec-color);
-  }
-
-  .color-sec {
-    color: var(--sec-color);
-  }
-
-  .color-sec:hover {
-    color: white;
-    transition: 0.2s;
   }
 
   .text-sec {
@@ -734,7 +750,7 @@ ol, li {
 
 }
 
-@media screen and (min-width: 614px) {
+@media screen and (max-width: 614px) {
   #button-navbar {
     display: none;
   }

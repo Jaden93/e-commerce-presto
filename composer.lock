@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e3c1e430af9dcbf3c6e8a6fb459ae11",
+    "content-hash": "ef77abb056508fa057dc0d8772301205",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4913,17 +4913,87 @@
             "time": "2021-03-28T09:42:18+00:00"
         },
         {
-            "name": "teamtnt/tntsearch",
-            "version": "v2.8.0",
+            "name": "teamtnt/laravel-scout-tntsearch-driver",
+            "version": "v11.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/teamtnt/tntsearch.git",
-                "reference": "da6bda458ca96e784585d7940519be8483c56320"
+                "url": "https://github.com/teamtnt/laravel-scout-tntsearch-driver.git",
+                "reference": "dc4be1a37c1dc56da879f4b4a0d844ec8374a8f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/teamtnt/tntsearch/zipball/da6bda458ca96e784585d7940519be8483c56320",
-                "reference": "da6bda458ca96e784585d7940519be8483c56320",
+                "url": "https://api.github.com/repos/teamtnt/laravel-scout-tntsearch-driver/zipball/dc4be1a37c1dc56da879f4b4a0d844ec8374a8f9",
+                "reference": "dc4be1a37c1dc56da879f4b4a0d844ec8374a8f9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/bus": "~5.4|^6.0|^7.0|^8.0",
+                "illuminate/contracts": "~5.4|^6.0|^7.0|^8.0",
+                "illuminate/pagination": "~5.4|^6.0|^7.0|^8.0",
+                "illuminate/queue": "~5.4|^6.0|^7.0|^8.0",
+                "illuminate/support": "~5.4|^6.0|^7.0|^8.0",
+                "laravel/scout": "7.*|^8.0|^8.3",
+                "php": ">=7.1",
+                "teamtnt/tntsearch": "2.7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "suggest": {
+                "teamtnt/tntsearch": "Required to use the TNTSearch engine."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "TeamTNT\\Scout\\TNTSearchScoutServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TeamTNT\\Scout\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "TNT Studio",
+                    "email": "info@tntstudio.hr"
+                }
+            ],
+            "description": "Driver for Laravel Scout search package based on https://github.com/teamtnt/tntsearch",
+            "keywords": [
+                "laravel",
+                "scout",
+                "search",
+                "tntsearch"
+            ],
+            "support": {
+                "issues": "https://github.com/teamtnt/laravel-scout-tntsearch-driver/issues",
+                "source": "https://github.com/teamtnt/laravel-scout-tntsearch-driver/tree/v11.3.0"
+            },
+            "time": "2021-04-27T13:23:03+00:00"
+        },
+        {
+            "name": "teamtnt/tntsearch",
+            "version": "v2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/teamtnt/tntsearch.git",
+                "reference": "c7d0f67070ea22e835bb1416b85dee0f74780fdc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/teamtnt/tntsearch/zipball/c7d0f67070ea22e835bb1416b85dee0f74780fdc",
+                "reference": "c7d0f67070ea22e835bb1416b85dee0f74780fdc",
                 "shasum": ""
             },
             "require": {
@@ -4972,7 +5042,7 @@
             ],
             "support": {
                 "issues": "https://github.com/teamtnt/tntsearch/issues",
-                "source": "https://github.com/teamtnt/tntsearch/tree/v2.8.0"
+                "source": "https://github.com/teamtnt/tntsearch/tree/v2.7.0"
             },
             "funding": [
                 {
@@ -4988,7 +5058,11 @@
                     "type": "patreon"
                 }
             ],
+<<<<<<< HEAD
             "time": "2021-04-17T11:07:52+00:00"
+=======
+            "time": "2021-03-11T15:26:17+00:00"
+>>>>>>> 7bf3e132190be9c5e96a66afc8152a496026338a
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
