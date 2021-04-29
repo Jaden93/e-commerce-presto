@@ -11131,10 +11131,6 @@ textarea.form-control-lg {
 
 
 
-.custom-detail-card img {
-      max-width: 100%;
-      filter: drop-shadow(1px 1px 3px red);
-    }
 
 /* ----- Product Section ----- */
 .product {
@@ -11143,28 +11139,39 @@ textarea.form-control-lg {
   margin: auto;
   padding: 2.5em 0;
   min-width: 600px;
-  background-color: white;
+  background-color: #585c61fc;
   border-radius: 5px;
+  z-index: 1;
 }
 
 /* ----- Photo Section ----- */
 .product__photo {
   position: relative;
+  right: -10px;
 }
 
 .photo-container {
   position: absolute;
-  left: -9.5em;
   display: grid;
   grid-template-rows: 1fr;
-  width: 100%;
   height: 100%;
   border-radius: 6px;
-  box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 20px -2px rgb(0 0 0 / 63%);
 }
 
 .photo-img {
+  width: 800px;
+  height: 400px;
+  margin: auto;
+}
+.custom-detail-card-fix {
+  max-width: 100%;
+}
+
+.photo-img-car {
+
   width: 396px;
+  height: 300px;
   margin: auto;
 }
 
@@ -11214,12 +11221,30 @@ textarea.form-control-lg {
   
 }
 
+
 /* ----- Informations Section ----- */
 .product__info {
+  z-index: -1;
+  /* top: 100px; */
   padding: 0.8em 0;
+  border-radius: 6px 6px 6px 6px;
+  background-color: var(--third-color);
+  position: relative;
+  left: 100px;
+  padding-left: 20px;
+  padding-right: 30px;
+  padding-top: 60px;
+  padding-bottom: 20px;
 }
 
-
+/* .transparency {
+  width: 800px;
+  filter: blur(1px);
+   filter: drop-shadow(2px 4px 6px black); 
+  filter: contrast(1.9);
+  opacity: 0.05;
+  margin: auto;
+} */
 
 .price {
   margin: 1.5em 0;
@@ -11230,7 +11255,9 @@ textarea.form-control-lg {
 
 
 
-
+.text-wrap {
+  word-wrap: break-word;
+}
 
 
 .description {
@@ -11385,6 +11412,7 @@ ol, li {
   padding-top: 75%;
   filter: drop-shadow(0 0 10px #0003);
   perspective: 100px;
+  margin-top: 4px;
 }
 
 .carousel__viewport {
@@ -11511,7 +11539,7 @@ ol, li {
   color: red;
 }
 
-.carousel::before,
+/* .carousel::before,
 .carousel::after {
   content: '';
   z-index: 1;
@@ -11523,9 +11551,9 @@ ol, li {
   line-height: 4rem;
   text-align: center;
   pointer-events: none;
-}
+} */
 
-.carousel::before {
+/* .carousel::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
   background-size: 20px;
   
@@ -11534,7 +11562,7 @@ ol, li {
 .carousel::after {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
   background-size: 20px;
-}
+} */
 
 /* END DETAIL CAROUSEL */
 
