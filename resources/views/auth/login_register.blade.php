@@ -3,10 +3,10 @@
 
     <div class="container">
         <div class="row">
-          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mt-5">
             <div class="card card-signin my-5">
-              <div class="card-body">
-                <h5 class="card-title text-center">Login</h5>
+              <div class="card-body bg-main" style="border-radius: 10px 10px 10px 10px;">
+                <h5 class="card-title text-center text-sec">Login</h5>
                 <form method="POST" action="{{route('login')}}" class="form-signin">
                     @csrf
                   <div class="form-label-group">
@@ -23,11 +23,11 @@
                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                   </div> --}}
                   <button class="btn btn-lg custom-btn btn-block text-uppercase" type="submit">Login</button>
-                  <hr class="my-4">
+                  <hr class="my-4 text-sec">
                 </form>
 
                 {{-- registrazione --}}
-                <h5 class="card-title text-center">Registrati</h5>
+                <h5 class="card-title text-center text-sec">Registrati</h5>
                 <form method="POST" action="{{route('register')}}"  class="form-signin">
                     @csrf
                     <div class="form-label-group">

@@ -10862,6 +10862,13 @@ textarea.form-control-lg {
   margin-top: 100px;
 }
 
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* .custom-session {
 
   z-index: 1000;
