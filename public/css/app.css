@@ -10837,6 +10837,16 @@ textarea.form-control-lg {
     --font-mont_s:'Montserrat Alternates', sans-serif;
 }
 
+.row {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
 .custom-card {
   display: inline-block;
   vertical-align: middle;

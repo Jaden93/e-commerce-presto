@@ -156,7 +156,7 @@
                                     </p>
 
                                     <a href="{{route('announcement.show' ,$announcement)}}"
-                                        class="btn btn-primary">Dettaglio Annuncio</a>
+                                        class="btn custom-btn">Dettaglio Annuncio</a>
                                 </div>
                             </div>
                         </div>

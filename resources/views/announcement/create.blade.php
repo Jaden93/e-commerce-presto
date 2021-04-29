@@ -1,7 +1,7 @@
 <x-layout>
  
 
-    <h2 class="text-center col-12 col-md-4 offset-md-4">Crea il tuo annuncio!</h2>
+    <h2 class="text-center col-12 col-md-4 offset-md-4 margin-custom-top">Crea il tuo annuncio!</h2>
 
  <div class="container">
         <div class="row">
@@ -38,7 +38,7 @@
                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                   </div> --}}
-                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Inserisci l'annuncio</button>
+                  <button class="btn btn-lg custom-btn btn-block text-uppercase" type="submit">Inserisci l'annuncio</button>
                 </form>
 
 
