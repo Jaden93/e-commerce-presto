@@ -7,6 +7,8 @@
 
     <x-layout>
 
+        {{-- <audio id="foobar" src="https://www.youtube.com/watch?v=DCmh5fvgqq4" preload=""> --}}
+
         @if (session('status'))
         <div class="alert alert-success mt-5">
             {{session('status')}}
@@ -14,11 +16,11 @@
         </div>
         @endif
 
-    
+
         @if (session('access.denied'))
          <div class="mt-5">
              <h4 class="text-danger">Accesso non consentito</h4>
-         </div>  
+         </div>
         @endif
         {{-- VIDEO HEADER --}}
         <header>
@@ -37,7 +39,7 @@
           </header>
 
 
-        
+
 
         <div class="margin-custom-top container text-center">
             <div class="mt-0 row justify-content-center align-items-center">
@@ -160,9 +162,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     @endif
-                  
+
                     @endforeach
                 </div>
             </div>

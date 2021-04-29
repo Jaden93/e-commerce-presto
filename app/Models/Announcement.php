@@ -39,7 +39,7 @@ class Announcement extends Model
             'id'=>$this->id,
             'title'=>$this->title,
             'description'=>$this->description,
-            'category'=>$category,
+            'category'=>$category->id,
         ];
         return $array;
     }

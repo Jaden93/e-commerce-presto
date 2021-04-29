@@ -60,7 +60,16 @@ class AnnouncementController extends Controller
 
             $announcements=Announcement::search($query)->get();
 
-            return view('announcement.search', compact('query','announcements'))->with('status','il tuo annuncio è stato creato');
+            for ($i=0; $i < 1; $i++) {
+                foreach ($announcements as $announcement) {
+
+                    $category = $announcement->category_id;
+
+                }
+            }
+            $announcements_all=Announcement::all();
+
+            return view('announcement.search', compact('query','announcements','category','announcements_all'))->with('status','il tuo annuncio è stato creato');
     }
 
     /**
