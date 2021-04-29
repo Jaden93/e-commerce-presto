@@ -7,6 +7,8 @@
 
     <x-layout>
 
+        {{-- <audio id="foobar" src="https://www.youtube.com/watch?v=DCmh5fvgqq4" preload=""> --}}
+
         @if (session('status'))
         <div class="alert alert-success mt-5">
             {{session('status')}}
@@ -14,11 +16,11 @@
         </div>
         @endif
 
-    
+
         @if (session('access.denied'))
          <div class="mt-5">
              <h4 class="text-danger">Accesso non consentito</h4>
-         </div>  
+         </div>
         @endif
         {{-- VIDEO HEADER --}}
         <header>
@@ -37,6 +39,10 @@
           </header>
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6ca40ff3b6d5d2c9148b9bb43a3dc21d151cfc36
 
         <div class=" margin-custom-top container text-center">
             <div class="mt-0 row justify-content-center align-items-center">
@@ -152,11 +158,16 @@
                 
                                 <button class="buy--btn">Descrizione Prodotto</button>
                             </div>
+<<<<<<< HEAD
                         </section>
                     </div>
                 
+=======
+                        </div>
+                    </div>
+>>>>>>> 6ca40ff3b6d5d2c9148b9bb43a3dc21d151cfc36
                     @endif
-                  
+
                     @endforeach
                 </div>
             </div>
