@@ -17,17 +17,17 @@
                     <input name="password" type="password" id="pw" class="form-control" placeholder="Password" required>
                     <label for="pw">Inserisci password</label>
                   </div>
-    
+
                   {{-- <div class="custom-control custom-checkbox mb-3">
                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                   </div> --}}
-                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                  <button class="btn btn-lg custom-btn btn-block text-uppercase" type="submit">Login</button>
                   <hr class="my-4">
                 </form>
 
                 {{-- registrazione --}}
-                <h5 class="card-title text-center">Register</h5>
+                <h5 class="card-title text-center">Registrati</h5>
                 <form method="POST" action="{{route('register')}}"  class="form-signin">
                     @csrf
                     <div class="form-label-group">
@@ -50,16 +50,16 @@
                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                   </div> --}}
-                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                  <button class="btn btn-lg custom-btn btn-block text-uppercase" type="submit">Registrati</button>
                 </form>
-                
+
 
 
               </div>
             </div>
           </div>
         </div>
-        
+
       </div>
 
 
