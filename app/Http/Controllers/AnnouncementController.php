@@ -54,6 +54,14 @@ class AnnouncementController extends Controller
         return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
     }
 
+    public function search(Request $request)
+    {
+            $query=$request->input('query');
+
+            $announcements=Announcement::search($query)->get();
+
+            return view('announcement.search', compact('query','announcements'))->with('status','il tuo annuncio è stato creato');
+    }
 
     /**
      * Display the specified resource.
