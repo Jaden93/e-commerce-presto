@@ -1,6 +1,6 @@
 <nav class="navbar nav-custom  navbar-expand-lg bg-main">
     <div class="container-fluid">
-        <a class=" navbar-brand text-sec   text-U-brand" href="{{route('homepage')}}"><i class="fas fa-store"></i>
+        <a class=" navbar-brand color-sec   text-U-brand" href="{{route('homepage')}}"><i class="fas fa-store"></i>
             Presto</a>
         <button id="button-navbar" class="navbar-toggler hvr-icon-spin  bg-sec" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -13,19 +13,19 @@
             <ul class="align-items-center navbar-nav ms-auto">
                 <li class="nav-item">
                     @if(Route::is('homepage'))
-                    <a class="nav-link active text-sec fw-bold" style="display:none;" aria-current="page"
+                    <a class="nav-link active color-sec fw-bold" style="display:none;" aria-current="page"
                         href="{{route('homepage')}}">Home</a>
                     @else
-                    <a class="nav-link active text-sec fw-bold" aria-current="page"
+                    <a class="nav-link active color-sec fw-bold" aria-current="page"
                         href="{{route('homepage')}}">Home</a>
                     @endif
                 </li>
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link text-sec fw-bold" href="{{route('login_register')}}">Login</a>
+                    <a class="nav-link color-sec fw-bold" href="{{route('login_register')}}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-sec fw-bold" href="{{route('login_register')}}">Register</a>
+                    <a class="nav-link color-sec fw-bold" href="{{route('login_register')}}">Register</a>
                 </li>
                 <form id="button-navbar" class="custom-nav-search btn nav-link ">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -34,7 +34,7 @@
                 @endguest
                 @auth
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-sec" href="#" id="navbarDropdownMenuLink" role="button"
+                    <a class="nav-link dropdown-toggle color-sec" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
 
                         Ciao, {{Auth::user()->name}}
@@ -43,7 +43,7 @@
                         <li>
                             <form action="{{route('logout')}}" id="logout" method="POST">
                                 @csrf
-                                <a class="dropdown-item text-sec"
+                                <a class="dropdown-item color-sec"
                                     onclick="event.preventDefault(); document.getElementById('logout').submit()">Logout</a>
                             </form>
                         </li>
@@ -53,6 +53,10 @@
 
                 @auth
                 @if (Auth::user()->is_revisor)
+                <li class="nav-item">
+                    <a class="nav-link text-sec fw-bold" href="{{route('revisor.recovery')}}"">Recupero</a>
+                    </span>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link text-sec fw-bold" href="{{route('revisor.index')}}">
                         Revisor index <span class="badge badge-pill badge-warning">#
