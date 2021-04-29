@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Announcement;
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
 
 
 class RevisorController extends Controller
 {
-    public function __construct() 
+    public function __construct()
     {
         $this->middleware('auth.revisor');
     }
