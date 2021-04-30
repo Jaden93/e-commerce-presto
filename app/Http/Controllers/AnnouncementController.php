@@ -69,6 +69,8 @@ class AnnouncementController extends Controller
             ]);
 
             $uniqueSecret=$request->input('uniqueSecret');
+
+
             $images=session()->get('images.{$uniqueSecret}');
 
 
