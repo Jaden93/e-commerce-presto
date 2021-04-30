@@ -2,12 +2,28 @@
 
 namespace App\Http\Controllers;
 
+
+
+;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Models\AnnouncementImage;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class AnnouncementController extends Controller
 {
+
+    public function uploadImages(Request $request) {
+
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+
+        session()->push("images.{$uniqueSecret}", $fileName);
+        return response()->json(session()->get("images.{$uniqueSecret}"));
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,9 +41,9 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
+
         $uniqueSecret = base_convert(sha1(uniqid(mt_rand())),16,36);
         return view('announcement.create', compact('uniqueSecret'));
-       
     }
 
 
@@ -41,7 +57,8 @@ class AnnouncementController extends Controller
     public function store(Request $request)
     {
 
-        $announcement = Announcement::create([
+        $announcement = Announcement::create
+        ([
             'title'=>$request->input('title'),
             'description'=>$request->input('description'),
             'price'=>$request->input('price'),
@@ -49,26 +66,34 @@ class AnnouncementController extends Controller
             'category_id'=>$request->input('categories'),
 
 
-        ]);
+            ]);
 
+            $uniqueSecret=$request->input('uniqueSecret');
+            $images=session()->get('images.{$uniqueSecret}');
+
+
+            foreach ($images as $image) {
+
+                $img=new AnnouncementImage();
+
+                $fileName=basename($image);
+                $file=Storage::move($image ,"public/announcements/{$uniqueSecret}");
+
+                $img->file=$file;
+                $img->announcement_id=$announcement->id;
+            }
+
+
+        Storage::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
 
         return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
     }
 
-
-    public function uploadImages(Request $request) {
-        
-        $uniqueSecret = $request->input('uniqueSecret');
-        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
-
-        session()->push("images.{$uniqueSecret}", $fileName);
-        return response()->json(session()->get("images.{$uniqueSecret}"));
-    
-    } 
     public function search(Request $request)
     {
-        dd($request);
+
             $query=$request->input('query');
+
             $announcements=Announcement::search($query)->get();
 
             for ($i=0; $i < 1; $i++) {

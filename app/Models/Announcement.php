@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use Laravel\Scout\Searchable;
+use App\Models\AnnouncementImage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -41,5 +42,10 @@ class Announcement extends Model
             'category'=>$category->id,
         ];
         return $array;
+    }
+
+    public function images()
+    {
+        return $this->hasMany(AnnouncementImage::class);
     }
 }
