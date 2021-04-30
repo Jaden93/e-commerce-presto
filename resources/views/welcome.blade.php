@@ -9,6 +9,42 @@
 
         {{-- <audio id="foobar" src="https://www.youtube.com/watch?v=DCmh5fvgqq4" preload=""> --}}
 
+      
+        {{-- VIDEO HEADER --}}
+        {{-- <header>
+            <div class="overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="w-100 h-25">
+              <source src="/video/video1.mp4" type="video/mp4">
+            </video> --}}
+            {{-- <div class="container h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                  <h1 class="display-3 text-danger">Video Header</h1>
+                  <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
+                </div>
+              </div>
+            </div> --}}
+        
+       
+        <section class="fix">
+            <div class=" margin-custom-top container text-center">
+                <div class="mt-0 row justify-content-center align-items-center">
+                    <h2 class="display-1">Cerca la categoria</h2>
+                    @foreach ($categories as $category)
+                    <div class="col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
+                        <div class="mt-3 card-body p-0">
+
+                            <a class="pt-3 text-decoration-none "
+                                href="{{route('byCategory', [ $category->id, $category->name])}}">
+                                <p id="categoryWrap" class="custom-category">{{$category->name}}</p>
+                                <p class="fs-1"><i class="{{$category->icon}}"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+    </section>
         @if (session('status'))
         <div class="alert alert-success mt-5">
             {{session('status')}}
@@ -22,48 +58,13 @@
              <h4 class="text-danger">Accesso non consentito</h4>
          </div>
         @endif
-        {{-- VIDEO HEADER --}}
-        <header>
-            <div class="overlay"></div>
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="w-100 h-25">
-              <source src="/video/video1.mp4" type="video/mp4">
-            </video>
-            {{-- <div class="container h-100">
-              <div class="d-flex h-100 text-center align-items-center">
-                <div class="w-100 text-white">
-                  <h1 class="display-3 text-danger">Video Header</h1>
-                  <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
-                </div>
-              </div>
-            </div> --}}
-          </header>
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 6ca40ff3b6d5d2c9148b9bb43a3dc21d151cfc36
 
-        <div class=" margin-custom-top container text-center">
-            <div class="mt-0 row justify-content-center align-items-center">
-                <h2 class="display-1">Cerca la categoria</h2>
-                @foreach ($categories as $category)
-                <div class="col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
-                    <div class="mt-3 card-body p-0">
-
-                        <a class="pt-3 text-decoration-none "
-                            href="{{route('byCategory', [ $category->id, $category->name])}}">
-                            <p id="categoryWrap" class="custom-category">{{$category->name}}</p>
-                            <p class="fs-1"><i class="{{$category->icon}}"></i></p>
-                        </a>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
 
        
-        <h2 class="display-5 pt-5 text-center custom-font-card">Gli ultimi annunci aggiunti</h2>
+        {{-- <h2 class="display-5 pt-5 text-center custom-font-card">Gli ultimi annunci aggiunti</h2>
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-10 col-11">
@@ -117,7 +118,7 @@
                                                         <a href="" class="carousel__next">Go to first slide</a>
                                                     </li>
                                                 </ol>
-                                                {{-- <aside class="carousel__navigation">
+                                                 <aside class="carousel__navigation">
                                                         <ol class="carousel__navigation-list">
                                                             <li class="carousel__navigation-item">
                                                                 <a href="" class="carousel__navigation-button">Go to slide 1</a>
@@ -132,7 +133,7 @@
                                                                 <a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
                                                             </li>
                                                         </ol>
-                                                    </aside> --}}
+                                                    </aside> 
                                             </section>
                                         </div>
                                      
@@ -153,25 +154,17 @@
                                 <p class=" card-text custom-font-card">Categoria: <a
                                         href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a>
                                 </p>
-                                <p class=" card-text custom-font-card">Creato il: 
-                                    {{$announcement->created_at->format('Y/m/d')}} </p>
-                
-                                <button class="buy--btn">Descrizione Prodotto</button>
+                                <p class=" card-text custom-font-card">Creato il: {{$announcement->created_at->format('Y/m/d')}}</p>
+                                <a href="{{route('announcement.show', compact('announcement'))}}" class="text-decoration-none buy--btn">Descrizione Prodotto</a>
                             </div>
-<<<<<<< HEAD
-                        </section>
-                    </div>
-                
-=======
                         </div>
                     </div>
->>>>>>> 6ca40ff3b6d5d2c9148b9bb43a3dc21d151cfc36
                     @endif
 
                     @endforeach
                 </div>
             </div>
         </div>
-
+--}}
 
     </x-layout>

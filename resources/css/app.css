@@ -1,3 +1,5 @@
 @import'~bootstrap/dist/css/bootstrap';
 @import'style';
 @import'~hover.css/css/hover';
+@import'~dropzone/dist/basic';
+@import'~dropzone/dist/dropzone';
