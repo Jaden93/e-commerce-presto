@@ -56,6 +56,7 @@ class AnnouncementController extends Controller
 
     public function search(Request $request)
     {
+        dd($request);
             $query=$request->input('query');
 
             $announcements=Announcement::search($query)->get();
