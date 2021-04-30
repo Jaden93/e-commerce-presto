@@ -1,2 +1,5 @@
 require('bootstrap');
-// require('./script');
+require('./script');
+
+document.Dropzone = require('dropzone');
+Dropzone.autoDiscover = false;

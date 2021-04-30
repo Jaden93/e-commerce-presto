@@ -36,6 +36,6 @@ Route::get('/revisor/recovery', [RevisorController::class,'recovery'])->name('re
 Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.accept');
 Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.reject');
 
-
+Route::post('/announcement/images/upload', [AnnouncementController::class,'uploadImages'])->name('announcement.upload.images');
 //Ricerca
 Route::get('/search', [AnnouncementController::class , 'search'])->name('announcement.search');

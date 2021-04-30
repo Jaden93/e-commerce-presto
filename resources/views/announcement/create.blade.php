@@ -12,8 +12,11 @@
 
                 {{-- registrazione --}}
                 <h5 class="card-title text-center text-sec">Modifica i campi</h5>
+                {{-- <h3>DEBUG :: SECRET {{ $uniqueSecret }}</h3> --}}
                 <form method="POST" action="{{route('announcement.store')}}"  class="form-signin ">
                     @csrf
+                   <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
+                      
                     <div class="form-label-group">
                       <input  name="title" type="text" id="titolo" class="form-control" placeholder="Email address" required autofocus>
                       <label for="titolo">Titolo</label>
@@ -33,15 +36,28 @@
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
-                        </select>
+                        </select>  
                     </div>
 
+                    <div class="form-group row">
+                      <label for="images" class="col-md-12 col-form-label text-md-right">Immagini</label>
+                      <div class="col-md-12">
+                        <div id="drophere" class="dropzone">
+                        </div>
+                        @error('images')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                      </div>
+                    </div>
 
                   {{-- <div class="custom-control custom-checkbox mb-3">
                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                   </div> --}}
                   <button class="btn btn-lg custom-btn btn-block text-uppercase" type="submit">Inserisci l'annuncio</button>
+
                 </form>
 
 

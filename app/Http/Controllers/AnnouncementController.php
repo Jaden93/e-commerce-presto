@@ -25,8 +25,9 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
-
-        return view('announcement.create');
+        $uniqueSecret = base_convert(sha1(uniqid(mt_rand())),16,36);
+        return view('announcement.create', compact('uniqueSecret'));
+       
     }
 
 
@@ -54,11 +55,20 @@ class AnnouncementController extends Controller
         return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
     }
 
+
+    public function uploadImages(Request $request) {
+        
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+
+        session()->push("images.{$uniqueSecret}", $fileName);
+        return response()->json(session()->get("images.{$uniqueSecret}"));
+    
+    } 
     public function search(Request $request)
     {
         dd($request);
             $query=$request->input('query');
-
             $announcements=Announcement::search($query)->get();
 
             for ($i=0; $i < 1; $i++) {
