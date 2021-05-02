@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    @foreach ($announcements_all as $announcement1)
+    {{-- @foreach ($announcements_all as $announcement1)
         @if ($announcement1->category_id == $category)
                 <div class="card-body">
                     <h3 class="card-title">{{$announcement1->title}}</h3>
@@ -37,7 +37,7 @@
                     <a href="{{route('announcement.show' ,$announcement1)}}" class="btn custom-btn">Dettaglio Annuncio</a>
                 </div>
         @endif
-    @endforeach
+    @endforeach --}}
     @endforeach
     @else
     <h3 class="margin-custom-top">non puoi</h3>
