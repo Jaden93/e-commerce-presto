@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
+use App\Models\Announcement;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,5 +38,8 @@ Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accep
 Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.reject');
 
 Route::post('/announcement/images/upload', [AnnouncementController::class,'uploadImages'])->name('announcement.upload.images');
+Route::delete('/announcement/images/remove', [AnnouncementController::class,'removeImage'])->name('announcement.delete.images');
+// Route::get('/announcement/images', [AnnouncementController::class,]);
 //Ricerca
+Route::post('locale/{locale}',[AnnouncementController::class, 'locale'])->name('announcement.locale');
 Route::get('/search', [AnnouncementController::class , 'search'])->name('announcement.search');

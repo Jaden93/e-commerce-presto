@@ -44,11 +44,15 @@
                       <div class="col-md-12">
                         <div id="drophere" class="dropzone">
                         </div>
+
+
                         @error('images')
                             <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+
+                        
                       </div>
                     </div>
 

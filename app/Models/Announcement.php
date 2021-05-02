@@ -44,8 +44,8 @@ class Announcement extends Model
         return $array;
     }
 
-    public function images()
-    {
+    public function images() {
         return $this->hasMany(AnnouncementImage::class);
     }
+
 }
