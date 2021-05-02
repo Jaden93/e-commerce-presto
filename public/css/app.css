@@ -11597,7 +11597,7 @@ ol, li {
 }
 
 header {
-
+z-index: 4;
 position: fixed;
 top: 0;
 left: 0;
@@ -11680,9 +11680,9 @@ header.sticky .nav-header ul {
 
 
 .fix {
-  margin-top: 60vh;
+  margin-top: 20vh;
   padding: 100px;
-  z-index: -1000;
+  z-index: -100!important;
 
 }
 

@@ -40,14 +40,12 @@
         <nav class="nav-header">
             <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class=" ">
                 <div class="search">
-                    <input class="form-control" type="search" placeholder="Cosa stai cercando?" aria-label="Search"
-                        name="query">
+                    {{-- <input class="form-control" type="search" aria-label="Search" > --}}
                     <div class="icon"></div>
                     <div class="input">
-                        <input type="text" placeholder="Cerca il tuo annuncio">
+                        <input type="search" name="query" placeholder="Cerca il tuo annuncio">
                     </div>
                 </div>
-                <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button>
             </form>
 
             <ul class="mb-0">
@@ -64,16 +62,14 @@
         </nav>
     </header>
 
-     <section class="fix"> 
-        <div class="margin-custom-top container text-center">
+    <section class="fix">
+        <div class="container text-center">
             <div class="mt-0 row justify-content-center align-items-center">
-                <h2 class="display-1">Cerca la categoria</h2>
+                <h2 class=" display-1">Cerca la categoria</h2>
                 @foreach ($categories as $category)
-                <div class="col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
+                <div class=" col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
                     <div class="mt-3 card-body p-0">
-
-                        <a class="pt-3 text-decoration-none "
-                            href="{{route('byCategory', [ $category->id, $category->name])}}">
+                        <a class=" pt-3 text-decoration-none" href="{{route('byCategory', [ $category->id, $category->name])}}">
                             <p id="categoryWrap" class="custom-category">{{$category->name}}</p>
                             <p class="fs-1"><i class="{{$category->icon}}"></i></p>
                         </a>
@@ -82,7 +78,8 @@
                 @endforeach
             </div>
         </div>
-     </section>
+    </section>
+
 
 
     <h2 class="display-5 pt-5 text-center custom-font-card">Gli ultimi annunci aggiunti</h2>

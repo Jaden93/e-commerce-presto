@@ -53,6 +53,18 @@ icon.addEventListener('click', function(){
 //     // search.classList.toggle('active')
 // }
 
+$(function(){
+    window.addEventListener('scroll',function stopScroll(e) {
+        if ($(this).scrollTop() < 100 ) { 
+            window.scrollBy(0,10)
+            
+            
+
+        }
+    }); 
+});
+
+        
 
 
 

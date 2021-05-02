@@ -3165,6 +3165,13 @@ icon.addEventListener('click', function () {
 // }
 
 $(function () {
+  window.addEventListener('scroll', function stopScroll(e) {
+    if ($(this).scrollTop() < 100) {
+      window.scrollBy(0, 10);
+    }
+  });
+});
+$(function () {
   if ($('#drophere').length > 0) {
     var csrfToken = $('[name="_token"]').attr('value');
     var uniqueSecret = $('input[name="uniqueSecret"]').attr('value');
