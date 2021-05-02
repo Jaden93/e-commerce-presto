@@ -24,9 +24,9 @@
 
         <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class="offset-md-2  me-auto custom-nav-search btn nav-link ">
             <div class="d-flex custom-navbar-nav">
-            <input class="form-control" type="search" placeholder="Cosa stai cercando?" aria-label="Search" name="query">
-            <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button>
-        </div>
+                <input class="form-control" type="search" placeholder="Cosa stai cercando?" aria-label="Search" name="query">
+                <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button>
+            </div>
         </form>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -50,7 +50,7 @@
                     <a class="nav-link fw-bold" href="{{route('login_register')}}">Register</a>
                 </li class="" >
                 <li class="d-flex">
-               
+
                 @endguest
                 @auth
                 <li class="nav-item dropdown">
@@ -100,7 +100,7 @@
             </ul>
         </div>
     </div>
-</nav> 
+</nav>
 
 
 

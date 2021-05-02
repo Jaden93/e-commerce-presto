@@ -79,22 +79,22 @@ class AnnouncementController extends Controller
         Storage::deleteDirectory(storage_path("/public/temp/{$uniqueSecret}"));
 
 
-            $images=session()->get('images.{$uniqueSecret}');
+        //     $images=session()->get('images.{$uniqueSecret}');
 
 
-            foreach ($images as $image) {
+        //     foreach ($images as $image) {
 
-                $img=new AnnouncementImage();
+        //         $img=new AnnouncementImage();
 
-                $fileName=basename($image);
-                $file=Storage::move($image ,"public/announcements/{$uniqueSecret}");
+        //         $fileName=basename($image);
+        //         $file=Storage::move($image ,"public/announcements/{$uniqueSecret}");
 
-                $img->file=$file;
-                $img->announcement_id=$announcement->id;
-            }
+        //         $img->file=$file;
+        //         $img->announcement_id=$announcement->id;
+        //     }
 
 
-        Storage::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
+        // Storage::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
 
         return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
     }
@@ -109,13 +109,13 @@ class AnnouncementController extends Controller
             for ($i=0; $i < 1; $i++) {
                 foreach ($announcements as $announcement) {
 
-                    $category = $announcement->category_id;
+                    // $category = $announcement->category_id;
 
                 }
             }
             $announcements_all=Announcement::all();
 
-            return view('announcement.search', compact('query','announcements','category','announcements_all'))->with('status','il tuo annuncio è stato creato');
+            return view('announcement.search', compact('query','announcements','announcements_all'))->with('status','il tuo annuncio è stato creato');
     }
 
     /**
