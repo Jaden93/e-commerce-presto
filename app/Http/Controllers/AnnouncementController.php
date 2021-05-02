@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 class AnnouncementController extends Controller
 {
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -31,7 +33,6 @@ class AnnouncementController extends Controller
         $uniqueSecret = $request->old('uniqueSecret',base_convert(sha1(uniqid(mt_rand())),16,36));
         
         return view('announcement.create', compact('uniqueSecret'));
-       
     }
 
 
@@ -45,7 +46,8 @@ class AnnouncementController extends Controller
     public function store(Request $request)
     {
 
-        $announcement = Announcement::create([
+        $announcement = Announcement::create
+        ([
             'title'=>$request->input('title'),
             'description'=>$request->input('description'),
             'price'=>$request->input('price'),
@@ -74,10 +76,10 @@ class AnnouncementController extends Controller
         }
         Storage::deleteDirectory(storage_path("/public/temp/{$uniqueSecret}"));
 
-        return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
+
+            $images=session()->get('images.{$uniqueSecret}');
     }
-
-
+    
     public function uploadImages(Request $request) {
         
         $uniqueSecret = $request->input('uniqueSecret');
@@ -103,7 +105,9 @@ class AnnouncementController extends Controller
     }
     public function search(Request $request)
     {
+
             $query=$request->input('query');
+
             $announcements=Announcement::search($query)->get();
 
             for ($i=0; $i < 1; $i++) {

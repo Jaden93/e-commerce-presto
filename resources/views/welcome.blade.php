@@ -70,121 +70,117 @@
                             </a>
                         </div>
                     </div>
-                    @endforeach
                 </div>
+                @endforeach
             </div>
-    </section>
-        @if (session('status'))
-        <div class="alert alert-success mt-5">
-            {{session('status')}}
-            {{-- <p class="alert alert-success">Annuncio inserito con successo</p> --}}
         </div>
-        @endif
 
+        <div class="container">
+                <div class="row" id="ads">
+                    <!-- Category Card -->
+                    <div class="col-md-4">
+                        <div class="card rounded">
+                            <div class="card-image">
+                                <span class="card-notify-badge">Low KMS</span>
+                                <span class="card-notify-year">2018</span>
+                                <img class="img-fluid"
+                                    src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC011A021001.jpg&width=440&height=262"
+                                    alt="Alternate Text" />
+                            </div>
+                            <div class="card-image-overlay m-auto">
+                                <span class="card-detail-badge">Used</span>
+                                <span class="card-detail-badge">$28,000.00</span>
+                                <span class="card-detail-badge">13000 Kms</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="ad-title m-auto">
+                                    <h5>Honda Accord LX</h5>
+                                </div>
+                                <a class="ad-btn" href="#">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card rounded">
+                            <div class="card-image">
+                                <span class="card-notify-badge">Fully-Loaded</span>
+                                <span class="card-notify-year">2017</span>
+                                <img class="img-fluid"
+                                    src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=CAC80HOC021B121001.jpg&width=440&height=262"
+                                    alt="Alternate Text" />
+                            </div>
+                            <div class="card-image-overlay m-auto">
+                                <span class="card-detail-badge">Used</span>
+                                <span class="card-detail-badge">$28,000.00</span>
+                                <span class="card-detail-badge">13000 Kms</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="ad-title m-auto">
+                                    <h5>Honda CIVIC HATCHBACK LS</h5>
+                                </div>
+                                <a class="ad-btn" href="#">View</a>
+                            </div>
+                        </div>
+                    </div>
 
-        @if (session('access.denied'))
-         <div class="mt-5">
-             <h4 class="text-danger">Accesso non consentito</h4>
-         </div>
-        @endif
+                    <div class="col-md-4">
+                        <div class="card rounded">
+                            <div class="card-image">
+                                <span class="card-notify-badge">Price Reduced</span>
+                                <span class="card-notify-year">2018</span>
+                                <img class="img-fluid"
+                                    src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC091A021001.jpg&width=440&height=262"
+                                    alt="Alternate Text" />
+                            </div>
+                            <div class="card-image-overlay m-auto">
+                                <span class="card-detail-badge">Used</span>
+                                <span class="card-detail-badge">$22,000.00</span>
+                                <span class="card-detail-badge">8000 Kms</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="ad-title m-auto">
+                                    <h5>Honda Accord Hybrid LT</h5>
+                                </div>
+                                <a class="ad-btn" href="#">View</a>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+        </div>
 
-
-
-
+<<<<<<< HEAD
        
          <h2 class="display-5 pt-5 text-center custom-font-card">Gli ultimi annunci aggiunti</h2>
+=======
+>>>>>>> 88b76e25160c3c2627070764506fe3eb0360e599
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-10 col-11">
                     @foreach ($announcements as $announcement)
 
                     @if ($announcement->is_accepted)
-                    <div class="margin-custom-top  custom-detail-ad">
-                        <section class=" product-welcome ">
-                            <div class="product__photo">
-                                <div class="photo-container">
-                                    <div class="photo-main">
-                                        <div class="controls">
-                                            <i class=" custom-font-card">Creato da: {{$announcement->user->name}}</i>
-                                        </div>
-                                        <div class="">
-                                            <section  id="myDiv" class="carousel " aria-label="Gallery">
-                                                <ol class="carousel__viewport">
-                                                    <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-                                                        <img class="img-fluid photo-img-car"
-                                                            src="https://www.peperonciniamoci.it/forum/uploads/profile/photo-15386.png"
-                                                            alt="Card image cap">
-                                                        <div class="carousel__snapper">
-                                                            <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
-                                                            <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
-                                                        </div>
-                                                    </li>
-                                                    <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-                                                        <img class="img-fluid photo-img-car "
-                                                            src="https://www.peperonciniamoci.it/forum/uploads/profile/photo-15386.png"
-                                                            alt="Card image cap">
-                    
-                                                        <div class="carousel__snapper"></div>
-                                                        <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
-                                                        <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
-                                                    </li>
-                                                    <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-                                                        <img class="img-fluid photo-img-car "
-                                                            src="https://www.peperonciniamoci.it/forum/uploads/profile/photo-15386.png"
-                                                            alt="Card image cap">
-                    
-                                                        <div class="carousel__snapper"></div>
-                                                        <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
-                                                        <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
-                                                    </li>
-                                                    <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-                                                        <img class="img-fluid photo-img-car"
-                                                            src="https://www.peperonciniamoci.it/forum/uploads/profile/photo-15386.png"
-                                                            alt="Card image cap">
-                                                        <div class="carousel__snapper"></div>
-                                                        <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
-                                                        <a href="" class="carousel__next">Go to first slide</a>
-                                                    </li>
-                                                </ol>
-                                                 <aside class="carousel__navigation">
-                                                        <ol class="carousel__navigation-list">
-                                                            <li class="carousel__navigation-item">
-                                                                <a href="" class="carousel__navigation-button">Go to slide 1</a>
-                                                            </li>
-                                                            <li class="carousel__navigation-item">
-                                                                <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
-                                                            </li>
-                                                            <li class="carousel__navigation-item">
-                                                                <a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
-                                                            </li>
-                                                            <li class="carousel__navigation-item">
-                                                                <a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
-                                                            </li>
-                                                        </ol>
-                                                    </aside> 
-                                            </section>
-                                        </div>
-                                     
-                                    </div>
-                
-                                </div>
+                    <div class="my-3 card col-md-8 col-12 offset-md-2">
+                        <div class="row align-items-center justify-content-end">
+                            <div class="col-5">
+                                <img class="img-fluid"
+                                    src="https://www.peperonciniamoci.it/forum/uploads/profile/photo-15386.png"
+                                    style="width: 200px; height: 200px;" alt="Card image cap">
                             </div>
-                
-                
-                            <div class="product__info_welcome">
-                                <div class=" title">
-                                    <h1 class="custom-font-card">{{$announcement->title}}</h1>
+                            <div class="col-7">
+                                <div class="card-body">
+                                    <h3 class="card-title">{{$announcement->title}}</h3>
+                                    <p class="card-text">{{$announcement->description}} </p>
+                                    <p class="card-text">{{$announcement->created_at->format('Y/m/d')}} </p>
+                                    <p class="card-text">{{$announcement->price}}€</p>
+                                    <p class="card-text">{{$announcement->user->name}}</p>
+                                    <p class="card-text">Categoria: <a
+                                            href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a>
+                                    </p>
+
+                                    <a href="{{route('announcement.show' ,$announcement)}}"
+                                        class="btn custom-btn">Dettaglio Annuncio</a>
                                 </div>
-                   
-                                <div class="price">
-                                    <p class=" card-text custom-font-card">{{$announcement->price}} €</p>
-                                </div>
-                                <p class=" card-text custom-font-card">Categoria: <a
-                                        href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a>
-                                </p>
-                                <p class=" card-text custom-font-card">Creato il: {{$announcement->created_at->format('Y/m/d')}}</p>
-                                <a href="{{route('announcement.show', compact('announcement'))}}" class="text-decoration-none buy--btn">Descrizione Prodotto</a>
                             </div>
                         </div>
                     </div>
@@ -194,6 +190,10 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 88b76e25160c3c2627070764506fe3eb0360e599
 
         <x-footer/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
