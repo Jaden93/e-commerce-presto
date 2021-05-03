@@ -1,17 +1,4 @@
- <header>
-    <img class="banner" src="https://sirv-cdn.sirv.com/blog/image%20seo/2456071.png" alt="">
-    <a class="logo" href="#">Presto</a>
-    <div id="toggle"></div>
-    <nav class="nav-header">
-        <ul class="mb-0">
-            <li><a href="#">Ciao</a></li>
-            <li><a href="#">Ciao</a></li>
-            <li><a href="#">Ciao</a></li>
-            <li><a href="#">Ciao</a></li>
-            <li><a href="#">Ciao</a></li>
-        </ul>
-    </nav>
-</header>
+
 <nav class="navbar nav-custom  navbar-expand-lg bg-main">
     <div class="container-fluid">
         <a class=" navbar-brand text-U-brand" href="{{route('homepage')}}"><i class="fas fa-store"></i>
@@ -22,10 +9,18 @@
             <i class="fas  hvr-icon text-main fa-cog"></i>
         </button>
 
+    
+
         <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class="offset-md-2  me-auto custom-nav-search btn nav-link ">
-            <div class="d-flex custom-navbar-nav">
+            <div class="search">
+                <div class="icon"></div>
+                <div class="input">
+                    <input type="text" placeholder="Cerca il tuo annuncio">
+                </div>
+            </div>
+            {{-- <div class="d-flex custom-navbar-nav">
             <input class="form-control" type="search" placeholder="Cosa stai cercando?" aria-label="Search" name="query">
-            <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button>
+            <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button> --}}
         </div>
         </form>
 

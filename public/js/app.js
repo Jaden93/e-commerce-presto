@@ -3155,6 +3155,15 @@ document.getElementById('toggle').onclick = function () {
   var navigation = document.querySelector('nav.nav-header').classList.toggle('active'); // navigation.addClass('active');
 };
 
+var icon = document.getElementsByClassName('icon')[0];
+var search = document.getElementsByClassName('search')[0];
+icon.addEventListener('click', function () {
+  search.classList.toggle('active');
+}); // icon.onclick = function() {
+//     console.log('ciao')
+//     // search.classList.toggle('active')
+// }
+
 $(function () {
   if ($('#drophere').length > 0) {
     var csrfToken = $('[name="_token"]').attr('value');
@@ -3164,7 +3173,41 @@ $(function () {
       params: {
         _token: csrfToken,
         uniqueSecret: uniqueSecret
+      },
+      addRemoveLinks: true,
+      init: function init() {
+        $.ajax({
+          type: 'GET',
+          url: '/announcement/images',
+          data: {
+            uniqueSecret: uniqueSecret
+          },
+          dataType: 'json'
+        }).done(function (data) {
+          $.each(data, function (key, value) {
+            var file = {
+              serverId: value.id
+            };
+            myDropzone.options.addedfile.call(myDropzone, file);
+            myDropzone.options.thumbnail.call(myDropzon, file, value.src);
+          });
+        });
       }
+    });
+    myDropzone.on("success", function (file, response) {
+      file.serverId = response.id;
+    });
+    myDropzone.on("removedfile", function (file) {
+      $.ajax({
+        type: 'DELETE',
+        url: '/announcement/images/remove',
+        data: {
+          _token: csrfToken,
+          id: file.serverId,
+          uniqueSecret: uniqueSecret
+        },
+        dataType: 'json'
+      });
     });
   } // alert('ci sono');
 

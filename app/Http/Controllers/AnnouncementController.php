@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 class AnnouncementController extends Controller
 {
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -26,11 +28,11 @@ class AnnouncementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $uniqueSecret = base_convert(sha1(uniqid(mt_rand())),16,36);
+    public function create(Request $request)
+    {   
+        $uniqueSecret = $request->old('uniqueSecret',base_convert(sha1(uniqid(mt_rand())),16,36));
+        
         return view('announcement.create', compact('uniqueSecret'));
-       
     }
 
 
@@ -44,7 +46,8 @@ class AnnouncementController extends Controller
     public function store(Request $request)
     {
 
-        $announcement = Announcement::create([
+        $announcement = Announcement::create
+        ([
             'title'=>$request->input('title'),
             'description'=>$request->input('description'),
             'price'=>$request->input('price'),
@@ -53,51 +56,90 @@ class AnnouncementController extends Controller
 
 
         ]);
-
+            // restituisce collezione il get()
         $uniqueSecret = $request->input('uniqueSecret');
-        $images = session()->get("images.{$uniqueSecret}");
-            dd($images);
+        
+        $images = session()->get("images.{$uniqueSecret}", []);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
+
+        $images = array_diff($images, $removedImages);
+
         forEach ($images as $image) {
             $i = new AnnouncementImage();
             $fileName = basename($image);
-            $file = Storage::move($image, "public/announcements/{$announcement->id}/{$fileName}");
+            $newFileName = "public/announcements/{$announcement->id}/{$fileName}";
+            Storage::move($image, $newFileName);
 
-            $i->file = $file;
+            $i->file =  $newFileName;
             $i->announcement_id = $announcement->id;
             $i->save();
         }
         Storage::deleteDirectory(storage_path("/public/temp/{$uniqueSecret}"));
 
-        return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
+
+            $images=session()->get('images.{$uniqueSecret}');
     }
-
-
+    
     public function uploadImages(Request $request) {
         
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
-
-        session()->push("images.{$uniqueSecret}", $fileName);
-        return response()->json(session()->get("images.{$uniqueSecret}"));
+        session()->push("images.{$uniqueSecret}",$fileName);
+        return response()->json(
+            [
+            'id' => $fileName,
+            
+            ]
+        );
     
     } 
+
+    public function removeImage(Request $request) {
+
+        $uniqueSecret = $request->uniqueSecret;
+        $fileName = $request->id;
+
+        session()->push("removedimages.{$uniqueSecret}", $fileName);
+        Storage::delete($fileName);
+        return response()->json('ok');
+    }
     public function search(Request $request)
     {
+
             $query=$request->input('query');
+
             $announcements=Announcement::search($query)->get();
 
             for ($i=0; $i < 1; $i++) {
                 foreach ($announcements as $announcement) {
 
-                    $category = $announcement->category_id;
+                    // $category = $announcement->category_id;
 
                 }
             }
             $announcements_all=Announcement::all();
 
-            return view('announcement.search', compact('query','announcements','category','announcements_all'))->with('status','il tuo annuncio è stato creato');
+            return view('announcement.search', compact('query','announcements','announcements_all'))->with('status','il tuo annuncio è stato creato');
     }
 
+
+    public function getImages(Request $request) 
+    {
+        $uniqueSecret = $request->input('uniqueSecret');
+
+        $images = session()->get("image.{$uniqueSecret}", []);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}",[]);
+
+        $images = array_diff($images, $removedImages);
+
+        foreach ($images as $image) {
+            $data[] = [
+                'id' => $image, 
+                'src' => Storage::url($image)
+            ];
+        }
+        return response()->json($data);
+        }
     /**
      * Display the specified resource.
      *
@@ -110,6 +152,10 @@ class AnnouncementController extends Controller
         return view('announcement.show', compact('announcement'));
     }
 
+    public function locale($locale) {
+        session()->put('locale',$locale);
+        return redirect()->back();
+    }
     /**
      * Show the form for editing the specified resource.
      *

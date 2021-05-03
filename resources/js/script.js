@@ -40,6 +40,20 @@ document.getElementById('toggle').onclick = function() {
  
 }
 
+const icon = document.getElementsByClassName('icon')[0];
+const search = document.getElementsByClassName('search')[0];
+
+icon.addEventListener('click', function(){
+     search.classList.toggle('active');
+
+})
+
+// icon.onclick = function() {
+//     console.log('ciao')
+//     // search.classList.toggle('active')
+// }
+
+
 
 
 $(function() {
@@ -55,9 +69,51 @@ $(function() {
                 params: {
                     _token: csrfToken,
                     uniqueSecret: uniqueSecret
+                },
+                addRemoveLinks: true, 
+                init: function() {
+                    $.ajax({
+
+                        type: 'GET',
+                        url: '/announcement/images',
+                        data: {
+                            uniqueSecret: uniqueSecret
+                        },
+                        dataType: 'json'
+                    }).done(function(data){
+                        $.each(data, function(key,value){
+                            let file = {
+                                serverId: value.id
+                            };
+
+                            myDropzone.options.addedfile.call(myDropzone, file);
+                            myDropzone.options.thumbnail.call(myDropzon, file, value.src);
+                        })
+                    })
                 }
+
             });
-    }
     
+
+    myDropzone.on("success", function(file, response) {
+        file.serverId = response.id;
+
+    });
+
+
+    myDropzone.on("removedfile", function(file) {
+        $.ajax ({
+            type: 'DELETE',
+            url: '/announcement/images/remove',
+            data: {
+                
+                _token: csrfToken,
+                id: file.serverId,
+                uniqueSecret: uniqueSecret
+            },
+            dataType: 'json'
+        })
+    });
+}
     // alert('ci sono');
 })
