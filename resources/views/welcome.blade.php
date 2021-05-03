@@ -32,7 +32,6 @@
 
 <body>
 
-
     <header id="big-img">
         <img class="banner" src="https://sirv-cdn.sirv.com/blog/image%20seo/2456071.png" alt="">
         <a class="logo" href="#">Presto</a>
@@ -56,8 +55,24 @@
                 @include('components.locale',['lang'=>'en','nation' => 'gb'])
 
                 @endguest
+                <li>
+                    <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class="">
+                        <div class="search active">
+                            {{-- <input class="form-control" type="search" aria-label="Search" > --}}
+                            <div class="icon"></div>
+                            <div class="input">
+                                <input type="search" name="query" placeholder="Cerca il tuo annuncio">
+                            </div>
+                        </div>
+                    </form>
+                </li>
+                @guest
+                <li><a class="btn btn-primary" href="{{route('login_register')}}">Inserisci annuncio</a></li>
+                @endguest
+                @auth
+                <li><a class="btn btn-primary" href="{{route('announcement.create')}}">Inserisci annuncio</a></li>
 
-                <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
+                @endauth
             </ul>
         </nav>
     </header>

@@ -39,11 +39,11 @@
         <div id="toggle"></div>
         <nav class="nav-header">
             <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class=" ">
-                <div class="search">
+                <div class="search justify-content-around">
                     {{-- <input class="form-control" type="search" aria-label="Search" > --}}
-                    <div class="icon"></div>
+                    <div class="icon "></div>
                     <div class="input">
-                        <input type="search" name="query" placeholder="Cerca il tuo annuncio">
+                        <input stile="display:none;" type="search" name="query" placeholder="Cerca il tuo annuncio">
                     </div>
                 </div>
             </form>
@@ -54,9 +54,9 @@
                 @include('components.locale',['lang'=>'it','nation' => 'it'])
                 <li><a href="#">Registrati</a></li>
                 @include('components.locale',['lang'=>'en','nation' => 'gb'])
-
+                
                 @endguest
-
+                <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
                 <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
             </ul>
         </nav>
