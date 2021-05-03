@@ -56,7 +56,8 @@
                 @include('components.locale',['lang'=>'it','nation' => 'it'])
                 <li><a href="#">Registrati</a></li>
                 @include('components.locale',['lang'=>'en','nation' => 'gb'])
-
+                <li><a href="#">iniciar sesiòn</a></li>
+                @include('components.locale',['lang'=>'esp','nation' => 'es'])
                 @endguest
 
                 <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
