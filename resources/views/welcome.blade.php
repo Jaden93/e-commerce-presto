@@ -33,7 +33,7 @@
 <body>
 
 
-    <header>
+    <header id="big-img">
         <img class="banner" src="https://sirv-cdn.sirv.com/blog/image%20seo/2456071.png" alt="">
         <a class="logo" href="#">Presto</a>
         <div id="toggle"></div>
@@ -64,10 +64,10 @@
         </nav>
     </header>
 
-     <section class="fix"> 
+     <section class="fix">
         <div class="margin-custom-top container text-center">
             <div class="mt-0 row justify-content-center align-items-center">
-                <h2 class="display-1">Cerca la categoria</h2>
+                <h2 class="display-1">{{__('ui.searchCat')}}</h2>
                 @foreach ($categories as $category)
                 <div class="col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
                     <div class="mt-3 card-body p-0">

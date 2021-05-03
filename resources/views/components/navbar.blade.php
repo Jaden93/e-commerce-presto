@@ -9,7 +9,7 @@
             <i class="fas  hvr-icon text-main fa-cog"></i>
         </button>
 
-    
+
 
         <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class="offset-md-2  me-auto custom-nav-search btn nav-link ">
             <div class="search">
@@ -45,7 +45,7 @@
                     <a class="nav-link fw-bold" href="{{route('login_register')}}">Register</a>
                 </li class="" >
                 <li class="d-flex">
-               
+
                 @endguest
                 @auth
                 <li class="nav-item dropdown">
@@ -95,7 +95,7 @@
             </ul>
         </div>
     </div>
-</nav> 
+</nav>
 
 
 

@@ -3146,14 +3146,18 @@ Dropzone.autoDiscover = false;
 //     }
 //     // button classList.add('transparency')
 // });
-window.addEventListener("scroll", function () {
-  var header = document.querySelector('header');
-  header.classList.toggle('sticky', window.scrollY > 0);
-});
+var big_img = document.getElementById('big-img');
 
-document.getElementById('toggle').onclick = function () {
-  var navigation = document.querySelector('nav.nav-header').classList.toggle('active'); // navigation.addClass('active');
-};
+if (big_img) {
+  var header = document.querySelector('header');
+  window.addEventListener("scroll", function () {
+    header.classList.toggle('sticky', window.scrollY > 0);
+  });
+  var navbar_header = document.querySelector('nav.nav-header');
+  document.getElementById('toggle').addEventListener('click', function () {
+    navbar_header.classList.toggle('active');
+  });
+}
 
 var icon = document.getElementsByClassName('icon')[0];
 var search = document.getElementsByClassName('search')[0];
@@ -3184,12 +3188,13 @@ $(function () {
           },
           dataType: 'json'
         }).done(function (data) {
+          console.log(data);
           $.each(data, function (key, value) {
             var file = {
               serverId: value.id
             };
             myDropzone.options.addedfile.call(myDropzone, file);
-            myDropzone.options.thumbnail.call(myDropzon, file, value.src);
+            myDropzone.options.thumbnail.call(myDropzone, file, value.src);
           });
         });
       }
