@@ -38,7 +38,7 @@
         <a class="logo text-start" href="#">Presto</a>
         <div id="toggle"></div>
         <nav class="nav-header offset-md-2 mx-auto">
-            <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class="">
+            <form method="GET" action="{{route('announcement.search')}}" id="button-header-navbar" class="">
                 <div class="search">
                     {{-- <input class="form-control" type="search" aria-label="Search" > --}}
                     <div class="icon "></div>
@@ -56,7 +56,7 @@
                 @include('components.locale',['lang'=>'en','nation' => 'gb'])
                 <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
                 <li class="d-none-custom">
-                    <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class="">
+                    <form method="GET" action="{{route('announcement.search')}}" id="button-header-navbar" class="">
                         <div id="mobile-big-img" class="search">
                             <div class="icon"></div>
                             <div class="input">
