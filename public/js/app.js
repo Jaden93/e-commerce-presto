@@ -3159,11 +3159,13 @@ if (big_img) {
   });
 }
 
-var icon = document.getElementsByClassName('icon')[0];
-var search = document.getElementsByClassName('search')[0];
-icon.addEventListener('click', function () {
-  search.classList.toggle('active');
-}); // icon.onclick = function() {
+var icons = document.querySelectorAll('.icon');
+icons.forEach(function (icon) {
+  icon.addEventListener('click', function () {
+    icon.parentNode.classList.toggle('active');
+  });
+}); // console.log(icon)
+// icon.onclick = function() {
 //     console.log('ciao')
 //     // search.classList.toggle('active')
 // }
