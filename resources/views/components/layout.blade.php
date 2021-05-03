@@ -39,8 +39,11 @@
     @include('layout.locale', ['lang' => 'it', 'nation' => 'it'])
 </li>
 
+
 <li>
     @include('layout.locale', ['lang' => 'gb ', 'nation' => 'gb'])
+    <li>
+    @include('layout.locale', ['lang' => 'esp', 'nation' => 'es'])
 </li> --}}
 {{-- 
 <nav lass="flag-icon">
@@ -48,7 +51,7 @@
 </nav>
  <form action="{{route('locale',$lang)}}" method="post"></form>
 @csrf
-<button type="submit">Cliccami
+<button type="submit">{{__('ui.click')}}
     <span class="flag-icon flag-icon-{{$nation}}"></span>
 </button> --}}
 {{-- public function locale($locale) {
