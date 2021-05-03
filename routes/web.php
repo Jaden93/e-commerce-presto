@@ -39,7 +39,7 @@ Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'rejec
 
 Route::post('/announcement/images/upload', [AnnouncementController::class,'uploadImages'])->name('announcement.upload.images');
 Route::delete('/announcement/images/remove', [AnnouncementController::class,'removeImage'])->name('announcement.delete.images');
-// Route::get('/announcement/images', [AnnouncementController::class,]);
+Route::get('/announcement/images', [AnnouncementController::class,'getImages']);
 //Ricerca
 Route::post('locale/{locale}',[AnnouncementController::class, 'locale'])->name('announcement.locale');
 Route::get('/search', [AnnouncementController::class , 'search'])->name('announcement.search');

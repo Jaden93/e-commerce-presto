@@ -33,7 +33,7 @@
 <body>
 
 
-    <header>
+    <header id="big-img">
         <img class="banner" src="https://sirv-cdn.sirv.com/blog/image%20seo/2456071.png" alt="">
         <a class="logo" href="#">Presto</a>
         <div id="toggle"></div>
@@ -63,6 +63,13 @@
     </header>
 
     
+     <section class="fix">
+        <div class="margin-custom-top container text-center">
+            <div class="mt-0 row justify-content-center align-items-center">
+                <h2 class="display-1">{{__('ui.searchCat')}}</h2>
+                @foreach ($categories as $category)
+                <div class="col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
+                    <div class="mt-3 card-body p-0">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="

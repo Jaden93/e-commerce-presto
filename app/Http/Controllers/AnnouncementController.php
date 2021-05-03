@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class AnnouncementController extends Controller
 {
 
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -29,9 +29,9 @@ class AnnouncementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
-    {   
+    {
         $uniqueSecret = $request->old('uniqueSecret',base_convert(sha1(uniqid(mt_rand())),16,36));
-        
+
         return view('announcement.create', compact('uniqueSecret'));
     }
 
@@ -58,7 +58,7 @@ class AnnouncementController extends Controller
         ]);
             // restituisce collezione il get()
         $uniqueSecret = $request->input('uniqueSecret');
-        
+
         $images = session()->get("images.{$uniqueSecret}", []);
         $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
 
@@ -76,25 +76,23 @@ class AnnouncementController extends Controller
         }
         Storage::deleteDirectory(storage_path("/public/temp/{$uniqueSecret}"));
 
-
-            $images=session()->get('images.{$uniqueSecret}');
-
-            
+        return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
     }
-    
+
+
     public function uploadImages(Request $request) {
-        
+
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
         session()->push("images.{$uniqueSecret}",$fileName);
         return response()->json(
             [
             'id' => $fileName,
-            
+
             ]
         );
-    
-    } 
+
+    }
 
     public function removeImage(Request $request) {
 
@@ -125,7 +123,7 @@ class AnnouncementController extends Controller
     }
 
 
-    public function getImages(Request $request) 
+    public function getImages(Request $request)
     {
         $uniqueSecret = $request->input('uniqueSecret');
 
@@ -134,12 +132,21 @@ class AnnouncementController extends Controller
 
         $images = array_diff($images, $removedImages);
 
-        foreach ($images as $image) {
-            $data[] = [
-                'id' => $image, 
-                'src' => Storage::url($image)
+        // $data=[];
+        // foreach ($images as $image) {
+        //     $data[]=[
+        //         'id' => $image,
+        //         'src' => Storage::url($image),
+        //     ];
+        // }
+
+        $data=array_map(function($image){
+            return [
+                'id' => $image,
+                'src' => Storage::url($image),
             ];
-        }
+        },$images);
+
         return response()->json($data);
         }
     /**

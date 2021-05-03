@@ -3,7 +3,7 @@
 
 // // categoryWrap.style.cursor = 'pointer';
 // categoryWrap.onclick = function() {
-    
+
 //     console.log('s')
 // };
 
@@ -25,21 +25,18 @@
 //     // button classList.add('transparency')
 // });
 
-
-
-window.addEventListener("scroll",function(){
-
+let big_img = document.getElementById('big-img')
+if(big_img){
     const header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 0);
-})
+    window.addEventListener("scroll",function(){
+        header.classList.toggle('sticky', window.scrollY > 0);
+    })
 
+    const navbar_header = document.querySelector('nav.nav-header')
+    document.getElementById('toggle').addEventListener('click' , function() {
+        navbar_header.classList.toggle('active');
+    })
 
-
-document.getElementById('toggle').onclick = function() {
-    const navigation = document.querySelector('nav.nav-header').classList.toggle('active');
-
-    // navigation.addClass('active');
- 
 }
 
 const icon = document.getElementsByClassName('icon')[0];
@@ -84,7 +81,7 @@ $(function() {
                     _token: csrfToken,
                     uniqueSecret: uniqueSecret
                 },
-                addRemoveLinks: true, 
+                addRemoveLinks: true,
                 init: function() {
                     $.ajax({
 
@@ -95,6 +92,7 @@ $(function() {
                         },
                         dataType: 'json'
                     }).done(function(data){
+                        console.log(data);
                         $.each(data, function(key,value){
                             let file = {
                                 serverId: value.id
@@ -107,7 +105,7 @@ $(function() {
                 }
 
             });
-    
+
 
     myDropzone.on("success", function(file, response) {
         file.serverId = response.id;
@@ -120,7 +118,7 @@ $(function() {
             type: 'DELETE',
             url: '/announcement/images/remove',
             data: {
-                
+
                 _token: csrfToken,
                 id: file.serverId,
                 uniqueSecret: uniqueSecret
