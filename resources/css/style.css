@@ -43,6 +43,10 @@ a:hover{
   margin-left: calc(var(--bs-gutter-x) / -2);
 }
 
+#search-navbar1{
+  display: none;
+}
+
 .custom-card {
   display: inline-block;
   vertical-align: middle;
@@ -89,6 +93,8 @@ a:hover{
 }
 
 
+
+
 .custom-nav {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -106,6 +112,7 @@ a:hover{
   background-color: var(--sec-color);
   text-decoration: none;
   padding: 4px;
+  width: 170px;
 
 }
 #text-nav-btn {
@@ -967,6 +974,7 @@ header.sticky {
 }
 .custom-navbar-nav {
  padding: 0;
+ width: 500px;
 
 }
 .carousel::after,
@@ -974,6 +982,8 @@ header.sticky {
   right: -1rem;
   color: red;
 }
+
+
 
 /* .carousel::before,
 .carousel::after {
@@ -1020,13 +1030,26 @@ header.sticky {
 
 }
 
-@media screen and (max-width: 614px) {
+@media screen and (min-width: 991px) {
   #button-navbar {
     display: none;
   }
+}
 
-  #button-navbar {
+@media screen and (max-width: 991px) {
+  #search-navbar {
     display: none;
+  }
+
+  .custom-navbar-nav{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #search-navbar1 {
+    display: flex;
+    justify-content: center;
   }
 }
 
