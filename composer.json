@@ -13,7 +13,7 @@
         "laravel/framework": "^8.12",
         "laravel/scout": "^8.6",
         "laravel/tinker": "^2.5",
-        "teamtnt/tntsearch": "^2.7"
+        "teamtnt/laravel-scout-tntsearch-driver": "^11.3"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
