@@ -1,13 +1,14 @@
 <?php 
 
     return [
-        'searchCat' => 'buscar la categoria',
-         'search'   => 'buscar',
-         'login'    => 'iniciar sesion',
-         'register' => 'registro' ,
-         'hello'    => 'hola',
-         'logout'   => 'cerrar sesiòn' ,
+        'searchCat' => 'Buscar la categoria',
+         'search'   => 'Buscar',
+         'login'    => 'login',
+         'register' => 'Registro' ,
+         'hello'    => 'Hola',
+         'logout'   => 'logout' ,
          'announce' => 'publicar anuncio' ,
          'recupero' => 'recuperaciòn' ,
-         'click'   =>  'hacer clic' ,
+         'click'   =>  'clic' ,
+         'annunciAggiunti' => 'L ultema annuncos por tigo'
         ];

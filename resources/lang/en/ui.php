@@ -2,12 +2,14 @@
 
     return [
         'searchCat' => 'Search the Category',
-        'search'    => 'search',
-        'login'     => 'login' ,
-        'register'  => 'register' ,
-        'hello'     => 'hi' ,
+        'search'    => 'Search',
+        'login'     => 'Login' ,
+        'register'  => 'Sign in' ,
+        'hello'     => 'Hi' ,
         'logout'    => 'logout',
-        'announce'  => 'post ad' ,
+        'announce'  => 'Create announce' ,
         'recupero'  => 'recovery',
         'click'     => 'click' ,
+        'annunciAggiunti' => 'Last added announces'
+        
     ];

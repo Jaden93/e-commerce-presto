@@ -72,7 +72,7 @@
     <section class="fix">
         <div class="margin-custom-top container text-center">
             <div class="mt-0 row justify-content-center align-items-center">
-                <h2 class=" display-1">Cerca la categoria</h2>
+                <h2 class=" display-1">{{__('ui.searchCat')}}</h2>
                 @foreach ($categories as $category)
                 <div class=" col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
                     <div class="mt-3 card-body p-0">
@@ -88,7 +88,7 @@
     </section>
 
 
-    <h2 class="display-5 pt-5 text-center custom-font-card">Gli ultimi annunci aggiunti</h2>
+    <h2 class="display-5 pt-5 text-center custom-font-card">{{__('ui.annunciAggiunti')}}</h2>
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-10 col-11">
