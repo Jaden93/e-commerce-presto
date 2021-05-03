@@ -13,6 +13,10 @@
         "laravel/framework": "^8.12",
         "laravel/scout": "^8.6",
         "laravel/tinker": "^2.5",
+<<<<<<< HEAD
+=======
+        "spatie/image": "^1.10",
+>>>>>>> 5d7111edfe3759fcb3181c8bae5275ead10fea09
         "teamtnt/laravel-scout-tntsearch-driver": "^11.3"
     },
     "require-dev": {

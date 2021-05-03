@@ -35,37 +35,42 @@
 
     <header id="big-img">
         <img class="banner" src="https://sirv-cdn.sirv.com/blog/image%20seo/2456071.png" alt="">
-        <a class="logo" href="#">Presto</a>
+        <a class="logo text-start" href="#">Presto</a>
         <div id="toggle"></div>
-        <nav class="nav-header">
-            <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class=" ">
+        <nav class="nav-header offset-md-2 mx-auto">
+            <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class="">
                 <div class="search">
-                    <input class="form-control" type="search" placeholder="Cosa stai cercando?" aria-label="Search"
-                        name="query">
-                    <div class="icon"></div>
+                    {{-- <input class="form-control" type="search" aria-label="Search" > --}}
+                    <div class="icon "></div>
                     <div class="input">
-                        <input type="text" placeholder="Cerca il tuo annuncio">
+                        <input type="search" name="query" placeholder="Cerca il tuo annuncio">
                     </div>
                 </div>
-                <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button>
             </form>
-
             <ul class="mb-0">
                 @guest
                 <li><a href="#">Login</a></li>
-                @include('components.locale',['lang'=>'it','nation' => 'it'])
                 <li><a href="#">Registrati</a></li>
-                @include('components.locale',['lang'=>'en','nation' => 'gb'])
-                <li><a href="#">iniciar sesiòn</a></li>
-                @include('components.locale',['lang'=>'esp','nation' => 'es'])
                 @endguest
-
+                @include('components.locale',['lang'=>'it','nation' => 'it'])
+                @include('components.locale',['lang'=>'en','nation' => 'gb'])
+                @include('components.locale',['lang'=>'esp','nation' => 'es'])
                 <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
+                <li class="d-none-custom">
+                    <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class="">
+                        <div id="mobile-big-img" class="search">
+                            <div class="icon"></div>
+                            <div class="input">
+                                <input type="search" name="query" placeholder="Cerca il tuo annuncio">
+                            </div>
+                        </div>
+                    </form>
+                </li>
             </ul>
         </nav>
     </header>
 
-     <section class="fix">
+    <section class="fix">
         <div class="margin-custom-top container text-center">
             <div class="mt-0 row justify-content-center align-items-center">
                 <h2 class="display-1">{{__('ui.searchCat')}}</h2>
@@ -83,7 +88,7 @@
                 @endforeach
             </div>
         </div>
-     </section>
+    </section>
 
 
     <h2 class="display-5 pt-5 text-center custom-font-card">Gli ultimi annunci aggiunti</h2>

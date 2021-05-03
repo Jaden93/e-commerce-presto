@@ -10872,6 +10872,10 @@ a:hover{
   margin-left: calc(var(--bs-gutter-x) / -2);
 }
 
+#search-navbar1{
+  display: none;
+}
+
 .custom-card {
   display: inline-block;
   vertical-align: middle;
@@ -10914,6 +10918,8 @@ a:hover{
 }
 
 
+
+
 .custom-nav {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -10931,6 +10937,7 @@ a:hover{
   background-color: var(--sec-color);
   text-decoration: none;
   padding: 4px;
+  width: 170px;
 
 }
 #text-nav-btn {
@@ -11290,7 +11297,7 @@ a:hover{
   border-radius: 6px 6px 6px 6px;
   background-color: var(--sec-color);
   position: relative;
- 
+
   padding-left: 80px;
   padding-right: 30px;
   padding-top: 60px;
@@ -11301,7 +11308,7 @@ a:hover{
 /* .transparency {
   width: 800px;
   filter: blur(1px);
-   filter: drop-shadow(2px 4px 6px black); 
+   filter: drop-shadow(2px 4px 6px black);
   filter: contrast(1.9);
   opacity: 0.05;
   margin: auto;
@@ -11623,7 +11630,7 @@ header .banner {
      object-fit: cover;
 }
 
-header .logo 
+header .logo
 {
   position: absolute;
   top: 50%;
@@ -11686,7 +11693,14 @@ header.sticky .nav-header ul {
 
 }
 
+.d-none-custom{
+    display: none;
+}
+
 @media (max-width:991px) {
+    .d-none-custom{
+        display: flex;
+    }
   .fix, header {
     padding: 40px;
   }
@@ -11785,7 +11799,7 @@ header.sticky #toggle.active {
 .search .icon::before {
   content: '';
   position: absolute;
-  width: 15px;  
+  width: 15px;
   height: 15px;
   border: 3px solid blue;
   border-radius: 50%;
@@ -11805,7 +11819,7 @@ header.sticky #toggle.active {
   display: flex;
   align-items: center;
   justify-content: center;
-} 
+}
 
 .search .input input {
   position: absolute;
@@ -11822,7 +11836,7 @@ header.sticky #toggle.active {
 .search .icon::after {
   content: '';
   position: absolute;
-  width: 3px;  
+  width: 3px;
   height: 12px;
   border-radius: 50%;
   background: blue;
@@ -11851,6 +11865,7 @@ header.sticky {
 }
 .custom-navbar-nav {
  padding: 0;
+ width: 500px;
 
 }
 .carousel::after,
@@ -11858,6 +11873,8 @@ header.sticky {
   right: -1rem;
   color: red;
 }
+
+
 
 /* .carousel::before,
 .carousel::after {
@@ -11904,13 +11921,26 @@ header.sticky {
 
 }
 
-@media screen and (max-width: 614px) {
+@media screen and (min-width: 991px) {
   #button-navbar {
     display: none;
   }
+}
 
-  #button-navbar {
+@media screen and (max-width: 991px) {
+  #search-navbar {
     display: none;
+  }
+
+  .custom-navbar-nav{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #search-navbar1 {
+    display: flex;
+    justify-content: center;
   }
 }
 
