@@ -31,46 +31,22 @@
 </head>
 
 <body>
-
-
-    <header id="big-img">
-        <img class="banner" src="https://sirv-cdn.sirv.com/blog/image%20seo/2456071.png" alt="">
-        <a class="logo" href="#">Presto</a>
-        <div id="toggle"></div>
-        <nav class="nav-header">
-            <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class=" ">
-                <div class="search justify-content-around">
-                    {{-- <input class="form-control" type="search" aria-label="Search" > --}}
-                    <div class="icon "></div>
-                    <div class="input">
-                        <input stile="display:none;" type="search" name="query" placeholder="Cerca il tuo annuncio">
-                    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="col-12  col-md-10 mx-auto bg-primary">
+                <div class="text-top row">
+                        <img class="m-3 col-6 img-fluid"src="https://picsum.photos/400/260">
+                    <div class="col-5 my-2">
+                            <h2>Rome</h2>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                 Deleniti nobis blanditiis iusto obcaecati iste vero neque error maxime,
+                                 delectus quis saepe magni eveniet praesentium amet corrupti magnam. Dignissimos, harum odio.</p>
+                                 <a class="justify-content-end btn btn-success"href="">Dettaglio</a>
+                    </div>   
                 </div>
-            </form>
-
-            <ul class="mb-0">
-                @guest
-                <li><a href="{{route('login')}}">Login</a></li>
-                @include('components.locale',['lang'=>'it','nation' => 'it'])
-                <li><a href="#">Registrati</a></li>
-                @include('components.locale',['lang'=>'en','nation' => 'gb'])
-                
-                @endguest
-                <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
-                <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    
-     <section class="fix">
-        <div class="margin-custom-top container text-center">
-            <div class="mt-0 row justify-content-center align-items-center">
-                <h2 class="display-1">{{__('ui.searchCat')}}</h2>
-                @foreach ($categories as $category)
-                <div class="col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
-                    <div class="mt-3 card-body p-0">
-
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous"></script>

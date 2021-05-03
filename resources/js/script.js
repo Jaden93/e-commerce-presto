@@ -40,13 +40,15 @@ if(big_img){
 
 }
 
-const icon = document.getElementsByClassName('icon')[0];
-const search = document.getElementsByClassName('search')[0];
+const icons = document.querySelectorAll('.icon');
 
-icon.addEventListener('click', function(){
-     search.classList.toggle('active');
+icons.forEach(icon => {
+    icon.addEventListener('click', function(){
+        icon.parentNode.classList.toggle('active');
+    })
+});
 
-})
+// console.log(icon)
 
 // icon.onclick = function() {
 //     console.log('ciao')
