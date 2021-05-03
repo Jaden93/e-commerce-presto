@@ -38,10 +38,11 @@
                 </li>
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="{{route('login_register')}}">Login</a>
+                    <a class="nav-link fw-bold" href="{{route('login_register')}}">{{__('ui.login')}}</a>
+                   
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="{{route('login_register')}}">Register</a>
+                    <a class="nav-link fw-bold" href="{{route('login_register')}}">{{__('ui.register')}}</a>
                 </li class="">
                 <li class="d-flex">
 
@@ -51,14 +52,14 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
 
-                        Ciao, {{Auth::user()->name}}
+                        {{__('ui.hello')}}, {{Auth::user()->name}}
                     </a>
                     <ul class="dropdown-menu bg-main" aria-labelledby="navbarDropdownMenuLink">
                         <li>
                             <form action="{{route('logout')}}" id="logout" method="POST">
                                 @csrf
                                 <a class="dropdown-item color"
-                                    onclick="event.preventDefault(); document.getElementById('logout').submit()">Logout</a>
+                                    onclick="event.preventDefault(); document.getElementById('logout').submit()">{{__('ui.logout')}}</a>
                             </form>
                         </li>
                     </ul>
@@ -68,7 +69,7 @@
                 @auth
                 @if (Auth::user()->is_revisor)
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="{{route('revisor.recovery')}}">Recupero</a>
+                    <a class="nav-link fw-bold" href="{{route('revisor.recovery')}}">{{__('ui.recupero')}}</a>
                     </span>
                 </li>
                 <li class="nav-item">
@@ -82,13 +83,13 @@
                 <li class="nav-item">
                     @auth
                     @if (Auth::user()->name)
-                    <a class="custom-btn btn text-main " href="{{route('announcement.create')}}">Inserisci
-                        annuncio</a>
+                    <a class="custom-btn btn text-main " href="{{route('announcement.create')}}">{{__('ui.announce')}}
+                        </a>
                     @endauth
                     @else
 
                     <a class=" custom-btn btn me-2 " href="{{route('login_register')}}"><span
-                            id="text-nav-btn">Inserisci annuncio</span> </a>
+                            id="text-nav-btn">{{__('ui.announce')}}</span> </a>
                     @endif
                 </li>
                 <li>
