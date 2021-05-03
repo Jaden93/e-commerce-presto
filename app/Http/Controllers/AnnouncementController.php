@@ -76,9 +76,9 @@ class AnnouncementController extends Controller
         }
         Storage::deleteDirectory(storage_path("/public/temp/{$uniqueSecret}"));
 
-
-            $images=session()->get('images.{$uniqueSecret}');
+        return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
     }
+
 
     public function uploadImages(Request $request) {
 
@@ -132,12 +132,21 @@ class AnnouncementController extends Controller
 
         $images = array_diff($images, $removedImages);
 
-        foreach ($images as $image) {
-            $data[] = [
+        // $data=[];
+        // foreach ($images as $image) {
+        //     $data[]=[
+        //         'id' => $image,
+        //         'src' => Storage::url($image),
+        //     ];
+        // }
+
+        $data=array_map(function($image){
+            return [
                 'id' => $image,
-                'src' => Storage::url($image)
+                'src' => Storage::url($image),
             ];
-        }
+        },$images);
+
         return response()->json($data);
         }
     /**

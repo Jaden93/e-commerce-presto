@@ -9,15 +9,9 @@
             <i class="fas  hvr-icon text-main fa-cog"></i>
         </button>
 
-    
+
 
         <form method="GET" action="{{route('announcement.search')}}" id="button-navbar" class="offset-md-2  me-auto custom-nav-search btn nav-link ">
-<<<<<<< HEAD
-            <div class="d-flex custom-navbar-nav">
-                <input class="form-control" type="search" placeholder="Cosa stai cercando?" aria-label="Search" name="query">
-                <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button>
-            </div>
-=======
             <div class="search">
                 <div class="icon"></div>
                 <div class="input">
@@ -28,7 +22,6 @@
             <input class="form-control" type="search" placeholder="Cosa stai cercando?" aria-label="Search" name="query">
             <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button> --}}
         </div>
->>>>>>> 3620ebb908df342e2026f83d02d7a1ff06d31d05
         </form>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
