@@ -33,7 +33,7 @@
 <body>
 
 
-    <header>
+    <header id="big-img">
         <img class="banner" src="https://sirv-cdn.sirv.com/blog/image%20seo/2456071.png" alt="">
         <a class="logo" href="#">Presto</a>
         <div id="toggle"></div>
@@ -62,65 +62,15 @@
         </nav>
     </header>
 
-    <section class="fix">
-        <div class="container text-center">
+    
+     <section class="fix">
+        <div class="margin-custom-top container text-center">
             <div class="mt-0 row justify-content-center align-items-center">
-                <h2 class=" display-1">Cerca la categoria</h2>
+                <h2 class="display-1">{{__('ui.searchCat')}}</h2>
                 @foreach ($categories as $category)
-                <div class=" col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
+                <div class="col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
                     <div class="mt-3 card-body p-0">
-                        <a class=" pt-3 text-decoration-none" href="{{route('byCategory', [ $category->id, $category->name])}}">
-                            <p id="categoryWrap" class="custom-category">{{$category->name}}</p>
-                            <p class="fs-1"><i class="{{$category->icon}}"></i></p>
-                        </a>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
 
-
-
-    <h2 class="display-5 pt-5 text-center custom-font-card">Gli ultimi annunci aggiunti</h2>
-    <div class="container">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-10 col-11">
-                @foreach ($announcements as $announcement)
-
-                @if ($announcement->is_accepted)
-                <div class="my-3 card col-md-8 col-12 offset-md-2">
-                    <div class="row align-items-center justify-content-end">
-                        <div class="col-5">
-                            <img class="img-fluid"
-                                src="https://www.peperonciniamoci.it/forum/uploads/profile/photo-15386.png"
-                                style="width: 200px; height: 200px;" alt="Card image cap">
-                        </div>
-                        <div class="col-7">
-                            <div class="card-body">
-                                <h3 class="card-title">{{$announcement->title}}</h3>
-                                <p class="card-text">{{$announcement->description}} </p>
-                                <p class="card-text">{{$announcement->created_at->format('Y/m/d')}} </p>
-                                <p class="card-text">{{$announcement->price}}€</p>
-                                <p class="card-text">{{$announcement->user->name}}</p>
-                                <p class="card-text">Categoria: <a
-                                        href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a>
-                                </p>
-
-                                <a href="{{route('announcement.show' ,$announcement)}}" class="btn custom-btn">Dettaglio
-                                    Annuncio</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endif
-
-                @endforeach
-            </div>
-        </div>
-    </div>
-
-    <x-footer />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous"></script>

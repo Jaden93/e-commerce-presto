@@ -30,6 +30,7 @@ if(big_img){
     const header = document.querySelector('header');
     window.addEventListener("scroll",function(){
         header.classList.toggle('sticky', window.scrollY > 0);
+        
     })
 
     const navbar_header = document.querySelector('nav.nav-header')

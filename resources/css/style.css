@@ -788,12 +788,7 @@ header.sticky .nav-header ul {
 }
 
 
-.fix {
-  margin-top: 20vh;
-  padding: 100px;
-  z-index: -100!important;
-
-}
+/* s */
 
 @media (max-width:991px) {
   .fix, header {

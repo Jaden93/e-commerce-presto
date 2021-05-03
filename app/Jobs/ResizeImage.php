@@ -2,12 +2,14 @@
 
 namespace App\Jobs;
 
+use Spatie\Image\Image;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Spatie\Image\Manipulations;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldBeUnique;
 
 class ResizeImage implements ShouldQueue
 {
@@ -18,9 +20,15 @@ class ResizeImage implements ShouldQueue
      *
      * @return void
      */
-    public function __construct()
+
+     private $path, $fileName, $width, $height;
+
+    public function __construct($filePath, $width, $height )
     {
-        //
+        $this->path = dirname($filePath);
+        $this->fileName = basename($filePath);
+        $this->width = $width;
+        $this->height = $height;
     }
 
     /**
@@ -30,6 +38,12 @@ class ResizeImage implements ShouldQueue
      */
     public function handle()
     {
-        //
+        $width= $this->width;
+        $height= $this->height;
+        $srcPath= storage_path() . '/app/' . $this->path . '/' . $this->fileName;
+        $destinationPath= storage_path() . '/app/' . $this->path . '/crop{$width}x{$height}_' . $this->fileName;
+
+        Image::load($srcPath)->crop(Manipulations::CROP_CENTER, $width, $height)->save($destinationPath);
     }
+
 }
