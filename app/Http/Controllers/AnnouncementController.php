@@ -71,15 +71,15 @@ class AnnouncementController extends Controller
             $newFileName = "public/announcements/{$announcement->id}/{$fileName}";
             Storage::move($image, $newFileName);
             dispatch(new ResizeImage(
-                $newFileName, 
-                400, 
+                $newFileName,
+                400,
                 300,
             ));
             $i->file =  $newFileName;
             $i->announcement_id = $announcement->id;
             $i->save();
         }
-        Storage::deleteDirectory(storage_path("/public/temp/{$uniqueSecret}"));
+        Storage::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
 
         return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
     }
@@ -89,10 +89,9 @@ class AnnouncementController extends Controller
 
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
-
         dispatch(new ResizeImage(
-            $fileName, 
-            80, 
+            $fileName,
+            80,
             80,
         ));
 
