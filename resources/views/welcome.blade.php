@@ -53,6 +53,7 @@
                 @endguest
                 @include('components.locale',['lang'=>'it','nation' => 'it'])
                 @include('components.locale',['lang'=>'en','nation' => 'gb'])
+                @include('components.locale',['lang'=>'esp','nation' => 'es'])
                 <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
                 <li class="d-none-custom">
                     <form method="GET" action="{{route('announcement.search')}}" id="button-header-dropdown" class="">
