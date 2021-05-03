@@ -3169,6 +3169,13 @@ icons.forEach(function (icon) {
 //     console.log('ciao')
 //     // search.classList.toggle('active')
 // }
+// $(function(){
+//     window.addEventListener('scroll',function stopScroll(e) {
+//         if ($(this).scrollTop() < 100 ) { 
+//             window.scrollBy(0,10)
+//         }
+//     }); 
+// });
 
 $(function () {
   if ($('#drophere').length > 0) {

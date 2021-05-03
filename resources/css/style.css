@@ -6,8 +6,13 @@
     --input-padding-x: 1.5rem;
     --input-padding-y: .75rem;
     --font-mont_s:'Montserrat Alternates', sans-serif;
+    --font-ubuntu:'Ubuntu', 'sans-serif';
 }
 
+body 
+ {
+   min-height: 100vh;
+ }
 a{
     color:var(--sec-color);
 }
@@ -50,7 +55,7 @@ a:hover{
 .custom-card {
   display: inline-block;
   vertical-align: middle;
-
+  
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -130,7 +135,7 @@ a:hover{
   background-color: #72aed48a;
   color: var(--third-color);
   margin-top: 200px;
-
+  
   padding: 1rem;
   text-align: center;
 
@@ -649,6 +654,16 @@ ol, li {
   scroll-snap-align: center;
 }
 
+#button-header-dropdown {
+  display: none;
+}
+
+
+.fix {
+  margin-top: 260px;
+}
+
+/* INIZIO MEDIA QUERY  */
 @media (hover: hover) {
   .carousel__snapper {
     animation-name: tonext, snap;
@@ -714,7 +729,7 @@ ol, li {
 }
 
 header {
-
+z-index: 4;
 position: fixed;
 top: 0;
 left: 0;
@@ -785,7 +800,7 @@ header.sticky .nav-header ul {
 
   transform: translate(0);
   opacity: 1;
-  transition-delay: 0.75s;
+  transition-delay: 0.15s;
   opacity: 1;
   visibility: visible;
 }
@@ -795,12 +810,7 @@ header.sticky .nav-header ul {
 }
 
 
-.fix {
-  margin-top: 60vh;
-  padding: 100px;
-  z-index: -1000;
-
-}
+/* s */
 
 .d-none-custom{
     display: none;
@@ -848,8 +858,7 @@ header.sticky #toggle {
   background-position: center;
 
 }
-
-header.sticky #toggle.active {
+gheader.sticky #toggle.active {
   background: #fff url("data:image/png;base64,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");
   background-size: 25px;
   background-repeat: no-repeat;
@@ -867,7 +876,7 @@ header.sticky #toggle.active {
   left: 0;
   width: 100%;
   height: calc(100%-80px);
-  background: #000;
+  background: rgba(82, 82, 82, 0.842);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1030,17 +1039,22 @@ header.sticky {
 
 }
 
+
 @media screen and (min-width: 991px) {
   #button-navbar {
     display: none;
   }
-}
+
+  
+  }
+
 
 @media screen and (max-width: 991px) {
   #search-navbar {
     display: none;
   }
 
+    
   .custom-navbar-nav{
     width: 300px;
     margin-left: auto;

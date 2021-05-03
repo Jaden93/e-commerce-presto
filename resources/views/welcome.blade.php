@@ -32,7 +32,6 @@
 
 <body>
 
-
     <header id="big-img">
         <img class="banner" src="https://sirv-cdn.sirv.com/blog/image%20seo/2456071.png" alt="">
         <a class="logo text-start" href="#">Presto</a>
@@ -57,7 +56,11 @@
                 @include('components.locale',['lang'=>'esp','nation' => 'es'])
                 <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
                 <li class="d-none-custom">
+<<<<<<< HEAD
                     <form method="GET" action="{{route('announcement.search')}}" id="button-header-navbar" class="">
+=======
+                    <form method="GET" action="{{route('announcement.search')}}" id="button-header-dropdown" class="">
+>>>>>>> da3ba2939339c2fa927ebe98f6742bb1dc69775a
                         <div id="mobile-big-img" class="search">
                             <div class="icon"></div>
                             <div class="input">
@@ -73,13 +76,11 @@
     <section class="fix">
         <div class="margin-custom-top container text-center">
             <div class="mt-0 row justify-content-center align-items-center">
-                <h2 class="display-1">{{__('ui.searchCat')}}</h2>
+                <h2 class=" display-1">{{__('ui.searchCat')}}</h2>
                 @foreach ($categories as $category)
-                <div class="col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
+                <div class=" col-md-3 custom-card col-lg-2 my-2 mx-1 card col-6">
                     <div class="mt-3 card-body p-0">
-
-                        <a class="pt-3 text-decoration-none "
-                            href="{{route('byCategory', [ $category->id, $category->name])}}">
+                        <a class=" pt-3 text-decoration-none" href="{{route('byCategory', [ $category->id, $category->name])}}">
                             <p id="categoryWrap" class="custom-category">{{$category->name}}</p>
                             <p class="fs-1"><i class="{{$category->icon}}"></i></p>
                         </a>
@@ -91,7 +92,7 @@
     </section>
 
 
-    <h2 class="display-5 pt-5 text-center custom-font-card">Gli ultimi annunci aggiunti</h2>
+    <h2 class="display-5 pt-5 text-center custom-font-card">{{__('ui.annunciAggiunti')}}</h2>
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-10 col-11">
