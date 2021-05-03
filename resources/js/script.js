@@ -33,6 +33,8 @@ window.addEventListener("scroll",function(){
     header.classList.toggle('sticky', window.scrollY > 0);
 })
 
+
+
 document.getElementById('toggle').onclick = function() {
     const navigation = document.querySelector('nav.nav-header').classList.toggle('active');
 
@@ -53,16 +55,16 @@ icon.addEventListener('click', function(){
 //     // search.classList.toggle('active')
 // }
 
-$(function(){
-    window.addEventListener('scroll',function stopScroll(e) {
-        if ($(this).scrollTop() < 100 ) { 
-            window.scrollBy(0,10)
+// $(function(){
+//     window.addEventListener('scroll',function stopScroll(e) {
+//         if ($(this).scrollTop() < 100 ) { 
+//             window.scrollBy(0,10)
             
             
 
-        }
-    }); 
-});
+//         }
+//     }); 
+// });
 
         
 
@@ -99,7 +101,7 @@ $(function() {
                             };
 
                             myDropzone.options.addedfile.call(myDropzone, file);
-                            myDropzone.options.thumbnail.call(myDropzon, file, value.src);
+                            myDropzone.options.thumbnail.call(myDropzone, file, value.src);
                         })
                     })
                 }

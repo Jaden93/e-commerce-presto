@@ -78,6 +78,8 @@ class AnnouncementController extends Controller
 
 
             $images=session()->get('images.{$uniqueSecret}');
+
+            
     }
     
     public function uploadImages(Request $request) {

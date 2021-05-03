@@ -42,8 +42,7 @@
                     <div class="form-group row">
                       <label for="images" class="col-md-12 col-form-label text-md-right">Immagini</label>
                       <div class="col-md-12">
-                        <div id="drophere" class="dropzone">
-                        </div>
+                        <div id="drophere" class="dropzone"></div>
 
 
                         @error('images')
