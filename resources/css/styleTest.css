@@ -153,15 +153,24 @@ body {
     background:black;
 } */ 
 
-
+.custom-label {
+    font-family: var(--font-ubuntu);
+}
 .custom-home-color {
     color: var(--sec-color);
     background: var(--third-color);
    
 }
 
+.custom-row-label
+{
+    inline-size: fit-content;
+    background-color: var(--sec-color);
+}
 
-
+.cstm-label  {
+    padding-left: 0;
+}
 @media screen and (max-width:1200px){
     .card-custom {
         margin: 0;

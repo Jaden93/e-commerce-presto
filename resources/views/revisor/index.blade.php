@@ -9,47 +9,58 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-title">
-                        <p>Annuncio Numero {{ $announcement->id }}</p>
+                        <p class="fw-bold fs-2 text-center">Annuncio Numero {{ $announcement->id }}</p>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-3">
-                                    <h3>Utente</h3>
-                                    <p># {{$announcement->user->id}}</p>
-                                    <p>Utente: {{$announcement->user->name}}</p>
-                                    <p>Email: {{$announcement->user->email}}</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h2>Titolo</h2>
-                                </div>
-                                <div class="col-md-10">{{$announcement->title}}</div>
-                            </div>
+                                <div class="col-md-6">
+                                    <span class="fs-5 fw-bold">ID Utente: </span>
+                                    <p>#{{$announcement->user->id}}</p>
+                                    <span class="fs-5 fw-bold">Utente: </span>
+                                    <p>{{$announcement->user->name}}</p>
+                                    <span class="fs-5 fw-bold">Email: </span>
+                                    <p>{{$announcement->user->email}}</p>
+                                    <span class="fs-5 fw-bold">Titolo </span>
+                                    <p>{{$announcement->title}}</p>
+                                    <span class="fs-5 fw-bold">Descrizione </span>
+                                    <p>{{$announcement->description}}</p>
 
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h2>Descrizione</h2>
                                 </div>
-                                <div class="col-md-10">{{$announcement->description}}</div>
+                                @foreach ($announcement->images as $image)
+                                <div class="col-md-6 p-3  custom-row-label">
+                                    <img class="" src="{{$image->getUrl(400, 300)}}" alt="Card image cap">
+                                    <div class="row">
+                                            <div class="custom-label col-md-6">
+                                                <h2>Filtri</h2>
+                                                <p class="my-0"><span class="fw-bolder fs-5"> ADULT:</span> {{$image->adult}} </p>
+                                                <p class="my-0"><span class="fw-bolder fs-5">SPOOF:</span>  {{$image->spoof}}</p>
+                                                <p class="my-0"><span class="fw-bolder fs-5">MEDICAL:</span>  {{$image->medical}}</p>
+                                                <p class="my-0"><span class="fw-bolder fs-5">VIOLENCE:</span>  {{$image->violence}}</p>
+                                                <p class="my-0"><span class="fw-bolder fs-5">RACY:</span>  {{$image->racy}}</p>
+                                            </div>
+                                            <div class="custom-label col-md-6">
+                                                <h2 class="text-end">Labels</h2>
+                                                <ul class="cstm-label">
+                                                    @if ($image->labels)
+                                                    @foreach ($image->labels as $label)
+                                                    <li class="text-end">{{$label}}</li>
+                                                    @endforeach
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                    </div>
+                                  
+                                
+                                    @endforeach
+                                </div>
                             </div>
-
-                            {{-- <div class="row">
-                                <div class="col-md-3"><h2>Immagini</h2></div>
-                                <div class="col-md-10">{{$announcement->img}}
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
-
-
             </div>
 
 
+
         </div>
-    </div>
-
-
-
-    </div>
 
     </div>
 
@@ -75,30 +86,7 @@
                 @csrf
                 <button class="p-3 btn btn-success" type="submit">Accept</button>
             </form>
-        </div>
-        @foreach ($announcement->images as $image)
-        <div class="col-md-4">
-
-            <img class=" img-fluid" src="{{$image->getUrl(400, 300)}}" alt="Card image cap">
-        </div>
-        {{-- <div class="col-md-8">
-            adult: {{$image->adult}} <br>
-            spoof: {{$image->spoof}} <br>
-            medical: {{$image->medical}} <br>
-            violence: {{$image->violence}} <br>
-            racy: {{$image->racy}}
-            {{$image->id}}
-        </div> --}}
-        @endforeach
-
-        <h2>Labels</h2>
-        <ul>
-            @if ($image->labels)
-            @foreach ($image->labels as $label)
-            <li>{{$label}}</li>
-            @endforeach
-            @endif
-        </ul>
+        </div>    
     </div>
 
     @else
