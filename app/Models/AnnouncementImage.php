@@ -11,6 +11,10 @@ class AnnouncementImage extends Model
 {
 
     use HasFactory;
+// eloquent mutators
+    protected $casts = [
+        'labels' => 'array'
+    ];
 
     public function announcement() {
         return $this->belongsTo(Announcement::class);

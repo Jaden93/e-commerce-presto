@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Jobs\ResizeImage;
 use Illuminate\Http\File;
 use App\Models\Announcement;
@@ -78,10 +80,19 @@ class AnnouncementController extends Controller
                 300
             ));
 
+
+
             $i->file =  $newFileName;
             $i->announcement_id = $announcement->id;
+
             $i->save();
+            
+            dispatch(new GoogleVisionSafeSearchImage($i->id));
+            dispatch(new GoogleVisionLabelImage($i->id));
+
+
         }
+
         Storage::deleteDirectory(storage_path("/public/temp/{$uniqueSecret}"));
 
         return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');

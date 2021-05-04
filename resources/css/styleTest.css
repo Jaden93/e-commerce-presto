@@ -1,7 +1,182 @@
 
+:root {
+    --main-color: #232323e0;
+    --sec-color: #fea82f;
+    --third-color: #757575;
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem;
+    --font-mont_s:'Montserrat Alternates', sans-serif;
+    --font-ubuntu:'Ubuntu', 'sans-serif';
+}
+
 body {
     height: 2000px;
 }
 
 
+.card-custom {
+    position: relative;
+    padding: 3px;
+}
 
+.card-custom .custom-card-ad {
+    /* position: relative; */
+    /* left: 0; */
+
+   
+    position: absolute;
+    bottom: 4%;
+   
+ right: 4%;
+}
+.container .custom-card-home img {
+    -webkit-box-shadow: 8px 10px 10px 5px rgba(66,66,66,0.63); 
+    box-shadow: 8px 10px 10px 5px rgba(66,66,66,0.63);
+    opacity: 0.9;
+    
+}
+
+.container .custom-card-home .card-custom {
+    z-index: 2;
+    right: 22px;
+    position: relative;
+    background: linear-gradient(to left, #fbb825b7, #ffffff81);
+    top: 24px;    
+}
+
+.card-custom {
+    -webkit-box-shadow: 8px 17px 17px 5px rgba(66,66,66,0.63); 
+    box-shadow: 8px 17px 17px 5px rgba(66,66,66,0.63);
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+   
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+}
+
+.card-custom  {
+    color: var(--main-color);
+    padding-left: 20px;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+.card-custom h2 {
+    font-family:  var(--font-ubuntu);
+}
+
+.card-custom {
+    font-family: var(--font-mont_s);
+}
+.card-custom p {
+    margin-top: 40px;
+    word-wrap: break-word;
+    margin-right: 20px;
+}
+
+
+/* carousel  */
+/* 
+.carousel__indicator.carousel-slide{
+    background: (0,0,0,.75);
+}
+/* .carousel-main {
+    /* position: relative;
+     height: 200px; 
+    width: 80%;
+    margin: 0 auto; 
+
+} */
+/* 
+.carousel__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__track-container {
+    background: green;
+    padding: 10px;
+    height: 100%;
+    position: relative;
+}
+
+.carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style:none;
+}
+
+.carouse__slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    height: 200px;
+    transform: translate(-50%);
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+.carousel__button i {
+    width: 12px;
+}
+
+.carouse__button--left {
+    left: -40px;
+}
+
+.carouse__button--right {
+    right: 40px;
+}
+
+.carouse__nav {
+    background: black;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.carousel__indicator {
+    border: 0;
+    margin: 0 12;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background:black;
+} */ 
+
+
+.custom-home-color {
+    color: var(--sec-color);
+    background: var(--third-color);
+   
+}
+
+
+
+@media screen and (max-width:1200px){
+    .card-custom {
+        margin: 0;
+        color: var(--main-color);
+        padding-left: 20px;
+        width: 80%;
+
+        /* margin-top: 16px; 
+        /* margin-bottom: 10px;*/
+    }
+    .container .custom-card-home .card-custom {
+      
+        top: -20px;
+        padding-bottom: 40px;
+    }
+    
+}
+    

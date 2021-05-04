@@ -17,8 +17,8 @@
                                             src="{{$image->getUrl(400, 300)}}"
                                             alt="Card image cap">
                                         <div class="carousel__snapper">
-                                            <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
-                                            <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
+                                            <a href="#carousel__slide4" class="carousel__prev"></a>
+                                            <a href="#carousel__slide2" class="carousel__next"></a>
                                         </div>
                                     </li>
                                     @endforeach

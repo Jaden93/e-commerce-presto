@@ -10,6 +10,7 @@
         'announce'  => 'Create announce' ,
         'recupero'  => 'recovery',
         'click'     => 'click' ,
-        'annunciAggiunti' => 'Last added announces'
+        'annunciAggiunti' => 'Last added announces',
+        'Categoria:' => 'Categories:'
         
     ];

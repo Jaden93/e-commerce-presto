@@ -31,12 +31,11 @@
 </head>
 
 <body>
-
     <header id="big-img">
         <img class="banner" src="https://sirv-cdn.sirv.com/blog/image%20seo/2456071.png" alt="">
         <a class="logo text-start" href="#">Presto</a>
         <div id="toggle"></div>
-        <nav class="nav-header offset-md-2 mx-auto">
+        <nav class="nav-header align-items-center offset-md-2 mx-auto">
             <form method="GET" action="{{route('announcement.search')}}" id="button-header-navbar" class="">
                 <div class="search">
                     {{-- <input class="form-control" type="search" aria-label="Search" > --}}
@@ -46,15 +45,52 @@
                     </div>
                 </div>
             </form>
-            <ul class="mb-0">
+            <ul class="mb-0 align-items-center">
                 @guest
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Registrati</a></li>
+                <li><a href="{{route('login')}}">Login</a></li>
+                <li><a href="{{route('register')}}">Registrati</a></li>
                 @endguest
-                @include('components.locale',['lang'=>'it','nation' => 'it'])
-                @include('components.locale',['lang'=>'en','nation' => 'gb'])
-                @include('components.locale',['lang'=>'esp','nation' => 'es'])
-                <li><a class="btn btn-primary" href="#">Inserisci annuncio</a></li>
+                <div class=" d-flex fs-1 m-1">
+                    @include('components.locale',['lang'=>'it','nation' => 'it'])
+                    @include('components.locale',['lang'=>'en','nation' => 'gb'])
+                    @include('components.locale',['lang'=>'esp','nation' => 'es'])
+                </div>
+                {{-- @if(Auth::user()->is_revisor)
+          
+               
+                @endif   --}}
+                <li class="m-3"><a class="btn btn-primary" href="{{route('register')}}">Inserisci annuncio</a></li>
+                @auth  
+                <li class="nav-item dropdown">
+                    <a class="name nav-link dropdown-toggle"  data-bs-toggle="dropdown" role="button" aria-expanded="false" id="name-dropdown" href="#">{{__('ui.hello')." ".Auth::user()->name}}</a>
+                    <ul id="toggle-ul" class="d-none dropdown-menu" aria-labelledby="name-dropdown">
+                        <li class="custom-home-color dropdown-item">
+                            <form action="{{route('logout')}}" id="logout" method="POST">
+                                @csrf
+                                <a class="dropdown-item color"
+                                    onclick="event.preventDefault(); document.getElementById('logout').submit()">{{__('ui.logout')}}</a>
+                            </form>
+                        </li>
+                      <li class="custom-home-color dropdown-item">
+                        <a class="nav-link fw-bold" href="{{route('revisor.recovery')}}">{{__('ui.recupero')}}</a>
+                        </span>
+                    </li>
+                      <li class="custom-home-color dropdown-item nav-item">
+                        <a class="nav-link fw-bold" href="{{route('revisor.index')}}">
+                            Revisor index <span class="badge badge-pill badge-warning">#
+                                {{ \App\Models\Announcement::ToBeRevisionedCount()}}</a>
+                        </span>
+                    </li>
+                    </ul>
+                </li>
+                {{-- <li class="m-3 me-auto">
+                
+               </li> --}}
+                @endauth
+                @guest
+                <li class="m-3 me-auto"><a class="" href="#">{{__('ui.hello')." Guest"}}</a></li>
+
+                @endguest
                 <li class="d-none-custom">
                     <form method="GET" action="{{route('announcement.search')}}" id="button-header-dropdown" class="">
                         <div id="mobile-big-img" class="search">
@@ -92,10 +128,66 @@
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-10 col-11">
-                @foreach ($announcements as $announcement)
 
-                @if ($announcement->is_accepted)
-                <div class="my-3 card col-md-8 col-12 offset-md-2">
+                <div class=" container-fluid">
+                    <div class="container">
+                        @foreach ($announcements as $announcement)
+                        @if ($announcement->is_accepted)
+                        <div class="custom-card-home my-5 p-3 col-12  col-md-10 mx-auto">
+                            <div class=" text-top row">
+                                <div class="photo-main">
+                                <section  id="myDiv" class="carousel " aria-label="Gallery">
+                                    <ol class="carousel__viewport">
+                                @foreach ($announcement->images as $image)
+                                    <li id="carousel__slide1"  class="col-md-6 col-12 carousel__slide">
+                                        <img class=" img-fluid"src="{{$image->getUrl(400, 300)}}"
+                                        alt="Card image cap">
+                                        <div class="carousel__snapper">
+                                            <a href="#carousel__slide2" class=""></a>
+                                            <a href="#carousel__slide4" class=""></a>
+                                        </div>
+                                 
+                                    </li>  
+                                    {{-- <aside class="carousel__navigation">
+                                        <ol class="carousel__navigation-list">
+                                            <li class="carousel__navigation-item">
+                                                
+                                                <a href="" class="carousel__navigation-button">Go to slide 1</a>
+                                            </li>
+                                            <li class="carousel__navigation-item">
+                                                <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
+                                            </li>
+                                            <li class="carousel__navigation-item">
+                                                <a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
+                                            </li>
+                                            <li class="carousel__navigation-item">
+                                                <a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
+                                            </li>
+                                        </ol>
+                                    </aside>      --}}
+                                @endforeach
+                                    </ol>
+                                </section>
+                                </div>
+                                <div class="card-custom col-md-6 col-12">
+                                    <h2 class="ms-2">{{$announcement->title}}</h2>
+                                    <h5 class="ms-2">{{__('ui.Categoria:')}} <a href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a> </h5>
+                                    <p class="ms-2">{{$announcement->description}}</p>
+                                    <div class="row">
+                                        <p class="col-2">Prezzo {{$announcement->price}}</p>
+                                        <p class="col-4">Creata il: {{$announcement->created_at->format('Y/m/d')}} </p>
+                                        <a class="col-4 custom-card-ad btn btn-success"href="{{route('announcement.show' ,$announcement)}}">Dettaglio</a>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        @endif
+
+                        @endforeach
+                    </div>
+                </div>
+                
+                {{-- <div class="my-3 card col-md-8 col-12 offset-md-2">
                     <div class="row align-items-center justify-content-end">
                         <div class="col-5">
                             <img class="img-fluid"
@@ -118,10 +210,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                @endif
+                </div> --}}
 
-                @endforeach
             </div>
         </div>
     </div>

@@ -66,8 +66,13 @@ icons.forEach(icon => {
 //     }); 
 // });
 
-        
-
+let name_dropdown = document.getElementById('name-dropdown');
+let ul_toggle = document.getElementById('toggle-ul');
+if(name_dropdown) {
+name_dropdown.addEventListener('click', function() {
+    ul_toggle.classList.toggle('d-none');
+})
+}
 
 
 $(function() {

@@ -10,5 +10,6 @@
         'announce'  => 'Inserisci annuncio' ,
         'recupero'  => 'Recupero',
         'click'     => 'Click' ,
-        'annunciAggiunti' => 'Gli ultimi annunci aggiunti'
+        'annunciAggiunti' => 'Gli ultimi annunci aggiunti',
+        'Categoria:' => 'Categoria:'
     ];
