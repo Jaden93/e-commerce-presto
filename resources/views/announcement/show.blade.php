@@ -14,7 +14,7 @@
                                     @foreach ($announcement->images as $image)
                                     <li id="carousel__slide1" tabindex="0" class="carousel__slide">
                                         <img class="img-fluid photo-img-car"
-                                            src="{{$image->getUrl(80, 80)}}"
+                                            src="{{$image->getUrl(400, 300)}}"
                                             alt="Card image cap">
                                         <div class="carousel__snapper">
                                             <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>

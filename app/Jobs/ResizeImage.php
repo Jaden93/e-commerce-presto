@@ -21,7 +21,7 @@ class ResizeImage implements ShouldQueue
      * @return void
      */
 
-     private $path, $fileName, $width, $height;
+    private $path, $fileName, $width, $height;
 
     public function __construct($filePath, $width, $height )
     {
