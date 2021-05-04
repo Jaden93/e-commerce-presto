@@ -10,5 +10,6 @@
          'announce' => 'publicar anuncio' ,
          'recupero' => 'recuperaciòn' ,
          'click'   =>  'clic' ,
-         'annunciAggiunti' => 'L ultema annuncos por tigo'
+         'annunciAggiunti' => 'L ultema annuncos por tigo',
+         'Categoria:' => 'Categorias',
         ];

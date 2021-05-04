@@ -2,13 +2,14 @@
 
     return [
         'searchCat' => 'Cerca la categoria',
-        'search'    => 'cerca',
-        'login'     => 'login' ,
-        'register'  => 'registrati' ,
-        'hello'     => 'ciao' ,
-        'logout'    => 'logout',
-        'announce'  => 'inserisci annuncio' ,
-        'recupero'  => 'recupero',
-        'click'     => 'click' ,
-        'annunciAggiunti' => 'Gli ultimi annunci aggiunti'
+        'search'    => 'Cerca',
+        'login'     => 'Login' ,
+        'register'  => 'Registrati' ,
+        'hello'     => 'Ciao' ,
+        'logout'    => 'Logout',
+        'announce'  => 'Inserisci annuncio' ,
+        'recupero'  => 'Recupero',
+        'click'     => 'Click' ,
+        'annunciAggiunti' => 'Gli ultimi annunci aggiunti',
+        'Categoria:' => 'Categoria:'
     ];
