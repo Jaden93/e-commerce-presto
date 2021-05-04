@@ -398,6 +398,7 @@ a:hover{
 .photo-main {
   border-radius: 6px 6px 0 0;
   width: 400px;
+  height: 300px;
   background-color: var(--main-color);
   /* background: radial-gradient(#e5f89e, rgba(27, 27, 27, 0.972)); */
 }
@@ -608,18 +609,18 @@ ol, li {
 
 .carousel {
   position: relative;
-  padding-top: 75%;
+  /* padding-top: 75%; */
   filter: drop-shadow(0 0 10px #0003);
   perspective: 100px;
   margin-top: 4px;
 }
 
 .carousel__viewport {
-  position: absolute;
-  top: 0;
+  /* position: absolute; */
+  /* top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 0; */
   display: flex;
   overflow-x: scroll;
   counter-reset: item;
@@ -646,11 +647,11 @@ ol, li {
 }
 
 .carousel__snapper {
-  position: absolute;
+   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; 
   scroll-snap-align: center;
 }
 
@@ -718,14 +719,20 @@ ol, li {
 .carousel__prev,
 .carousel__next {
   position: absolute;
-  top: 0;
-  margin-top: 37.5%;
-  width: 4rem;
-  height: 4rem;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  font-size: 0;
-  outline: 0;
+    bottom: 0;
+    /* margin-top: 37.5%; */
+    width: 4rem;
+    height: 4rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    /* font-size: 0; */
+    /* color: red; */
+    /* font-size: 30px;*/
+
+}
+
+.active .name {
+  display: none;
 }
 
 header {
