@@ -1,7 +1,6 @@
 <nav class="navbar nav-custom  navbar-expand-lg bg-main">
     <div class="container-fluid">
-        <a class=" navbar-brand text-U-brand ms-2" href="{{route('homepage')}}"><i class="fas fa-store"></i>
-            Presto</a>
+        <a class=" navbar-brand text-U-brand ms-2" href="{{route('homepage')}}"><i class="fas fa-store"></i>Presto</a>
         <div class=" d-flex m-3">
             @include('components.locale',['lang'=>'it','nation' => 'it'])
             @include('components.locale',['lang'=>'en','nation' => 'gb'])
@@ -29,7 +28,6 @@
         </form>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
             <ul class="align-items-center navbar-nav ms-auto">
                 <li>
                 </li>
@@ -44,50 +42,43 @@
                 @guest
                 <li class="nav-item">
                     <a class="nav-link fw-bold" href="{{route('login_register')}}">{{__('ui.login')}}</a>
-
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-bold" href="{{route('login_register')}}">{{__('ui.register')}}</a>
                 </li class="">
+                @endguest
+                @auth
                 <li class="d-flex">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
 
-                    @endguest
-                    @auth
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-
-                        {{__('ui.hello')}}, {{Auth::user()->name}}
-                    </a>
-                    <ul class="dropdown-menu bg-main" aria-labelledby="navbarDropdownMenuLink">
-                        <li>
-                            <form action="{{route('logout')}}" id="logout" method="POST">
-                                @csrf
-                                <a class="dropdown-item color"
-                                    onclick="event.preventDefault(); document.getElementById('logout').submit()">{{__('ui.logout')}}</a>
-                            </form>
-                        </li>
-                        <li class="custom-home-color dropdown-item">
-                            <a class="nav-link fw-bold" href="{{route('revisor.recovery')}}">{{__('ui.recupero')}}</a>
-                            </span>
-                        </li>
-                        <li class="custom-home-color dropdown-item nav-item">
-                            <a class="nav-link fw-bold" href="{{route('revisor.index')}}">
-                                Revisor index <span class="badge badge-pill badge-warning">#
-                                    {{ \App\Models\Announcement::ToBeRevisionedCount()}}</a>
-                            </span>
-                        </li>
-                    </ul>
-                </li>
+                            {{__('ui.hello')}}, {{Auth::user()->name}}
+                        </a>
+                            <ul class="dropdown-menu bg-main" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <form action="{{route('logout')}}" id="logout" method="POST">
+                                        @csrf
+                                        <a class="dropdown-item color"
+                                        onclick="event.preventDefault(); document.getElementById('logout').submit()">{{__('ui.logout')}}</a>
+                                    </form>
+                                </li>
+                                <li class="custom-home-color dropdown-item">
+                                    <a class="nav-link fw-bold" href="{{route('revisor.recovery')}}">{{__('ui.recupero')}}</a>
+                                </li>
+                                <li class="custom-home-color dropdown-item nav-item">
+                                    <a class="nav-link fw-bold" href="{{route('revisor.index')}}">Revisor index <span class="badge badge-pill badge-warning">#{{ \App\Models\Announcement::ToBeRevisionedCount()}}</a></span>
+                                </li>
+                            </ul>
+                    </li>
+                @endauth
             </ul>
-            </li>
-            @endauth
 
-            @auth
+            {{-- @auth --}}
             {{-- @if (Auth::user()->is_revisor)
             <li class="nav-item">
                 <a class="nav-link fw-bold" href="{{route('revisor.recovery')}}">{{__('ui.recupero')}}</a>
-                </span>
+            </span>
             </li>
             <li class="nav-item">
                 <a class="nav-link fw-bold" href="{{route('revisor.index')}}">
@@ -96,21 +87,18 @@
                 </span>
             </li>
             @endif --}}
-            @endAuth
-            <li class="nav-item">
+            {{-- @endAuth --}}
+            <li class="nav-item text-center">
                 @auth
-                @if (Auth::user()->name)
-                <a class="custom-btn btn text-main " href="{{route('announcement.create')}}">{{__('ui.announce')}}
-                </a>
+                    @if (Auth::user()->name)
+                    <a class="custom-btn btn text-main" href="{{route('announcement.create')}}">{{__('ui.announce')}}</a>
                 @endauth
-                @else
-
-                <a class=" custom-btn btn me-2 " href="{{route('login_register')}}"><span
+                    @else
+                        <a class=" custom-btn btn me-2 " href="{{route('login_register')}}"><span
                         id="text-nav-btn">{{__('ui.announce')}}</span> </a>
-                @endif
+                    @endif
             </li>
             <li>
-
                 <form method="GET" action="{{route('announcement.search')}}" id="search-navbar1"
                     class="offset-md-2 me-auto custom-nav-search btn nav-link ">
                     {{-- <div class="search">
@@ -119,14 +107,14 @@
                             <input type="text" placeholder="Cerca il tuo annuncio">
                         </div>
                     </div> --}}
-                    <div class="d-flex custom-navbar-nav">
+                    <div class="d-flex custom-navbar-nav d-flex justify-content-center">
                         <input class="form-control w-75" type="search" placeholder="Cosa stai cercando?"
                             aria-label="Search" name="query">
                         <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button>
                     </div>
                 </form>
             </li>
-            </ul>
-        </div>
+        </ul>
     </div>
+</div>
 </nav>

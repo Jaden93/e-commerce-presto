@@ -56,11 +56,11 @@
                     @include('components.locale',['lang'=>'esp','nation' => 'es'])
                 </div>
                 {{-- @if(Auth::user()->is_revisor)
-          
-               
+
+
                 @endif   --}}
                 <li class="m-3"><a class="btn btn-primary" href="{{route('register')}}">Inserisci annuncio</a></li>
-                @auth  
+                @auth
                 <li class="nav-item dropdown">
                     <a class="name nav-link dropdown-toggle"  data-bs-toggle="dropdown" role="button" aria-expanded="false" id="name-dropdown" href="#">{{__('ui.hello')." ".Auth::user()->name}}</a>
                     <ul id="toggle-ul" class="d-none dropdown-menu" aria-labelledby="name-dropdown">
@@ -84,7 +84,7 @@
                     </ul>
                 </li>
                 {{-- <li class="m-3 me-auto">
-                
+
                </li> --}}
                 @endauth
                 @guest
@@ -92,11 +92,7 @@
 
                 @endguest
                 <li class="d-none-custom">
-<<<<<<< HEAD
-                    <form method="GET" action="{{route('announcement.search')}}" id="button-header-navbar" class="">
-=======
                     <form method="GET" action="{{route('announcement.search')}}" id="button-header-dropdown" class="">
->>>>>>> da3ba2939339c2fa927ebe98f6742bb1dc69775a
                         <div id="mobile-big-img" class="search">
                             <div class="icon"></div>
                             <div class="input">
@@ -150,12 +146,12 @@
                                             <a href="#carousel__slide2" class=""></a>
                                             <a href="#carousel__slide4" class=""></a>
                                         </div>
-                                 
-                                    </li>  
+
+                                    </li>
                                     {{-- <aside class="carousel__navigation">
                                         <ol class="carousel__navigation-list">
                                             <li class="carousel__navigation-item">
-                                                
+
                                                 <a href="" class="carousel__navigation-button">Go to slide 1</a>
                                             </li>
                                             <li class="carousel__navigation-item">
@@ -182,7 +178,7 @@
                                         <p class="col-4">Creata il: {{$announcement->created_at->format('Y/m/d')}} </p>
                                         <a class="col-4 custom-card-ad btn btn-success"href="{{route('announcement.show' ,$announcement)}}">Dettaglio</a>
                                     </div>
-                                </div>    
+                                </div>
                             </div>
                         </div>
                         @endif
@@ -190,7 +186,7 @@
                         @endforeach
                     </div>
                 </div>
-                
+
                 {{-- <div class="my-3 card col-md-8 col-12 offset-md-2">
                     <div class="row align-items-center justify-content-end">
                         <div class="col-5">

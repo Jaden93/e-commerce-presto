@@ -81,14 +81,14 @@
 
             <img class=" img-fluid" src="{{$image->getUrl(400, 300)}}" alt="Card image cap">
         </div>
-        {{-- <div class="col-md-8">
+        <div class="col-md-8">
             adult: {{$image->adult}} <br>
             spoof: {{$image->spoof}} <br>
             medical: {{$image->medical}} <br>
             violence: {{$image->violence}} <br>
             racy: {{$image->racy}}
             {{$image->id}}
-        </div> --}}
+        </div>
         @endforeach
 
         <h2>Labels</h2>
