@@ -15908,9 +15908,6 @@ body {
 
 .custom-row-label
 {
-    inline-size: -webkit-fit-content;
-    inline-size: -moz-fit-content;
-    inline-size: fit-content;
     background-color: var(--sec-color);
 }
 

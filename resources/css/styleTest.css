@@ -164,7 +164,6 @@ body {
 
 .custom-row-label
 {
-    inline-size: fit-content;
     background-color: var(--sec-color);
 }
 

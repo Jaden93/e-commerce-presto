@@ -13,56 +13,66 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <span class="fs-5 fw-bold">ID Utente: </span>
-                                    <p>#{{$announcement->user->id}}</p>
-                                    <span class="fs-5 fw-bold">Utente: </span>
-                                    <p>{{$announcement->user->name}}</p>
-                                    <span class="fs-5 fw-bold">Email: </span>
-                                    <p>{{$announcement->user->email}}</p>
-                                    <span class="fs-5 fw-bold">Titolo </span>
-                                    <p>{{$announcement->title}}</p>
-                                    <span class="fs-5 fw-bold">Descrizione </span>
-                                    <p>{{$announcement->description}}</p>
+                                    <span class="fs-4 fw-bold">ID Utente: </span>
+                                    <p class="fs-5">#{{$announcement->user->id}}</p>
+                                    <span class="fs-4 fw-bold">Utente: </span>
+                                    <p class="fs-5">{{$announcement->user->name}}</p>
+                                    <span class="fs-4 fw-bold">Email: </span>
+                                    <p class="fs-5">{{$announcement->user->email}}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="fs-4 fw-bold">Titolo </span>
+                                    <p class="fs-5">{{$announcement->title}}</p>
+                                    <span class="fs-4 fw-bold">Descrizione </span>
+                                    <p class="fs-5">{{$announcement->description}}</p>
 
                                 </div>
-                                @foreach ($announcement->images as $image)
-                                <div class="col-md-6 p-3  custom-row-label">
-                                    <img class="" src="{{$image->getUrl(400, 300)}}" alt="Card image cap">
-                                    <div class="row">
-                                            <div class="custom-label col-md-6">
-                                                <h2>Filtri</h2>
-                                                <p class="my-0"><span class="fw-bolder fs-5"> ADULT:</span> {{$image->adult}} </p>
-                                                <p class="my-0"><span class="fw-bolder fs-5">SPOOF:</span>  {{$image->spoof}}</p>
-                                                <p class="my-0"><span class="fw-bolder fs-5">MEDICAL:</span>  {{$image->medical}}</p>
-                                                <p class="my-0"><span class="fw-bolder fs-5">VIOLENCE:</span>  {{$image->violence}}</p>
-                                                <p class="my-0"><span class="fw-bolder fs-5">RACY:</span>  {{$image->racy}}</p>
-                                            </div>
-                                            <div class="custom-label col-md-6">
-                                                <h2 class="text-end">Labels</h2>
-                                                <ul class="cstm-label">
-                                                    @if ($image->labels)
-                                                    @foreach ($image->labels as $label)
-                                                    <li class="text-end">{{$label}}</li>
-                                                    @endforeach
-                                                    @endif
-                                                </ul>
-                                            </div>
-                                    </div>
-                                  
-                                
-                                    @endforeach
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
-
     </div>
+
+    <div class="margin-custom-top container">
+        @foreach ($announcement->images as $image)
+        <div class="my-4 p-5 mx-auto custom-row-label">
+            <div class="row">
+                <div class="col-lg-6 text-xs-start text-sm-center">
+                    <img class="" src="{{$image->getUrl(400, 300)}}" alt="Card image cap">
+                </div>
+                    <div class="col-lg-3 mt-3 col-6">
+                        <h2>Filtri</h2>
+                        <p class="my-0"><span class="fw-bolder fs-5"> ADULT:</span> {{$image->adult}} </p>
+                        <p class="my-0"><span class="fw-bolder fs-5">SPOOF:</span> {{$image->spoof}}</p>
+                        <p class="my-0"><span class="fw-bolder fs-5">MEDICAL:</span> {{$image->medical}}</p>
+                        <p class="my-0"><span class="fw-bolder fs-5">VIOLENCE:</span> {{$image->violence}}</p>
+                        <p class="my-0"><span class="fw-bolder fs-5">RACY:</span> {{$image->racy}}</p>
+                    </div>
+                    <div class="col-lg-3 mt-3 col-6">
+                        <h2 class="text-center">Labels</h2>
+                        <ul class="cstm-label">
+                            @if ($image->labels)
+                            @foreach ($image->labels as $label)
+                            <li class="text-center fw-bold">{{$label}}</li>
+                            @endforeach
+                            @endif
+                        </ul>
+                    </div>
+            </div>
+        
+        </div>
+            @endforeach
+    </div>
+
+
+
+
+
+
+
 
     <div class="row  justify-content-around mt-5">
         <div class="col-md-6">
@@ -86,16 +96,17 @@
                 @csrf
                 <button class="p-3 btn btn-success" type="submit">Accept</button>
             </form>
-        </div>    
+        </div>
     </div>
 
     @else
     <div class="margin-custom-top flex-wrapper">
         <div class="bg-success">
-            <p class="p-3 text-light text-center">
+            <h2 class=" p-3 text-light text-center">
                 Non ci sono annunci da revisionare, torna più tardi!
-            </p>
-        </div>
+                <img src="https://www.nowork.com/image/cache/catalog/vfc-logo-300x300.png" alt="">
+            </h2>
+       </div>
     </div>
     @endif
 
