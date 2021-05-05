@@ -15,7 +15,7 @@ class CreateAnnouncementImagesTable extends Migration
     {
         Schema::create('announcement_images', function (Blueprint $table) {
             $table->id();
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->unsignedBigInteger('announcement_id');
             $table->foreign('announcement_id')->references('id')->on('announcements');
             

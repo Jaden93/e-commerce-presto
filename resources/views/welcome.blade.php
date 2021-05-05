@@ -144,7 +144,7 @@
                                     <li id="carousel__slide1"  class="col-md-6 col-12 carousel__slide">
                                         <img class=" img-fluid"src="{{$image->getUrl(400, 300)}}"
                                         alt="Card image cap">
-                                        <div class="carousel__snapper">
+                                            <div class="carousel__snapper">
                                             <a href="#carousel__slide2" class=""></a>
                                             <a href="#carousel__slide4" class=""></a>
                                         </div>
