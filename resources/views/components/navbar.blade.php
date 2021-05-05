@@ -87,7 +87,7 @@
             {{-- @if (Auth::user()->is_revisor)
             <li class="nav-item">
                 <a class="nav-link fw-bold" href="{{route('revisor.recovery')}}">{{__('ui.recupero')}}</a>
-                </span>
+            </span>
             </li>
             <li class="nav-item">
                 <a class="nav-link fw-bold" href="{{route('revisor.index')}}">
@@ -97,10 +97,11 @@
             </li>
             @endif --}}
             @endAuth
-            <li class="nav-item">
+            <li class="nav-item text-center">
                 @auth
                 @if (Auth::user()->name)
-                <a class="custom-btn btn text-main " href="{{route('announcement.create')}}">{{__('ui.announce')}}
+                <a class="custom-btn btn text-main"
+                    href="{{route('announcement.create')}}">{{__('ui.announce')}}
                 </a>
                 @endauth
                 @else
