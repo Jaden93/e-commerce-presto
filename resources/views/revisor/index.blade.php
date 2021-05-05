@@ -60,7 +60,7 @@
                         </ul>
                     </div>
             </div>
-        
+
         </div>
             @endforeach
     </div>

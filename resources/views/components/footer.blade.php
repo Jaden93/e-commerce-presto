@@ -1,4 +1,4 @@
-
+<div class="flex-wrapper"></div>
 <div class="custom-footer">
     <footer class=" text-center text-dark p-3">
         <!-- Grid container -->
