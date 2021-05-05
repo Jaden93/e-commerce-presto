@@ -62,7 +62,7 @@
                         </ul>
                     </div>
             </div>
-        
+
         </div>
             @endforeach
     </div>
@@ -97,29 +97,6 @@
                 <button class="p-3 btn btn-success" type="submit">Accept</button>
             </form>
         </div>
-        @foreach ($announcement->images as $image)
-        <div class="col-md-4">
-
-            <img class=" img-fluid" src="{{$image->getUrl(400, 300)}}" alt="Card image cap">
-        </div>
-        <div class="col-md-8">
-            adult: {{$image->adult}} <br>
-            spoof: {{$image->spoof}} <br>
-            medical: {{$image->medical}} <br>
-            violence: {{$image->violence}} <br>
-            racy: {{$image->racy}}
-            {{$image->id}}
-        </div>
-        @endforeach
-
-        <h2>Labels</h2>
-        <ul>
-            @if ($image->labels)
-            @foreach ($image->labels as $label)
-            <li>{{$label}}</li>
-            @endforeach
-            @endif
-        </ul>
     </div>
 
     @else
