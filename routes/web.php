@@ -30,7 +30,7 @@ Route::get('/create/announcement',[AnnouncementController::class,'create'])->nam
 Route::post('/store',[AnnouncementController::class,'store'])->name('announcement.store');
 Route::get('/category/{name}/{id}',[PublicController::class,'byCategory'])->name('byCategory');
 Route::get('/announcement/show/{announcement}' , [AnnouncementController::class,'show'])->name('announcement.show');
-Route::get('/announcement/index', [AnnouncementController::class,'index'])->name('announcement.index');
+Route::get('/announcement/index/', [AnnouncementController::class,'index'])->name('announcement.index');
 //revisione
 Route::get('/revisor/index', [RevisorController::class,'index'])->name('revisor.index');
 Route::get('/revisor/recovery', [RevisorController::class,'recovery'])->name('revisor.recovery');

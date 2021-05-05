@@ -23,10 +23,11 @@ class AnnouncementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Announcement $announcement)
     {
+        $announcements = Announcement::all();
         
-        return view('announcement.index');
+        return view('announcement.index',compact('announcements'));
     }
 
     /**
@@ -116,12 +117,13 @@ class AnnouncementController extends Controller
     public function uploadImages(Request $request) {
 
         $uniqueSecret = $request->input('uniqueSecret');
+
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
 
         dispatch(new ResizeImage(
             $fileName, 
-            80, 
-            80,
+            120, 
+            120,
         ));
 
         session()->push("images.{$uniqueSecret}",$fileName);
@@ -183,7 +185,7 @@ class AnnouncementController extends Controller
         $data=array_map(function($image){
             return [
                 'id' => $image,
-                'src' => AnnouncementImage::getUrlByFilePath($image, 80, 80),
+                'src' => AnnouncementImage::getUrlByFilePath($image,120, 120),
             ];
         },$images);
 

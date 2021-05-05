@@ -25,6 +25,12 @@
 //     // button classList.add('transparency')
 // });
 
+
+
+
+
+    
+
 let big_img = document.getElementById('big-img')
 if(big_img){
     const header = document.querySelector('header');
