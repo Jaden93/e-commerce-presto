@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-title">
-                        <p class="fw-bold fs-2 text-center">Annuncio Numero {{ $announcement->id }}</p>
+                        <p class="fw-bold fs-2 text-center">Annunci da revisionare: {{ $announcement->id }}</p>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -25,9 +25,7 @@
                                     <p class="fs-5">{{$announcement->title}}</p>
                                     <span class="fs-4 fw-bold">Descrizione </span>
                                     <p class="fs-5">{{$announcement->description}}</p>
-
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -78,9 +76,7 @@
         <div class="col-md-6">
 
         </div>
-        <div class="col-md-6">
-
-        </div>
+        <div class="col-md-6"></div>
     </div>
 
 

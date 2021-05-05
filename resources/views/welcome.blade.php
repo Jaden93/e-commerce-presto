@@ -49,6 +49,8 @@
                 @guest
                 <li><a href="{{route('login')}}">Login</a></li>
                 <li><a href="{{route('register')}}">Registrati</a></li>
+                <a href="{{'/announcement/index'}}">TEST</a>
+
                 @endguest
                 <div class=" d-flex fs-1 m-1">
                     @include('components.locale',['lang'=>'it','nation' => 'it'])

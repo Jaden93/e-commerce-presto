@@ -52,7 +52,7 @@
                 <li class="d-flex">
 
                     @endguest
-                    @auth
+            @auth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,7 +83,7 @@
             </li>
             @endauth
 
-            @auth
+            {{-- @auth --}}
             {{-- @if (Auth::user()->is_revisor)
             <li class="nav-item">
                 <a class="nav-link fw-bold" href="{{route('revisor.recovery')}}">{{__('ui.recupero')}}</a>
@@ -96,7 +96,7 @@
                 </span>
             </li>
             @endif --}}
-            @endAuth
+            {{-- @endAuth --}}
             <li class="nav-item">
                 @auth
                 @if (Auth::user()->name)

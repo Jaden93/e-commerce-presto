@@ -25,7 +25,8 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        //
+        
+        return view('announcement.index');
     }
 
     /**
