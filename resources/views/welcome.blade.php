@@ -56,8 +56,8 @@
                     @include('components.locale',['lang'=>'esp','nation' => 'es'])
                 </div>
                 {{-- @if(Auth::user()->is_revisor)
-          
-               
+
+
                 @endif   --}}
                 <li class="m-3"><a class="btn btn-primary" href="{{route('register')}}">{{__('ui.announce')}}</a></li>
                 @auth  
@@ -84,7 +84,7 @@
                     </ul>
                 </li>
                 {{-- <li class="m-3 me-auto">
-                
+
                </li> --}}
                 @endauth
                 @guest
@@ -146,12 +146,12 @@
                                             <a href="#carousel__slide2" class=""></a>
                                             <a href="#carousel__slide4" class=""></a>
                                         </div>
-                                 
-                                    </li>  
+
+                                    </li>
                                     {{-- <aside class="carousel__navigation">
                                         <ol class="carousel__navigation-list">
                                             <li class="carousel__navigation-item">
-                                                
+
                                                 <a href="" class="carousel__navigation-button">Go to slide 1</a>
                                             </li>
                                             <li class="carousel__navigation-item">
@@ -178,7 +178,7 @@
                                         <p class="col-4">{{__('ui.creationDate:')}} {{$announcement->created_at->format('Y/m/d')}} </p>
                                         <a class="col-4 custom-card-ad btn btn-success"href="{{route('announcement.show' ,$announcement)}}">{{__('ui.dettaglio')}}</a>
                                     </div>
-                                </div>    
+                                </div>
                             </div>
                         </div>
                         @endif
@@ -186,7 +186,7 @@
                         @endforeach
                     </div>
                 </div>
-                
+
                 {{-- <div class="my-3 card col-md-8 col-12 offset-md-2">
                     <div class="row align-items-center justify-content-end">
                         <div class="col-5">

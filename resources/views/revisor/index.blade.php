@@ -64,7 +64,7 @@
             </div>
 
         </div>
-            @endforeach
+        @endforeach
     </div>
 
 
@@ -106,7 +106,7 @@
                 {{__('ui.noRevision')}}
                 <img src="https://www.nowork.com/image/cache/catalog/vfc-logo-300x300.png" alt="">
             </h2>
-       </div>
+        </div>
     </div>
     @endif
 

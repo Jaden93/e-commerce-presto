@@ -21,7 +21,7 @@ class ResizeImage implements ShouldQueue
      * @return void
      */
 
-     private $path, $fileName, $width, $height;
+    private $path, $fileName, $width, $height;
 
     public function __construct($filePath, $width, $height )
     {
@@ -41,7 +41,7 @@ class ResizeImage implements ShouldQueue
         $width= $this->width;
         $height= $this->height;
         $srcPath= storage_path() . '/app/' . $this->path . '/' . $this->fileName;
-        
+
         $destinationPath= storage_path() . '/app/' . $this->path . "/crop{$width}x{$height}_" . $this->fileName;
 
 
@@ -57,3 +57,4 @@ class ResizeImage implements ShouldQueue
     }
 
 }
+
