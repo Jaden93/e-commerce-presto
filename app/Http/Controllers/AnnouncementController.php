@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionRemoveFaces;
 use App\Jobs\GoogleVisionSafeSearchImage;
+use App\Jobs\GoogleVisionWatermark;
 use App\Jobs\ResizeImage;
 use Illuminate\Http\File;
 use App\Models\Announcement;
@@ -88,14 +89,16 @@ class AnnouncementController extends Controller
 
             $i->save();
             
-            dispatch(new GoogleVisionSafeSearchImage($i->id));
-            dispatch(new GoogleVisionLabelImage($i->id));
-            dispatch(new GoogleVisionRemoveFaces($i->id));
+            // dispatch(new GoogleVisionSafeSearchImage($i->id));
+            // dispatch(new GoogleVisionLabelImage($i->id));
+            // dispatch(new GoogleVisionRemoveFaces($i->id));
+            // dispatch(new GoogleVisionWatermark($i->id));
+
 
             GoogleVisionSafeSearchImage::withChain([
                 new GoogleVisionLabelImage($i->id),
                 new GoogleVisionRemoveFaces($i->id),
-                new ResizeImage($i->file,400,300)
+                new ResizeImage($i->file,400,300),
     
             ])->dispatch($i->id);
             

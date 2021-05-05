@@ -2,7 +2,9 @@
 
 namespace App\Jobs;
 
+use Spatie\Image\Image;
 use Illuminate\Bus\Queueable;
+use Spatie\Image\Manipulations;
 use App\Models\AnnouncementImage;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -41,15 +43,36 @@ class GoogleVisionWatermark implements ShouldQueue
         }
 
          $srcPath = storage_path('/app/' . $i->file);
-        $image = file_get_contents($srcPath);
+         $image = file_get_contents($srcPath);
 
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
+    
 
-        $imageAnnotator = new ImageAnnotatorClient();
-        $response = $imageAnnotator->imagepropertiesDetection($image);
-        $watermark = $response->getImagePropertiesAnnotation();
+            $image = Image::load($srcPath);
+
+            $image
+                    // ->watermark(base_path('resources/img/smile.png'))
+                    // ->watermarkPosition('top-left')
+                    // ->watermarkPadding($bounds[0][0], $bounds[0][1])
+                    // ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
+                    // ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
+                    // ->watermarkFit(Manipulations::FIT_STRETCH);
+            
+                    ->watermark(base_path('resources/img/smile.png'))
+                    ->watermarkOpacity(50)
+                    ->watermarkPosition(Manipulations::POSITION_CENTER)
+                    ->watermarkHeight(100, Manipulations::UNIT_PERCENT)    
+                    ->watermarkWidth(100, Manipulations::UNIT_PERCENT);      
+                
+                
+                $image->save($srcPath);
+               
+        
+        }
+
+    
+
     }
-}
+
 
 
 
