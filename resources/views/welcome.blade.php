@@ -41,14 +41,14 @@
                     {{-- <input class="form-control" type="search" aria-label="Search" > --}}
                     <div class="icon "></div>
                     <div class="input">
-                        <input type="search" name="query" placeholder="Cerca il tuo annuncio">
+                        <input type="search" name="query" placeholder="{{__('ui.search')}}">
                     </div>
                 </div>
             </form>
             <ul class="mb-0 align-items-center">
                 @guest
                 <li><a href="{{route('login')}}">Login</a></li>
-                <li><a href="{{route('register')}}">Registrati</a></li>
+                <li><a href="{{route('register')}}">{{__('ui.register')}}</a></li>
                 <a href="{{'/announcement/index'}}">TEST</a>
 
                 @endguest
@@ -58,10 +58,10 @@
                     @include('components.locale',['lang'=>'esp','nation' => 'es'])
                 </div>
                 {{-- @if(Auth::user()->is_revisor)
-          
-               
+
+
                 @endif   --}}
-                <li class="m-3"><a class="btn btn-primary" href="{{route('register')}}">Inserisci annuncio</a></li>
+                <li class="m-3"><a class="btn btn-primary" href="{{route('register')}}">{{__('ui.announce')}}</a></li>
                 @auth  
                 <li class="nav-item dropdown">
                     <a class="name nav-link dropdown-toggle"  data-bs-toggle="dropdown" role="button" aria-expanded="false" id="name-dropdown" href="#">{{__('ui.hello')." ".Auth::user()->name}}</a>
@@ -86,7 +86,7 @@
                     </ul>
                 </li>
                 {{-- <li class="m-3 me-auto">
-                
+
                </li> --}}
                 @endauth
                 @guest
@@ -148,12 +148,12 @@
                                             <a href="#carousel__slide2" class=""></a>
                                             <a href="#carousel__slide4" class=""></a>
                                         </div>
-                                 
-                                    </li>  
+
+                                    </li>
                                     {{-- <aside class="carousel__navigation">
                                         <ol class="carousel__navigation-list">
                                             <li class="carousel__navigation-item">
-                                                
+
                                                 <a href="" class="carousel__navigation-button">Go to slide 1</a>
                                             </li>
                                             <li class="carousel__navigation-item">
@@ -176,11 +176,11 @@
                                     <h5 class="ms-2">{{__('ui.Categoria:')}} <a href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a> </h5>
                                     <p class="ms-2">{{$announcement->description}}</p>
                                     <div class="row">
-                                        <p class="col-2">Prezzo {{$announcement->price}}</p>
-                                        <p class="col-4">Creata il: {{$announcement->created_at->format('Y/m/d')}} </p>
-                                        <a class="col-4 custom-card-ad btn btn-success"href="{{route('announcement.show' ,$announcement)}}">Dettaglio</a>
+                                        <p class="col-2">{{__('ui.prezzo:')}} {{$announcement->price}}</p>
+                                        <p class="col-4">{{__('ui.creationDate:')}} {{$announcement->created_at->format('Y/m/d')}} </p>
+                                        <a class="col-4 custom-card-ad btn btn-success"href="{{route('announcement.show' ,$announcement)}}">{{__('ui.dettaglio')}}</a>
                                     </div>
-                                </div>    
+                                </div>
                             </div>
                         </div>
                         @endif
@@ -188,7 +188,7 @@
                         @endforeach
                     </div>
                 </div>
-                
+
                 {{-- <div class="my-3 card col-md-8 col-12 offset-md-2">
                     <div class="row align-items-center justify-content-end">
                         <div class="col-5">

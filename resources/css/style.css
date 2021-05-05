@@ -9,7 +9,7 @@
     --font-ubuntu:'Ubuntu', 'sans-serif';
 }
 
-body 
+body
  {
    min-height: 100vh;
  }
@@ -55,7 +55,7 @@ a:hover{
 .custom-card {
   display: inline-block;
   vertical-align: middle;
-  
+
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -140,7 +140,7 @@ a:hover{
   background-color: #72aed48a;
   color: var(--third-color);
   margin-top: 200px;
-  
+
   padding: 1rem;
   text-align: center;
 
@@ -657,7 +657,7 @@ ol, li {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   scroll-snap-align: center;
 }
 
@@ -988,22 +988,22 @@ header.sticky {
   height: 80px;
   z-index: 1000;
 } */
-
-.carousel::before,
-.carousel__prev {
-  left: -1rem;
-  color: red;
-}
 .custom-navbar-nav {
  padding: 0;
  width: 450px;
 
 }
+
+/* .carousel::before,
+.carousel__prev {
+  left: -1rem;
+  color: red;
+}
 .carousel::after,
 .carousel__next {
   right: -1rem;
   color: red;
-}
+} */
 
 
 
@@ -1058,7 +1058,7 @@ header.sticky {
     display: none;
   }
 
-  
+
   }
 
 
@@ -1067,13 +1067,13 @@ header.sticky {
     display: none;
   }
 
-    
+
   .custom-navbar-nav{
     width: 300px;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   #search-navbar1 {
     display: flex;
     justify-content: center;

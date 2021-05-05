@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\GoogleVisionLabelImage;
-use App\Jobs\GoogleVisionRemoveFaces;
-use App\Jobs\GoogleVisionSafeSearchImage;
-use App\Jobs\GoogleVisionWatermark;
 use App\Jobs\ResizeImage;
 use Illuminate\Http\File;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
+use App\Jobs\GoogleVisionWatermark;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
+use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionSafeSearchImage;
+use App\Http\Requests\ValidationAnnouncement;
 
 class AnnouncementController extends Controller
 {
@@ -50,9 +51,9 @@ class AnnouncementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidationAnnouncement  $request)
     {
-
+        // dd($request->all());
         $announcement = Announcement::create
         ([
             'title'=>$request->input('title'),
@@ -75,12 +76,12 @@ class AnnouncementController extends Controller
             $i = new AnnouncementImage();
             $fileName = basename($image);
             $newFileName = "public/announcements/{$announcement->id}/{$fileName}";
-            
+
             Storage::move($image, $newFileName);
 
             // dispatch(new ResizeImage(
-            //     $newFileName, 
-            //     400, 
+            //     $newFileName,
+            //     400,
             //     300
             // ));
 
@@ -90,7 +91,7 @@ class AnnouncementController extends Controller
             $i->announcement_id = $announcement->id;
 
             $i->save();
-            
+
             // dispatch(new GoogleVisionSafeSearchImage($i->id));
             // dispatch(new GoogleVisionLabelImage($i->id));
             // dispatch(new GoogleVisionRemoveFaces($i->id));
@@ -101,9 +102,9 @@ class AnnouncementController extends Controller
                 new GoogleVisionLabelImage($i->id),
                 new GoogleVisionRemoveFaces($i->id),
                 new ResizeImage($i->file,400,300),
-    
+
             ])->dispatch($i->id);
-            
+
 
 
         }
@@ -119,7 +120,6 @@ class AnnouncementController extends Controller
         $uniqueSecret = $request->input('uniqueSecret');
 
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
-
         dispatch(new ResizeImage(
             $fileName, 
             120, 
@@ -169,25 +169,24 @@ class AnnouncementController extends Controller
     {
         $uniqueSecret = $request->input('uniqueSecret');
 
-        $images = session()->get("image.{$uniqueSecret}", []);
+        $images = session()->get("images.{$uniqueSecret}", []);
         $removedImages = session()->get("removedimages.{$uniqueSecret}",[]);
 
         $images = array_diff($images, $removedImages);
-
-        // $data=[];
-        // foreach ($images as $image) {
-        //     $data[]=[
-        //         'id' => $image,
-        //         'src' => Storage::url($image),
-        //     ];
-        // }
-
-        $data=array_map(function($image){
-            return [
+        $data=[];
+        foreach ($images as $image) {
+            $data[]=[
                 'id' => $image,
-                'src' => AnnouncementImage::getUrlByFilePath($image,120, 120),
+                'src' => AnnouncementImage::getUrlByFilePath($image ,80 ,80),
             ];
-        },$images);
+        }
+
+        // $data=array_map(function($image){
+        //     return [
+        //         'id' => $image,
+        //         'src' => AnnouncementImage::getUrlByFilePath($image, 80, 80),
+        //     ];
+        // },$images);
 
         return response()->json($data);
         }

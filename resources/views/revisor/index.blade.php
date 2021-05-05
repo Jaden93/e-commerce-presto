@@ -9,21 +9,21 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-title">
-                        <p class="fw-bold fs-2 text-center">Annunci da revisionare: {{ $announcement->id }}</p>
+                        <p class="fw-bold fs-2 text-center">{{__('ui.number')}} {{ $announcement->id }}</p>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <span class="fs-4 fw-bold">ID Utente: </span>
+                                    <span class="fs-4 fw-bold">{{__('ui.id')}} </span>
                                     <p class="fs-5">#{{$announcement->user->id}}</p>
-                                    <span class="fs-4 fw-bold">Utente: </span>
+                                    <span class="fs-4 fw-bold">{{__('ui.user')}} </span>
                                     <p class="fs-5">{{$announcement->user->name}}</p>
                                     <span class="fs-4 fw-bold">Email: </span>
                                     <p class="fs-5">{{$announcement->user->email}}</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <span class="fs-4 fw-bold">Titolo </span>
+                                    <span class="fs-4 fw-bold">{{__('ui.title')}} </span>
                                     <p class="fs-5">{{$announcement->title}}</p>
-                                    <span class="fs-4 fw-bold">Descrizione </span>
+                                    <span class="fs-4 fw-bold">{{__('ui.description')}} </span>
                                     <p class="fs-5">{{$announcement->description}}</p>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                     <img class="" src="{{$image->getUrl(400, 300)}}" alt="Card image cap">
                 </div>
                     <div class="col-lg-3 mt-3 col-6">
-                        <h2>Filtri</h2>
+                        <h2>{{__('ui.filters')}}</h2>
                         <p class="my-0"><span class="fw-bolder fs-5"> ADULT:</span> {{$image->adult}} </p>
                         <p class="my-0"><span class="fw-bolder fs-5">SPOOF:</span> {{$image->spoof}}</p>
                         <p class="my-0"><span class="fw-bolder fs-5">MEDICAL:</span> {{$image->medical}}</p>
@@ -62,7 +62,7 @@
             </div>
 
         </div>
-            @endforeach
+        @endforeach
     </div>
 
 
@@ -99,10 +99,10 @@
     <div class="margin-custom-top flex-wrapper">
         <div class="bg-success">
             <h2 class=" p-3 text-light text-center">
-                Non ci sono annunci da revisionare, torna più tardi!
+                {{__('ui.noRevision')}}
                 <img src="https://www.nowork.com/image/cache/catalog/vfc-logo-300x300.png" alt="">
             </h2>
-       </div>
+        </div>
     </div>
     @endif
 

@@ -9,23 +9,23 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-title">
-                        <p>Annuncio Numero {{ $announcement->id }}</p>
+                        <p>{{__('ui.number')}} {{ $announcement->id }}</p>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <h3>Utente</h3>
+                                    <h3>{{__('ui.user')}}</h3>
                                        <p># {{$announcement->user->id}}</p>
-                                         <p>Utente: {{$announcement->user->name}}</p>
+                                         <p>{{__('ui.user')}} {{$announcement->user->name}}</p>
                                         <p>Email: {{$announcement->user->email}}</p>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3"><h2>Titolo</h2></div>
+                                    <div class="col-md-3"><h2>{{__('ui.title')}}</h2></div>
                                     <div class="col-md-10">{{$announcement->title}}</div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-3"><h2>Descrizione</h2></div>
+                                    <div class="col-md-3"><h2>{{__('ui.description')}}</h2></div>
                                     <div class="col-md-10">{{$announcement->description}}</div>
                                 </div>
 
