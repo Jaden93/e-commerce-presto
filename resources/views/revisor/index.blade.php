@@ -62,7 +62,7 @@
                         </ul>
                     </div>
             </div>
-        
+
         </div>
             @endforeach
     </div>
@@ -97,39 +97,13 @@
                 <button class="p-3 btn btn-success" type="submit">Accept</button>
             </form>
         </div>
-<<<<<<< HEAD
-        @foreach ($announcement->images as $image)
-        <div class="col-md-4">
-
-            <img class=" img-fluid" src="{{$image->getUrl(400, 300)}}" alt="Card image cap">
-        </div>
-        <div class="col-md-8">
-            adult: {{$image->adult}} <br>
-            spoof: {{$image->spoof}} <br>
-            medical: {{$image->medical}} <br>
-            violence: {{$image->violence}} <br>
-            racy: {{$image->racy}}
-            {{$image->id}}
-        </div>
-        @endforeach
-
-        <h2>Labels</h2>
-        <ul>
-            @if ($image->labels)
-            @foreach ($image->labels as $label)
-            <li>{{$label}}</li>
-            @endforeach
-            @endif
-        </ul>
-=======
->>>>>>> 4204ac350b98018449541ca1f69fa92eb8c0cfd5
     </div>
 
     @else
     <div class="margin-custom-top flex-wrapper">
         <div class="bg-success">
             <h2 class=" p-3 text-light text-center">
-                Non ci sono annunci da revisionare, torna più tardi!
+                Non ci sono annunci da revisionare, torna piu' tardi!
                 <img src="https://www.nowork.com/image/cache/catalog/vfc-logo-300x300.png" alt="">
             </h2>
        </div>
