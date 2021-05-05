@@ -9,49 +9,70 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-title">
-                        <p>Annuncio Numero {{ $announcement->id }}</p>
+                        <p class="fw-bold fs-2 text-center">Annuncio Numero {{ $announcement->id }}</p>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-3">
-                                    <h3>Utente</h3>
-                                    <p># {{$announcement->user->id}}</p>
-                                    <p>Utente: {{$announcement->user->name}}</p>
-                                    <p>Email: {{$announcement->user->email}}</p>
+                                <div class="col-md-6">
+                                    <span class="fs-4 fw-bold">ID Utente: </span>
+                                    <p class="fs-5">#{{$announcement->user->id}}</p>
+                                    <span class="fs-4 fw-bold">Utente: </span>
+                                    <p class="fs-5">{{$announcement->user->name}}</p>
+                                    <span class="fs-4 fw-bold">Email: </span>
+                                    <p class="fs-5">{{$announcement->user->email}}</p>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h2>Titolo</h2>
-                                </div>
-                                <div class="col-md-10">{{$announcement->title}}</div>
-                            </div>
+                                <div class="col-md-6">
+                                    <span class="fs-4 fw-bold">Titolo </span>
+                                    <p class="fs-5">{{$announcement->title}}</p>
+                                    <span class="fs-4 fw-bold">Descrizione </span>
+                                    <p class="fs-5">{{$announcement->description}}</p>
 
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h2>Descrizione</h2>
                                 </div>
-                                <div class="col-md-10">{{$announcement->description}}</div>
-                            </div>
 
-                            {{-- <div class="row">
-                                <div class="col-md-3"><h2>Immagini</h2></div>
-                                <div class="col-md-10">{{$announcement->img}}
+                            </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
-
-
             </div>
-
-
         </div>
     </div>
 
-
-
+    <div class="margin-custom-top container">
+        @foreach ($announcement->images as $image)
+        <div class="my-4 p-5 mx-auto custom-row-label">
+            <div class="row">
+                <div class="col-lg-6 text-xs-start text-sm-center">
+                    <img class="" src="{{$image->getUrl(400, 300)}}" alt="Card image cap">
+                </div>
+                    <div class="col-lg-3 mt-3 col-6">
+                        <h2>Filtri</h2>
+                        <p class="my-0"><span class="fw-bolder fs-5"> ADULT:</span> {{$image->adult}} </p>
+                        <p class="my-0"><span class="fw-bolder fs-5">SPOOF:</span> {{$image->spoof}}</p>
+                        <p class="my-0"><span class="fw-bolder fs-5">MEDICAL:</span> {{$image->medical}}</p>
+                        <p class="my-0"><span class="fw-bolder fs-5">VIOLENCE:</span> {{$image->violence}}</p>
+                        <p class="my-0"><span class="fw-bolder fs-5">RACY:</span> {{$image->racy}}</p>
+                    </div>
+                    <div class="col-lg-3 mt-3 col-6">
+                        <h2 class="text-center">Labels</h2>
+                        <ul class="cstm-label">
+                            @if ($image->labels)
+                            @foreach ($image->labels as $label)
+                            <li class="text-center fw-bold">{{$label}}</li>
+                            @endforeach
+                            @endif
+                        </ul>
+                    </div>
+            </div>
+        
+        </div>
+            @endforeach
     </div>
 
-    </div>
+
+
+
+
+
+
 
     <div class="row  justify-content-around mt-5">
         <div class="col-md-6">
@@ -104,10 +125,11 @@
     @else
     <div class="margin-custom-top flex-wrapper">
         <div class="bg-success">
-            <p class="p-3 text-light text-center">
+            <h2 class=" p-3 text-light text-center">
                 Non ci sono annunci da revisionare, torna più tardi!
-            </p>
-        </div>
+                <img src="https://www.nowork.com/image/cache/catalog/vfc-logo-300x300.png" alt="">
+            </h2>
+       </div>
     </div>
     @endif
 
