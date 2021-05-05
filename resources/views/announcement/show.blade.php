@@ -6,7 +6,7 @@
                 <div class="photo-container">
                     <div class="photo-main">
                         <div class="controls">
-                            <i class=" custom-font-card">Creato da: {{$announcement->user->name}}</i>
+                            <i class=" custom-font-card">{{__('ui.creatoDa')}} {{$announcement->user->name}}</i>
                         </div>
                         <div>
                             <section id="myDiv" class="carousel " aria-label="Gallery">
@@ -55,7 +55,7 @@
                     <h1 class="custom-font-card">{{$announcement->title}}</h1>
                 </div>
                 <div class="description">
-                    <h3 class="custom-font-card  ">Descrizione</h3>
+                    <h3 class="custom-font-card  ">{{__('ui.description')}}</h3>
                     <p class="card-text custom-font-card m-3 text-wrap" style="width: 300px;">
                         {{$announcement->description}} </p>
 
@@ -63,10 +63,10 @@
                 <div class="price">
                     <p class="card-text custom-font-card">{{$announcement->price}} €</p>
                 </div>
-                <p class="card-text custom-font-card">Categoria: <a
+                <p class="card-text custom-font-card">{{__('ui.singleCat')}} <a
                         href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a>
                 </p>
-                <p class="card-text custom-font-card">Annuncio creato in data:
+                <p class="card-text custom-font-card">{{__('ui.detailDate')}}
                     {{$announcement->created_at->format('Y/m/d')}} </p>
 
                 <button class="buy--btn">Ritorna agli annunci</button>

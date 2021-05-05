@@ -1,6 +1,6 @@
 <x-layout>
 
-    <h2 class="margin-custom-top text-center display-1">Ecco gli annunci</h2>
+    <h2 class="margin-custom-top text-center display-1">{{__('ui.byCategoryHead')}}</h2>
     <div class="row">
         @foreach ($announcements as $announcement)
 
@@ -13,7 +13,7 @@
             <p class="card-text">{{$announcement->created_at->format('Y/m/d')}} </p>
             <p class="card-text">{{$announcement->price}}€</p>
             <p class="card-text">{{$announcement->user->name}}</p>
-            <p class="card-text">Categoria: <a href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a></p>
+            <p class="card-text">{{__('ui.singleCat')}} <a href="{{route('byCategory', [ $announcement->category->id, $announcement->category->name])}}">{{$announcement->category->name}}</a></p>
             
             <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>

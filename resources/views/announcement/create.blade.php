@@ -1,7 +1,7 @@
 <x-layout>
 
 
-    <h2 class="text-center col-12 col-md-4 offset-md-4 margin-custom-top">Crea il tuo annuncio!</h2>
+    <h2 class="text-center col-12 col-md-4 offset-md-4 margin-custom-top">{{__('ui.create')}}</h2>
 
  <div class="container">
         <div class="row">
@@ -11,7 +11,7 @@
 
 
                 {{-- registrazione --}}
-                <h5 class="card-title text-center text-sec">Modifica i campi</h5>
+                <h5 class="card-title text-center text-sec">{{__('ui.modify')}}</h5>
                 {{-- <h3>DEBUG :: SECRET {{ $uniqueSecret }}</h3> --}}
                 <form method="POST" action="{{route('announcement.store')}}"  class="form-signin ">
                     @csrf
@@ -19,19 +19,19 @@
                       
                     <div class="form-label-group">
                       <input  name="title" type="text" id="titolo" class="form-control" placeholder="Email address" required autofocus>
-                      <label for="titolo">Titolo</label>
+                      <label for="titolo">{{__('ui.title')}}</label>
                     </div>
                     <div class="form-label-group">
-                      <h6 class="text-sec">Descrivi il tuo articolo</h6>
+                      <h6 class="text-sec">{{__('ui.describe')}}</h6>
                         <textarea name="description" type="text" id="descrizione"  class="form-control" required autofocus></textarea>
                         <label for="descrizione"></label>
                     </div>
                     <div class="form-label-group">
                         <input  name="price" type="text" id="prezzo" class="form-control" placeholder="Email address" required autofocus>
-                        <label for="prezzo">Prezzo</label>
+                        <label for="prezzo">{{__('ui.price')}}</label>
                     </div>
                     <div class="form-label">
-                        <label class="text-sec" for="category">Categoria</label>
+                        <label class="text-sec" for="category">{{__('ui.category')}}</label>
                         <select class="my-3" name="categories" id="category">
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label for="images" class="col-md-12 col-form-label text-md-right">Immagini</label>
+                      <label for="images" class="col-md-12 col-form-label text-md-right text-sec">{{__('ui.image')}}</label>
                       <div class="col-md-12">
                         <div id="drophere" class="dropzone"></div>
 
@@ -59,7 +59,7 @@
                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                   </div> --}}
-                  <button class="btn btn-lg custom-btn btn-block text-uppercase" type="submit">Inserisci l'annuncio</button>
+                  <button class="btn btn-lg custom-btn btn-block text-uppercase" type="submit">{{__('ui.post')}}</button>
 
                 </form>
 

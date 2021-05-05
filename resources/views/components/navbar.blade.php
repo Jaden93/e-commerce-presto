@@ -22,9 +22,9 @@
                     </div>
                 </div> --}}
             <div class="d-flex custom-navbar-nav">
-                <input class="form-control w-75" type="search" placeholder="Cosa stai cercando?" aria-label="Search"
+                <input class="form-control w-75" type="search" placeholder="{{__('ui.searchPlaceholder')}}" aria-label="Search"
                     name="query">
-                <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button>
+                <button class="my-auto btn btn-outline-sec " type="submit">{{__('ui.searchButton')}}</button>
             </div>
         </form>
 
@@ -121,9 +121,9 @@
                         </div>
                     </div> --}}
                     <div class="d-flex custom-navbar-nav">
-                        <input class="form-control w-75" type="search" placeholder="Cosa stai cercando?"
+                        <input class="form-control w-75" type="search" placeholder="{{__('ui.searchPlaceholder')}}"
                             aria-label="Search" name="query">
-                        <button class="my-auto btn btn-outline-sec " type="submit">Cerca</button>
+                        <button class="my-auto btn btn-outline-sec " type="submit">{{__('ui.searchButton')}}</button>
                     </div>
                 </form>
             </li>
