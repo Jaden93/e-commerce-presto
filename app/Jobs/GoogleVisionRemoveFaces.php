@@ -11,6 +11,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+use League\Glide\Manipulators\Watermark;
 use Spatie\Image\Manipulations;
 
 class GoogleVisionRemoveFaces implements ShouldQueue
@@ -63,12 +64,21 @@ class GoogleVisionRemoveFaces implements ShouldQueue
 
             $image = Image::load($srcPath);
 
-            $image->watermark(base_path('resources/img/smile.png'))
-                ->watermarkPosition('top-left')
-                ->watermarkPadding($bounds[0][0], $bounds[0][1])
-                ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
-                ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
-                ->watermarkFit(Manipulations::FIT_STRETCH);
+            $image
+                    ->watermark(base_path('resources/img/smile.png'))
+                    ->watermarkPosition('top-left')
+                    ->watermarkPadding($bounds[0][0], $bounds[0][1])
+                    ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
+                    ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
+                    ->watermarkFit(Manipulations::FIT_STRETCH);
+                    
+            
+                    // ->watermark(base_path('resources/img/smile.png'))
+                    // // ->watermarkOpacity(80)
+                    // ->watermarkPosition(Manipulations::POSITION_CENTER)
+                    // ->watermarkHeight(100, Manipulations::UNIT_PERCENT)    
+                    // ->watermarkWidth(100, Manipulations::UNIT_PERCENT);      
+                
                 
                 $image->save($srcPath);
                
