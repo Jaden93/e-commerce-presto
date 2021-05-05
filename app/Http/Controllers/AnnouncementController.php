@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\GoogleVisionLabelImage;
-use App\Jobs\GoogleVisionRemoveFaces;
-use App\Jobs\GoogleVisionSafeSearchImage;
-use App\Jobs\GoogleVisionWatermark;
 use App\Jobs\ResizeImage;
 use Illuminate\Http\File;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
+use App\Jobs\GoogleVisionWatermark;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
+use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionSafeSearchImage;
+use App\Http\Requests\ValidationAnnouncement;
 
 class AnnouncementController extends Controller
 {
@@ -48,9 +49,9 @@ class AnnouncementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidationAnnouncement  $request)
     {
-
+        // dd($request->all());
         $announcement = Announcement::create
         ([
             'title'=>$request->input('title'),
@@ -165,25 +166,24 @@ class AnnouncementController extends Controller
     {
         $uniqueSecret = $request->input('uniqueSecret');
 
-        $images = session()->get("image.{$uniqueSecret}", []);
+        $images = session()->get("images.{$uniqueSecret}", []);
         $removedImages = session()->get("removedimages.{$uniqueSecret}",[]);
 
         $images = array_diff($images, $removedImages);
-
-        // $data=[];
-        // foreach ($images as $image) {
-        //     $data[]=[
-        //         'id' => $image,
-        //         'src' => Storage::url($image),
-        //     ];
-        // }
-
-        $data=array_map(function($image){
-            return [
+        $data=[];
+        foreach ($images as $image) {
+            $data[]=[
                 'id' => $image,
-                'src' => AnnouncementImage::getUrlByFilePath($image, 80, 80),
+                'src' => AnnouncementImage::getUrlByFilePath($image ,80 ,80),
             ];
-        },$images);
+        }
+
+        // $data=array_map(function($image){
+        //     return [
+        //         'id' => $image,
+        //         'src' => AnnouncementImage::getUrlByFilePath($image, 80, 80),
+        //     ];
+        // },$images);
 
         return response()->json($data);
         }

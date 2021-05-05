@@ -988,22 +988,22 @@ header.sticky {
   height: 80px;
   z-index: 1000;
 } */
-
-.carousel::before,
-.carousel__prev {
-  left: -1rem;
-  color: red;
-}
 .custom-navbar-nav {
  padding: 0;
  width: 450px;
 
 }
+
+/* .carousel::before,
+.carousel__prev {
+  left: -1rem;
+  color: red;
+}
 .carousel::after,
 .carousel__next {
   right: -1rem;
   color: red;
-}
+} */
 
 
 

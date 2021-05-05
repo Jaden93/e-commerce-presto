@@ -43,28 +43,28 @@
                 <div class="col-lg-6 text-xs-start text-sm-center">
                     <img class="" src="{{$image->getUrl(400, 300)}}" alt="Card image cap">
                 </div>
-                    <div class="col-lg-3 mt-3 col-6">
-                        <h2>Filtri</h2>
-                        <p class="my-0"><span class="fw-bolder fs-5"> ADULT:</span> {{$image->adult}} </p>
-                        <p class="my-0"><span class="fw-bolder fs-5">SPOOF:</span> {{$image->spoof}}</p>
-                        <p class="my-0"><span class="fw-bolder fs-5">MEDICAL:</span> {{$image->medical}}</p>
-                        <p class="my-0"><span class="fw-bolder fs-5">VIOLENCE:</span> {{$image->violence}}</p>
-                        <p class="my-0"><span class="fw-bolder fs-5">RACY:</span> {{$image->racy}}</p>
-                    </div>
-                    <div class="col-lg-3 mt-3 col-6">
-                        <h2 class="text-center">Labels</h2>
-                        <ul class="cstm-label">
-                            @if ($image->labels)
-                            @foreach ($image->labels as $label)
-                            <li class="text-center fw-bold">{{$label}}</li>
-                            @endforeach
-                            @endif
-                        </ul>
-                    </div>
+                <div class="col-lg-3 mt-3 col-6">
+                    <h2>Filtri</h2>
+                    <p class="my-0"><span class="fw-bolder fs-5"> ADULT:</span> {{$image->adult}} </p>
+                    <p class="my-0"><span class="fw-bolder fs-5">SPOOF:</span> {{$image->spoof}}</p>
+                    <p class="my-0"><span class="fw-bolder fs-5">MEDICAL:</span> {{$image->medical}}</p>
+                    <p class="my-0"><span class="fw-bolder fs-5">VIOLENCE:</span> {{$image->violence}}</p>
+                    <p class="my-0"><span class="fw-bolder fs-5">RACY:</span> {{$image->racy}}</p>
+                </div>
+                <div class="col-lg-3 mt-3 col-6">
+                    <h2 class="text-center">Labels</h2>
+                    <ul class="cstm-label">
+                        @if ($image->labels)
+                        @foreach ($image->labels as $label)
+                        <li class="text-center fw-bold">{{$label}}</li>
+                        @endforeach
+                        @endif
+                    </ul>
+                </div>
             </div>
 
         </div>
-            @endforeach
+        @endforeach
     </div>
 
 
@@ -106,7 +106,7 @@
                 Non ci sono annunci da revisionare, torna piu' tardi!
                 <img src="https://www.nowork.com/image/cache/catalog/vfc-logo-300x300.png" alt="">
             </h2>
-       </div>
+        </div>
     </div>
     @endif
 

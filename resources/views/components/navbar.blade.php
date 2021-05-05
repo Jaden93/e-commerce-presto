@@ -63,12 +63,14 @@
                                         onclick="event.preventDefault(); document.getElementById('logout').submit()">{{__('ui.logout')}}</a>
                                     </form>
                                 </li>
-                                <li class="custom-home-color dropdown-item">
-                                    <a class="nav-link fw-bold" href="{{route('revisor.recovery')}}">{{__('ui.recupero')}}</a>
-                                </li>
-                                <li class="custom-home-color dropdown-item nav-item">
-                                    <a class="nav-link fw-bold" href="{{route('revisor.index')}}">Revisor index <span class="badge badge-pill badge-warning">#{{ \App\Models\Announcement::ToBeRevisionedCount()}}</a></span>
-                                </li>
+                                @if (Auth::user()->is_revisor)
+                                    <li class="custom-home-color dropdown-item">
+                                        <a class="nav-link fw-bold" href="{{route('revisor.recovery')}}">{{__('ui.recupero')}}</a>
+                                    </li>
+                                    <li class="custom-home-color dropdown-item nav-item">
+                                        <a class="nav-link fw-bold" href="{{route('revisor.index')}}">Revisor index <span class="badge badge-pill badge-warning">#{{ \App\Models\Announcement::ToBeRevisionedCount()}}</a></span>
+                                    </li>
+                                @endif
                             </ul>
                     </li>
                 @endauth
@@ -86,8 +88,8 @@
                         {{ \App\Models\Announcement::ToBeRevisionedCount()}}</a>
                 </span>
             </li>
-            @endif --}}
-            @endAuth
+            @endif
+            @endAuth --}}
             <li class="nav-item text-center">
                 @auth
                 @if (Auth::user()->name)
