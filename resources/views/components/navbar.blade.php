@@ -87,11 +87,13 @@
                 </span>
             </li>
             @endif --}}
-            {{-- @endAuth --}}
+            @endAuth
             <li class="nav-item text-center">
                 @auth
-                    @if (Auth::user()->name)
-                    <a class="custom-btn btn text-main" href="{{route('announcement.create')}}">{{__('ui.announce')}}</a>
+                @if (Auth::user()->name)
+                <a class="custom-btn btn text-main"
+                    href="{{route('announcement.create')}}">{{__('ui.announce')}}
+                </a>
                 @endauth
                     @else
                         <a class=" custom-btn btn me-2 " href="{{route('login_register')}}"><span
