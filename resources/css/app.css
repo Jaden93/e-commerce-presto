@@ -1,6 +1,7 @@
 @import'~bootstrap/dist/css/bootstrap';
 @import'style';
 @import'~hover.css/css/hover';
+/* @import'styleNO'; */
 @import'~dropzone/dist/basic';
 @import'~dropzone/dist/dropzone';
 @import'styleTest';

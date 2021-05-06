@@ -111,7 +111,7 @@ class AnnouncementController extends Controller
 
         Storage::deleteDirectory(storage_path("/public/temp/{$uniqueSecret}"));
 
-        return redirect(route('homepage'))->with('status','il tuo annuncio è stato creato');
+        return redirect(route('announcement.index'))->with('status','Il tuo annuncio è stato creato, è in fase di revisione!');
     }
 
 

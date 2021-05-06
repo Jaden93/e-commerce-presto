@@ -342,6 +342,18 @@ a:hover{
 
 }
 
+.custom_btn_all {
+  border-radius: 12px;
+  background: var(--sec-color);
+  color: var(--third-color);
+  box-shadow: inset 1px 1px 1px 2px rgba(53, 53, 53, 0.301) ;
+}
+
+.custom_btn_all:hover {
+  color: black;
+  
+}
+
 /* CUSTOM DETAIL CARD  */
 
 .custom-detail-card {
@@ -368,21 +380,28 @@ a:hover{
   border-radius: 5px;
   z-index: 1;
 }
-
+.custom-status {
+  background-color: var(--sec-color);
+  color: rgb(92, 92, 92);  
+  font-family: var(--font-mont_s);
+  font-weight: 700;
+}
 /* ----- Photo Section ----- */
 .product__photo {
   position: relative;
   right: -10px;
 }
 
+.z-index-photo {
+  z-index: 10;
+}
+
 .photo-container {
-  position: absolute;
-  display: grid;
-  grid-template-rows: 1fr;
-  height: 440px;
-  z-index: -1;
+  width: 400px;
   border-radius: 6px;
   box-shadow: 4px 4px 20px -2px rgb(0 0 0 / 63%);
+  z-index: 10;
+
 }
 
 .photo-img {
@@ -403,16 +422,18 @@ a:hover{
 
 .photo-main {
   border-radius: 6px 6px 0 0;
-  width: 400px;
-  height: 300px;
-  background-color: var(--main-color);
-  /* background: radial-gradient(#e5f89e, rgba(27, 27, 27, 0.972)); */
+    width: 100%;
+    /* background-color: var(--main-color); */
+    /* background: radial-gradient(#e5f89e, rgba(27, 27, 27, 0.972));*/
+
 }
   .controls {
     display: flex;
     justify-content: space-between;
     padding: 0.8em;
     color: #fff;
+    background: var(--sec-color);
+
   }
   .controls i {
       cursor: pointer;
@@ -451,42 +472,35 @@ a:hover{
 
 /* ----- Informations Section ----- */
 .product__info {
-  z-index: -1;
+  z-index: 1;
   /* top: 100px; */
   padding: 0.8em 0;
   border-radius: 6px 6px 6px 6px;
   background-color: var(--third-color);
   position: relative;
   left: 30px;
-  padding-left: 20px;
+  /* padding-left: 20px;
   padding-right: 30px;
   padding-top: 60px;
-  padding-bottom: 20px;
+  padding-bottom: 20px; */
 }
 
 .product__info_welcome {
-  z-index: -1;
+  z-index: 1;
   /* top: 100px; */
   padding: 0.8em 0;
   border-radius: 6px 6px 6px 6px;
   background-color: var(--sec-color);
-  position: relative;
+  /* position: relative;
 
   padding-left: 80px;
   padding-right: 30px;
   padding-top: 60px;
-  padding-bottom: 20px;
+  padding-bottom: 20px; */
 }
 
 
-/* .transparency {
-  width: 800px;
-  filter: blur(1px);
-   filter: drop-shadow(2px 4px 6px black);
-  filter: contrast(1.9);
-  opacity: 0.05;
-  margin: auto;
-} */
+
 
 .price {
   margin: 0.5em 0;
@@ -495,25 +509,25 @@ a:hover{
 
 }
 
-.product-welcome {
+/* .product-welcome {
   display: grid;
   grid-template-columns: 0.7fr auto;
   padding: 2.5em 0;
   background-color: #585c61fc;
   border-radius: 5px;
   z-index: 1;
-}
+} */
 
 
 .text-wrap {
   word-wrap: break-word;
 }
 
-
+/* 
 .description {
   clear: left;
   margin: 2em 0;
-}
+} */
 
 .buy--btn {
   padding: 1.5em 3.1em;
@@ -533,6 +547,7 @@ a:hover{
 }
 
 /* END CUSTOM DETAIL CARD */
+
 
 
 
@@ -584,55 +599,32 @@ a:hover{
 
 
 
-* {
-  box-sizing: border-box;
-  scrollbar-color: transparent transparent; /* thumb and track color */
-  scrollbar-width: 0px;
-}
-
-*::-webkit-scrollbar {
-  width: 0;
-}
-
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: transparent;
-  border: none;
-}
-
-* {
-  -ms-overflow-style: none;
-}
-
 ol, li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.carousel {
+/* .carousel {
   position: relative;
-  /* padding-top: 75%; */
+  /* padding-top: 75%; 
   filter: drop-shadow(0 0 10px #0003);
   perspective: 100px;
   margin-top: 4px;
-}
+} */
 
-.carousel__viewport {
+/* .carousel__viewport {
   /* position: absolute; */
   /* top: 0;
   right: 0;
   bottom: 0;
-  left: 0; */
+  left: 0; 
   display: flex;
   overflow-x: scroll;
   counter-reset: item;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-}
+} 
 
 .carousel__slide {
   position: relative;
@@ -994,6 +986,13 @@ header.sticky {
 
 }
 
+.overflow-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+
 /* .carousel::before,
 .carousel__prev {
   left: -1rem;
@@ -1094,10 +1093,7 @@ header.sticky {
     padding: 0.8em 0;
     border-radius: 6px 6px 6px 6px;
     background-color: var(--third-color);
-    position: relative;
-    left: -90px;
-    width: 390px;
-    top: 425px;
+   
     padding-left: 25px;
     padding-right: 30px;
     padding-top: 60px;
