@@ -79,11 +79,11 @@ class AnnouncementController extends Controller
 
             Storage::move($image, $newFileName);
 
-            // dispatch(new ResizeImage(
-            //     $newFileName,
-            //     400,
-            //     300
-            // ));
+            dispatch(new ResizeImage(
+                $newFileName,
+                400,
+                300
+            ));
 
 
 
@@ -98,12 +98,12 @@ class AnnouncementController extends Controller
             // dispatch(new GoogleVisionWatermark($i->id));
 
 
-            GoogleVisionSafeSearchImage::withChain([
-                new GoogleVisionLabelImage($i->id),
-                new GoogleVisionRemoveFaces($i->id),
-                new ResizeImage($i->file,400,300),
+            // GoogleVisionSafeSearchImage::withChain([
+            //     new GoogleVisionLabelImage($i->id),
+            //     new GoogleVisionRemoveFaces($i->id),
+            //     new ResizeImage($i->file,400,300),
 
-            ])->dispatch($i->id);
+            // ])->dispatch($i->id);
 
 
 
@@ -120,11 +120,11 @@ class AnnouncementController extends Controller
         $uniqueSecret = $request->input('uniqueSecret');
 
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
-        dispatch(new ResizeImage(
-            $fileName, 
-            120, 
-            120,
-        ));
+        // dispatch(new ResizeImage(
+        //     $fileName, 
+        //     120, 
+        //     120,
+        // ));
 
         session()->push("images.{$uniqueSecret}",$fileName);
         return response()->json(

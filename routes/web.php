@@ -42,4 +42,5 @@ Route::delete('/announcement/images/remove', [AnnouncementController::class,'rem
 Route::get('/announcement/images', [AnnouncementController::class,'getImages']);
 //Ricerca
 Route::post('locale/{locale}',[AnnouncementController::class, 'locale'])->name('announcement.locale');
+
 Route::get('/search', [AnnouncementController::class , 'search'])->name('announcement.search');

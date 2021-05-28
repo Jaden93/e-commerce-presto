@@ -71,12 +71,11 @@ a:hover{
   margin-top: 100px;
 }
 
-.flex-wrapper {
+/* .flex-wrapper {
   display: flex;
-  min-height: 150vh;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
 
 /* .flex-wrapper2 {
   display: flex;

@@ -7,7 +7,7 @@
         'register'  => 'Sign in' ,
         'hello'     => 'Hello' ,
         'logout'    => 'Logout',
-        'announce'  => 'Create announcement' ,
+        'announce'  => 'Create Ad' ,
         'recupero'  => 'Retrieve',
         'click'     => 'click' ,
         'annunciAggiunti' => 'Most recent announcements',
